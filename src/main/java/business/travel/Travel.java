@@ -36,4 +36,21 @@ public class Travel {
 	private double flightCost;
 	private double hotelCost;
     private boolean active;
+
+    public TravelDTO toDTO(){
+        return TravelDTO.builder()
+            .id(this.id)
+            .userId(this.user.getId())
+            .date(this.date)
+            .returnDate(this.returnDate)
+            .passengerCounter(this.passengerCounter)
+            .cost(this.cost)
+            .status(this.status)
+            .flightReservationID(this.flightReservationID)
+            .hotelReservationID(this.hotelReservationID)
+            .flightCost(this.flightCost)
+            .hotelCost(this.hotelCost)
+            .active(this.active)
+            .build();
+    }
 }

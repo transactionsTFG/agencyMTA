@@ -28,4 +28,10 @@ public class Type implements Serializable {
    private Set<User> user;
    @Column(nullable = false, unique = true)
    private String name;
+   public TypeDTO toDTO() {
+      return TypeDTO.builder()
+              .id(this.id)
+              .name(this.name)
+              .build();
+   }
  }

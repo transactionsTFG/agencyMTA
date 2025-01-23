@@ -43,4 +43,17 @@ public class User implements Serializable {
 	private String passport;
     @Column(nullable = false)
 	private String born;
+
+	public UserDTO toDTO(){
+		return UserDTO.builder()
+		.id(this.id)
+		.type(this.type.getName())
+		.name(this.name)
+		.surname(this.surname)
+		.email(this.email)
+		.active(this.active)
+		.passport(this.passport)
+		.born(this.born)
+		.build();
+	}
 }
