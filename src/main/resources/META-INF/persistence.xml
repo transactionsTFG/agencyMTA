@@ -9,7 +9,7 @@
         <jta-data-source>jdbc/agency</jta-data-source>     
         <properties>
             <property name="jakarta.persistence.jtaDataSource" value="jdbc/agency"/>
-            <property name="jakarta.persistence.schema-generation.database.action" value="create"/>
+            <property name="jakarta.persistence.schema-generation.database.action" value="drop-and-create"/>
         </properties>
     </persistence-unit>
 </persistence>

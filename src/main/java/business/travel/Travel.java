@@ -7,6 +7,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Version;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -36,7 +37,8 @@ public class Travel {
 	private double flightCost;
 	private double hotelCost;
     private boolean active;
-
+    @Version
+    private int version;
     public TravelDTO toDTO(){
         return TravelDTO.builder()
             .id(this.id)

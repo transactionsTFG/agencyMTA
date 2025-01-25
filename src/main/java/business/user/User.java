@@ -12,6 +12,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.Version;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -43,6 +44,8 @@ public class User implements Serializable {
 	private String passport;
     @Column(nullable = false)
 	private String born;
+	@Version
+	private int version;
 
 	public UserDTO toDTO(){
 		return UserDTO.builder()

@@ -10,6 +10,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.Version;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -28,6 +29,8 @@ public class Type implements Serializable {
    private Set<User> user;
    @Column(nullable = false, unique = true)
    private String name;
+   @Version
+   private int version;
    public TypeDTO toDTO() {
       return TypeDTO.builder()
               .id(this.id)
