@@ -4,21 +4,18 @@ import java.io.Serializable;
 import java.util.Set;
 
 import business.user.User;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Version;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Version;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
  
 @Entity
-@Getter
-@Setter
-@NoArgsConstructor
 public class Type implements Serializable {
    private static final long serialVersionUID = 0;
  
@@ -31,6 +28,42 @@ public class Type implements Serializable {
    private String name;
    @Version
    private int version;
+    // Constructor vacío (necesario para JPA)
+    public Type() {}
+
+    // Getters y Setters
+    public int getId() {
+        return id;
+    }
+ 
+    public void setId(int id) {
+        this.id = id;
+    }
+ 
+    public Set<User> getUser() {
+        return user;
+    }
+ 
+    public void setUser(Set<User> user) {
+        this.user = user;
+    }
+ 
+    public String getName() {
+        return name;
+    }
+ 
+    public void setName(String name) {
+        this.name = name;
+    }
+ 
+    public int getVersion() {
+        return version;
+    }
+ 
+    public void setVersion(int version) {
+        this.version = version;
+    }
+
    public TypeDTO toDTO() {
       return TypeDTO.builder()
               .id(this.id)

@@ -12,7 +12,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @Builder
 public class TravelDTO {
-    private int id;
+    private long id;
     private int userId; // Relación con User representada por el ID del usuario.
     private String date;
     private String returnDate;

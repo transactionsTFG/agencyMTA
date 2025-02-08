@@ -1,14 +1,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>ucm.tfg</groupId>
-  <artifactId>mta-airline</artifactId>
+  <artifactId>mta-agency</artifactId>
   <version>1.0.0</version>
   <packaging>war</packaging>
-  <name>mta-airline</name>
+  <name>agencyMTA</name>
   <properties>
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
-    <jakartaee>10.0.0</jakartaee>
   </properties>
   <dependencies>
 	
@@ -32,37 +31,19 @@
 	</dependency>
 	
 	<dependency>
-		<groupId>com.sun.xml.ws</groupId>
-        <artifactId>jaxws-rt</artifactId>
-		<version>4.0.3</version>
-	</dependency>
-
-	<dependency>
-		<groupId>org.glassfish.metro</groupId>
-		<artifactId>webservices-rt</artifactId>
-		<version>2.3</version>
-		<scope>provided</scope>
-	</dependency>
-
-	<dependency>
         <groupId>jakarta.platform</groupId>
         <artifactId>jakarta.jakartaee-api</artifactId>
-        <version>10.0.0</version> <!-- Ajusta la versión según tu GlassFish -->
-        <scope>provided</scope>
+        <version>8.0.0</version>
+    	<scope>provided</scope>
     </dependency>
 
 	<dependency>
-		<groupId>jakarta.servlet</groupId>
-		<artifactId>jakarta.servlet-api</artifactId>
-		<version>6.1.0</version>
-		<scope>provided</scope>
-	</dependency>
-	
-	<dependency>
-		<groupId>jakarta.persistence</groupId>
-		<artifactId>jakarta.persistence-api</artifactId>
-		<version>3.1.0</version>
-	</dependency>
+	    <groupId>com.oracle.weblogic</groupId>
+	    <artifactId>weblogic-server-pom</artifactId>
+	    <version>14.1.2-0-0</version>
+	    <type>pom</type>
+	    <scope>provided</scope>
+  	</dependency>
 
 	<dependency>
     	<groupId>org.projectlombok</groupId>
@@ -70,6 +51,39 @@
     	<version>1.18.36</version>
     	<scope>provided</scope>
 	</dependency>
-	
   </dependencies>
+	<build>
+		<finalName>agencyMTA</finalName>
+		<plugins>
+	        <plugin>
+	            <groupId>org.apache.maven.plugins</groupId>
+	            <artifactId>maven-war-plugin</artifactId>
+	            <version>3.3.1</version>
+	        </plugin>
+			<!-- Configuración de wsimport -->
+			<!-- Comando: mvn jaxws:wsimport -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>jaxws-maven-plugin</artifactId>
+                <version>2.6</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <wsdlUrls>
+                        <!-- <wsdlUrl>http://localhost:7001/hotelMTA/RoomWSB?wsdl</wsdlUrl> -->
+						<!-- <wsdlUrl>http://localhost:7001/hotelMTA/BookingWSB?wsdl</wsdlUrl> -->
+						<!-- <wsdlUrl>http://localhost:8001/airlineMTA/ReservationWS?wsdl</wsdlUrl> -->
+						<wsdlUrl>http://localhost:8001/airlineMTA/FlightWS?wsdl</wsdlUrl>
+                    </wsdlUrls>
+                    <sourceDestDir>src/main/java</sourceDestDir>
+                    <packageName>soapclient.airline.flight</packageName>
+                </configuration>
+            </plugin>
+	    </plugins>
+	</build>
 </project>

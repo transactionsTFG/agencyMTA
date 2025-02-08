@@ -4,12 +4,14 @@
              xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence
                                  https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd"
              version="3.0">
-
     <persistence-unit name="MtaAgency" transaction-type="JTA">
-        <jta-data-source>jdbc/agency</jta-data-source>     
+        <jta-data-source>jdbc/agency</jta-data-source>   
+        <class>business.travel.Travel</class>
+        <class>business.type.Type</class>
+        <class>business.user.User</class>
         <properties>
-            <property name="jakarta.persistence.jtaDataSource" value="jdbc/agency"/>
-            <property name="jakarta.persistence.schema-generation.database.action" value="drop-and-create"/>
+            <property name="javax.persistence.jtaDataSource" value="jdbc/agency"/>
+            <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
         </properties>
     </persistence-unit>
 </persistence>
