@@ -24,19 +24,17 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _MakeReservationRequestSOAP_QNAME = new QName("http://soap/", "MakeReservationRequestSOAP");
-    private final static QName _ModifyReservationRequestSOAP_QNAME = new QName("http://soap/", "ModifyReservationRequestSOAP");
-    private final static QName _FlightSOAP_QNAME = new QName("http://soap/", "FlightSOAP");
-    private final static QName _ReservationSOAP_QNAME = new QName("http://soap/", "ReservationSOAP");
+    private final static QName _BookingSOAP_QNAME = new QName("http://soap/", "BookingSOAP");
+    private final static QName _RoomSOAP_QNAME = new QName("http://soap/", "RoomSOAP");
     private final static QName _SoapResponse_QNAME = new QName("http://soap/", "SoapResponse");
-    private final static QName _CancelReservation_QNAME = new QName("http://soap/", "cancelReservation");
-    private final static QName _CancelReservationResponse_QNAME = new QName("http://soap/", "cancelReservationResponse");
-    private final static QName _MakeReservation_QNAME = new QName("http://soap/", "makeReservation");
-    private final static QName _MakeReservationResponse_QNAME = new QName("http://soap/", "makeReservationResponse");
-    private final static QName _ModifyReservation_QNAME = new QName("http://soap/", "modifyReservation");
-    private final static QName _ModifyReservationResponse_QNAME = new QName("http://soap/", "modifyReservationResponse");
-    private final static QName _SearchReservation_QNAME = new QName("http://soap/", "searchReservation");
-    private final static QName _SearchReservationResponse_QNAME = new QName("http://soap/", "searchReservationResponse");
+    private final static QName _CancelBooking_QNAME = new QName("http://soap/", "cancelBooking");
+    private final static QName _CancelBookingResponse_QNAME = new QName("http://soap/", "cancelBookingResponse");
+    private final static QName _MakeBooking_QNAME = new QName("http://soap/", "makeBooking");
+    private final static QName _MakeBookingResponse_QNAME = new QName("http://soap/", "makeBookingResponse");
+    private final static QName _ModifyBooking_QNAME = new QName("http://soap/", "modifyBooking");
+    private final static QName _ModifyBookingResponse_QNAME = new QName("http://soap/", "modifyBookingResponse");
+    private final static QName _SearchBooking_QNAME = new QName("http://soap/", "searchBooking");
+    private final static QName _SearchBookingResponse_QNAME = new QName("http://soap/", "searchBookingResponse");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: soapclient.hotel.booking
@@ -46,35 +44,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link MakeReservationRequestSOAP }
+     * Create an instance of {@link BookingSOAP }
      * 
      */
-    public MakeReservationRequestSOAP createMakeReservationRequestSOAP() {
-        return new MakeReservationRequestSOAP();
+    public BookingSOAP createBookingSOAP() {
+        return new BookingSOAP();
     }
 
     /**
-     * Create an instance of {@link ModifyReservationRequestSOAP }
+     * Create an instance of {@link RoomSOAP }
      * 
      */
-    public ModifyReservationRequestSOAP createModifyReservationRequestSOAP() {
-        return new ModifyReservationRequestSOAP();
-    }
-
-    /**
-     * Create an instance of {@link FlightSOAP }
-     * 
-     */
-    public FlightSOAP createFlightSOAP() {
-        return new FlightSOAP();
-    }
-
-    /**
-     * Create an instance of {@link ReservationSOAP }
-     * 
-     */
-    public ReservationSOAP createReservationSOAP() {
-        return new ReservationSOAP();
+    public RoomSOAP createRoomSOAP() {
+        return new RoomSOAP();
     }
 
     /**
@@ -86,143 +68,109 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link CancelReservation }
+     * Create an instance of {@link CancelBooking }
      * 
      */
-    public CancelReservation createCancelReservation() {
-        return new CancelReservation();
+    public CancelBooking createCancelBooking() {
+        return new CancelBooking();
     }
 
     /**
-     * Create an instance of {@link CancelReservationResponse }
+     * Create an instance of {@link CancelBookingResponse }
      * 
      */
-    public CancelReservationResponse createCancelReservationResponse() {
-        return new CancelReservationResponse();
+    public CancelBookingResponse createCancelBookingResponse() {
+        return new CancelBookingResponse();
     }
 
     /**
-     * Create an instance of {@link MakeReservation }
+     * Create an instance of {@link MakeBooking }
      * 
      */
-    public MakeReservation createMakeReservation() {
-        return new MakeReservation();
+    public MakeBooking createMakeBooking() {
+        return new MakeBooking();
     }
 
     /**
-     * Create an instance of {@link MakeReservationResponse }
+     * Create an instance of {@link MakeBookingResponse }
      * 
      */
-    public MakeReservationResponse createMakeReservationResponse() {
-        return new MakeReservationResponse();
+    public MakeBookingResponse createMakeBookingResponse() {
+        return new MakeBookingResponse();
     }
 
     /**
-     * Create an instance of {@link ModifyReservation }
+     * Create an instance of {@link ModifyBooking }
      * 
      */
-    public ModifyReservation createModifyReservation() {
-        return new ModifyReservation();
+    public ModifyBooking createModifyBooking() {
+        return new ModifyBooking();
     }
 
     /**
-     * Create an instance of {@link ModifyReservationResponse }
+     * Create an instance of {@link ModifyBookingResponse }
      * 
      */
-    public ModifyReservationResponse createModifyReservationResponse() {
-        return new ModifyReservationResponse();
+    public ModifyBookingResponse createModifyBookingResponse() {
+        return new ModifyBookingResponse();
     }
 
     /**
-     * Create an instance of {@link SearchReservation }
+     * Create an instance of {@link SearchBooking }
      * 
      */
-    public SearchReservation createSearchReservation() {
-        return new SearchReservation();
+    public SearchBooking createSearchBooking() {
+        return new SearchBooking();
     }
 
     /**
-     * Create an instance of {@link SearchReservationResponse }
+     * Create an instance of {@link SearchBookingResponse }
      * 
      */
-    public SearchReservationResponse createSearchReservationResponse() {
-        return new SearchReservationResponse();
+    public SearchBookingResponse createSearchBookingResponse() {
+        return new SearchBookingResponse();
     }
 
     /**
-     * Create an instance of {@link CustomerDTO }
+     * Create an instance of {@link BookingDTO }
      * 
      */
-    public CustomerDTO createCustomerDTO() {
-        return new CustomerDTO();
+    public BookingDTO createBookingDTO() {
+        return new BookingDTO();
     }
 
     /**
-     * Create an instance of {@link ReservationDTO }
+     * Create an instance of {@link RoomDTO }
      * 
      */
-    public ReservationDTO createReservationDTO() {
-        return new ReservationDTO();
+    public RoomDTO createRoomDTO() {
+        return new RoomDTO();
     }
 
     /**
-     * Create an instance of {@link ReservationLineDTO }
-     * 
-     */
-    public ReservationLineDTO createReservationLineDTO() {
-        return new ReservationLineDTO();
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link MakeReservationRequestSOAP }{@code >}
+     * Create an instance of {@link JAXBElement }{@code <}{@link BookingSOAP }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link MakeReservationRequestSOAP }{@code >}
+     *     the new instance of {@link JAXBElement }{@code <}{@link BookingSOAP }{@code >}
      */
-    @XmlElementDecl(namespace = "http://soap/", name = "MakeReservationRequestSOAP")
-    public JAXBElement<MakeReservationRequestSOAP> createMakeReservationRequestSOAP(MakeReservationRequestSOAP value) {
-        return new JAXBElement<MakeReservationRequestSOAP>(_MakeReservationRequestSOAP_QNAME, MakeReservationRequestSOAP.class, null, value);
+    @XmlElementDecl(namespace = "http://soap/", name = "BookingSOAP")
+    public JAXBElement<BookingSOAP> createBookingSOAP(BookingSOAP value) {
+        return new JAXBElement<BookingSOAP>(_BookingSOAP_QNAME, BookingSOAP.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ModifyReservationRequestSOAP }{@code >}
+     * Create an instance of {@link JAXBElement }{@code <}{@link RoomSOAP }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link ModifyReservationRequestSOAP }{@code >}
+     *     the new instance of {@link JAXBElement }{@code <}{@link RoomSOAP }{@code >}
      */
-    @XmlElementDecl(namespace = "http://soap/", name = "ModifyReservationRequestSOAP")
-    public JAXBElement<ModifyReservationRequestSOAP> createModifyReservationRequestSOAP(ModifyReservationRequestSOAP value) {
-        return new JAXBElement<ModifyReservationRequestSOAP>(_ModifyReservationRequestSOAP_QNAME, ModifyReservationRequestSOAP.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link FlightSOAP }{@code >}
-     * 
-     * @param value
-     *     Java instance representing xml element's value.
-     * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link FlightSOAP }{@code >}
-     */
-    @XmlElementDecl(namespace = "http://soap/", name = "FlightSOAP")
-    public JAXBElement<FlightSOAP> createFlightSOAP(FlightSOAP value) {
-        return new JAXBElement<FlightSOAP>(_FlightSOAP_QNAME, FlightSOAP.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ReservationSOAP }{@code >}
-     * 
-     * @param value
-     *     Java instance representing xml element's value.
-     * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link ReservationSOAP }{@code >}
-     */
-    @XmlElementDecl(namespace = "http://soap/", name = "ReservationSOAP")
-    public JAXBElement<ReservationSOAP> createReservationSOAP(ReservationSOAP value) {
-        return new JAXBElement<ReservationSOAP>(_ReservationSOAP_QNAME, ReservationSOAP.class, null, value);
+    @XmlElementDecl(namespace = "http://soap/", name = "RoomSOAP")
+    public JAXBElement<RoomSOAP> createRoomSOAP(RoomSOAP value) {
+        return new JAXBElement<RoomSOAP>(_RoomSOAP_QNAME, RoomSOAP.class, null, value);
     }
 
     /**
@@ -239,107 +187,107 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link CancelReservation }{@code >}
+     * Create an instance of {@link JAXBElement }{@code <}{@link CancelBooking }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link CancelReservation }{@code >}
+     *     the new instance of {@link JAXBElement }{@code <}{@link CancelBooking }{@code >}
      */
-    @XmlElementDecl(namespace = "http://soap/", name = "cancelReservation")
-    public JAXBElement<CancelReservation> createCancelReservation(CancelReservation value) {
-        return new JAXBElement<CancelReservation>(_CancelReservation_QNAME, CancelReservation.class, null, value);
+    @XmlElementDecl(namespace = "http://soap/", name = "cancelBooking")
+    public JAXBElement<CancelBooking> createCancelBooking(CancelBooking value) {
+        return new JAXBElement<CancelBooking>(_CancelBooking_QNAME, CancelBooking.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link CancelReservationResponse }{@code >}
+     * Create an instance of {@link JAXBElement }{@code <}{@link CancelBookingResponse }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link CancelReservationResponse }{@code >}
+     *     the new instance of {@link JAXBElement }{@code <}{@link CancelBookingResponse }{@code >}
      */
-    @XmlElementDecl(namespace = "http://soap/", name = "cancelReservationResponse")
-    public JAXBElement<CancelReservationResponse> createCancelReservationResponse(CancelReservationResponse value) {
-        return new JAXBElement<CancelReservationResponse>(_CancelReservationResponse_QNAME, CancelReservationResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://soap/", name = "cancelBookingResponse")
+    public JAXBElement<CancelBookingResponse> createCancelBookingResponse(CancelBookingResponse value) {
+        return new JAXBElement<CancelBookingResponse>(_CancelBookingResponse_QNAME, CancelBookingResponse.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link MakeReservation }{@code >}
+     * Create an instance of {@link JAXBElement }{@code <}{@link MakeBooking }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link MakeReservation }{@code >}
+     *     the new instance of {@link JAXBElement }{@code <}{@link MakeBooking }{@code >}
      */
-    @XmlElementDecl(namespace = "http://soap/", name = "makeReservation")
-    public JAXBElement<MakeReservation> createMakeReservation(MakeReservation value) {
-        return new JAXBElement<MakeReservation>(_MakeReservation_QNAME, MakeReservation.class, null, value);
+    @XmlElementDecl(namespace = "http://soap/", name = "makeBooking")
+    public JAXBElement<MakeBooking> createMakeBooking(MakeBooking value) {
+        return new JAXBElement<MakeBooking>(_MakeBooking_QNAME, MakeBooking.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link MakeReservationResponse }{@code >}
+     * Create an instance of {@link JAXBElement }{@code <}{@link MakeBookingResponse }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link MakeReservationResponse }{@code >}
+     *     the new instance of {@link JAXBElement }{@code <}{@link MakeBookingResponse }{@code >}
      */
-    @XmlElementDecl(namespace = "http://soap/", name = "makeReservationResponse")
-    public JAXBElement<MakeReservationResponse> createMakeReservationResponse(MakeReservationResponse value) {
-        return new JAXBElement<MakeReservationResponse>(_MakeReservationResponse_QNAME, MakeReservationResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://soap/", name = "makeBookingResponse")
+    public JAXBElement<MakeBookingResponse> createMakeBookingResponse(MakeBookingResponse value) {
+        return new JAXBElement<MakeBookingResponse>(_MakeBookingResponse_QNAME, MakeBookingResponse.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ModifyReservation }{@code >}
+     * Create an instance of {@link JAXBElement }{@code <}{@link ModifyBooking }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link ModifyReservation }{@code >}
+     *     the new instance of {@link JAXBElement }{@code <}{@link ModifyBooking }{@code >}
      */
-    @XmlElementDecl(namespace = "http://soap/", name = "modifyReservation")
-    public JAXBElement<ModifyReservation> createModifyReservation(ModifyReservation value) {
-        return new JAXBElement<ModifyReservation>(_ModifyReservation_QNAME, ModifyReservation.class, null, value);
+    @XmlElementDecl(namespace = "http://soap/", name = "modifyBooking")
+    public JAXBElement<ModifyBooking> createModifyBooking(ModifyBooking value) {
+        return new JAXBElement<ModifyBooking>(_ModifyBooking_QNAME, ModifyBooking.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ModifyReservationResponse }{@code >}
+     * Create an instance of {@link JAXBElement }{@code <}{@link ModifyBookingResponse }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link ModifyReservationResponse }{@code >}
+     *     the new instance of {@link JAXBElement }{@code <}{@link ModifyBookingResponse }{@code >}
      */
-    @XmlElementDecl(namespace = "http://soap/", name = "modifyReservationResponse")
-    public JAXBElement<ModifyReservationResponse> createModifyReservationResponse(ModifyReservationResponse value) {
-        return new JAXBElement<ModifyReservationResponse>(_ModifyReservationResponse_QNAME, ModifyReservationResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://soap/", name = "modifyBookingResponse")
+    public JAXBElement<ModifyBookingResponse> createModifyBookingResponse(ModifyBookingResponse value) {
+        return new JAXBElement<ModifyBookingResponse>(_ModifyBookingResponse_QNAME, ModifyBookingResponse.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SearchReservation }{@code >}
+     * Create an instance of {@link JAXBElement }{@code <}{@link SearchBooking }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link SearchReservation }{@code >}
+     *     the new instance of {@link JAXBElement }{@code <}{@link SearchBooking }{@code >}
      */
-    @XmlElementDecl(namespace = "http://soap/", name = "searchReservation")
-    public JAXBElement<SearchReservation> createSearchReservation(SearchReservation value) {
-        return new JAXBElement<SearchReservation>(_SearchReservation_QNAME, SearchReservation.class, null, value);
+    @XmlElementDecl(namespace = "http://soap/", name = "searchBooking")
+    public JAXBElement<SearchBooking> createSearchBooking(SearchBooking value) {
+        return new JAXBElement<SearchBooking>(_SearchBooking_QNAME, SearchBooking.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SearchReservationResponse }{@code >}
+     * Create an instance of {@link JAXBElement }{@code <}{@link SearchBookingResponse }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link SearchReservationResponse }{@code >}
+     *     the new instance of {@link JAXBElement }{@code <}{@link SearchBookingResponse }{@code >}
      */
-    @XmlElementDecl(namespace = "http://soap/", name = "searchReservationResponse")
-    public JAXBElement<SearchReservationResponse> createSearchReservationResponse(SearchReservationResponse value) {
-        return new JAXBElement<SearchReservationResponse>(_SearchReservationResponse_QNAME, SearchReservationResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://soap/", name = "searchBookingResponse")
+    public JAXBElement<SearchBookingResponse> createSearchBookingResponse(SearchBookingResponse value) {
+        return new JAXBElement<SearchBookingResponse>(_SearchBookingResponse_QNAME, SearchBookingResponse.class, null, value);
     }
 
 }
