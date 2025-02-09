@@ -1,24 +1,24 @@
 package business.travel;
 
+import soapclient.airline.flight.FlightSOAP;
+import soapclient.airline.flight.FlightWS_Service;
+import weblogic.wsee.wstx.wsat.Transactional;
+import weblogic.wsee.wstx.wsat.Transactional.TransactionFlowType;
+import weblogic.wsee.wstx.wsat.Transactional.Version;
 
-import business.type.Type;
-import common.dto.result.Result;
-import common.exceptions.SAException;
-import common.exceptions.TravelException;
 import javax.ejb.Stateless;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-
+import javax.xml.ws.WebServiceRef;
 
 @Stateless
 public class SATravelImpl implements SATravel {
 
-    @PersistenceContext(unitName = "MtaAgency")
-    private EntityManager em;
+    @WebServiceRef(wsdlLocation = "http://localhost:8001/airlineMTA/FlightWS?wsdl")
+    @Transactional(version = Version.WSAT12, value = TransactionFlowType.MANDATORY)
+    private FlightWS_Service flightService;
 
     @Override
-    public Result<Void> getFlight(long idFlight) {
-        return Result.success(null);
+    public FlightSOAP getFlight(long idFlight) {
+        return (FlightSOAP) flightService.getFlightWSPort().searchFlight(idFlight).getData();
     }
     
 }

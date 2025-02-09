@@ -5,12 +5,14 @@ import business.travel.SATravel;
 import common.consts.WebMethodConsts;
 import common.dto.result.Result;
 import common.exceptions.SAException;
+import soapclient.airline.flight.FlightSOAP;
+
 import javax.inject.Inject;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
 
-@WebService(serviceName = "AgencyFlightWS")
+@WebService(serviceName = "AgencyFlight")
 public class AgencyFlightWS {
     
     private final SATravel servicesTravel;
@@ -21,8 +23,7 @@ public class AgencyFlightWS {
     }
 
     @WebMethod(operationName=WebMethodConsts.OP_SEARCH_FLIGHT)
-    public boolean search(@WebParam(name = "idFlightSearch") final long idFlight) throws SAException{
-        final Result<Void> f = this.servicesTravel.getFlight(idFlight);
-        return f.isSuccess();
+    public FlightSOAP search(@WebParam(name = "idFlightSearch") final long idFlight) throws SAException{
+        return this.servicesTravel.getFlight(idFlight);
     }
 }

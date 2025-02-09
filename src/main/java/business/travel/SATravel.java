@@ -1,7 +1,7 @@
 package business.travel;
 
-import common.dto.result.Result;
+import soapclient.airline.flight.FlightSOAP;
 
 public interface SATravel {
-    Result<Void> getFlight(final long idTravel);
+    FlightSOAP getFlight(final long idTravel);
 } 
