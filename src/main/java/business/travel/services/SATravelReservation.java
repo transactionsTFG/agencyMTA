@@ -4,5 +4,5 @@ import business.travel.TravelDTO;
 
 public interface SATravelReservation {
     TravelDTO get(final long id); 
-    boolean cancel(final int idTravel, final int idFlight, final long idHotel);
+    boolean cancel(final long idTravel, final long idFlight, final long idFlightInstance, final int idHotel);
 }

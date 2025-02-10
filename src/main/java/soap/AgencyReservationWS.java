@@ -9,6 +9,7 @@ import business.travel.TravelDTO;
 import business.travel.services.SATravelReservation;
 import common.consts.WebMethodConsts;
 import common.exceptions.SAException;
+import weblogic.wsee.wstx.wsat.Transactional;
 
 @WebService(serviceName = "AgencyReservation")
 public class AgencyReservationWS {
@@ -20,6 +21,7 @@ public class AgencyReservationWS {
     }
 
     @WebMethod(operationName=WebMethodConsts.OP_SEARCH_RESERVATION)
+    @Transactional
     public TravelDTO searchReservation(@WebParam(name = "idReservation") final long id) throws SAException{
         return this.servicesTravel.get(id);
     }

@@ -3,9 +3,9 @@ package soap;
 
 import business.travel.SATravel;
 import common.consts.WebMethodConsts;
-import common.dto.result.Result;
 import common.exceptions.SAException;
 import soapclient.airline.flight.FlightSOAP;
+import weblogic.wsee.wstx.wsat.Transactional;
 
 import javax.inject.Inject;
 import javax.jws.WebMethod;
@@ -23,6 +23,7 @@ public class AgencyFlightWS {
     }
 
     @WebMethod(operationName=WebMethodConsts.OP_SEARCH_FLIGHT)
+    @Transactional
     public FlightSOAP search(@WebParam(name = "idFlightSearch") final long idFlight) throws SAException{
         return this.servicesTravel.getFlight(idFlight);
     }

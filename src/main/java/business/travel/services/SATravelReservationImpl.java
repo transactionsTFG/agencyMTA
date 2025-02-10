@@ -9,7 +9,10 @@ import javax.xml.ws.WebServiceRef;
 import business.travel.Travel;
 import business.travel.TravelDTO;
 import common.exceptions.TravelException;
+import soapclient.airline.reservation.ReservationSOAP;
 import soapclient.airline.reservation.ReservationWS_Service;
+import soapclient.airline.reservation.SoapResponse;
+import soapclient.hotel.booking.BookingWSB_Service;
 import weblogic.wsee.wstx.wsat.Transactional;
 import weblogic.wsee.wstx.wsat.Transactional.TransactionFlowType;
 import weblogic.wsee.wstx.wsat.Transactional.Version;
@@ -23,6 +26,9 @@ public class SATravelReservationImpl implements SATravelReservation {
     @Transactional(version = Version.WSAT12, value = TransactionFlowType.MANDATORY)
     private ReservationWS_Service reservationService;
 
+    @WebServiceRef(wsdlLocation = "http://localhost:7001/hotelMTA/BookingWSB?wsdl")
+    @Transactional(version = Version.WSAT12, value = TransactionFlowType.MANDATORY)
+    private BookingWSB_Service bookingService;
 
     public SATravelReservationImpl(){}
     
@@ -40,12 +46,20 @@ public class SATravelReservationImpl implements SATravelReservation {
     }
 
     @Override
-    public boolean cancel(int idTravel, int idFlight, long idHotel) {
-        if (idHotel != -1) {
-            String x = "a";
-        }
+    public boolean cancel(long idTravel, long idFlight, final long idFlightInstance, int idHotel) {
+        Travel t = this.em.find(Travel.class, idTravel, LockModeType.OPTIMISTIC);
+        if (t == null) 
+            throw new TravelException("Viaje no encontrado");
 
-        throw new UnsupportedOperationException("Unimplemented method 'cancel'");
+        if (t.getHotelReservationID() != -1) 
+            this.bookingService.getBookingWSBPort().cancelBooking(idHotel);
+
+        SoapResponse sResponse = this.reservationService.getReservationWSPort().searchReservation(t.getFlightReservationID()); //TODO: Devolver flightInstance tambien
+        final ReservationSOAP reservation = (ReservationSOAP) sResponse.getData();
+        
+        this.reservationService.getReservationWSPort().cancelReservation(t.getFlightReservationID(), 0);
+        this.em.remove(bookingService);
+        return true;
     }
     
 }
