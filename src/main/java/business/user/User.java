@@ -5,6 +5,9 @@ import java.util.Set;
 
 import business.travel.Travel;
 import business.type.Type;
+import jakarta.persistence.NamedQueries;
+import jakarta.persistence.NamedQuery;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,10 +20,15 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import common.dto.UserRegisterSOAP;
+
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
+@NamedQueries({
+    @NamedQuery(name = "findByEmail", query = "SELECT u FROM User u WHERE u.email = :email")
+})
 public class User implements Serializable {
 	private static final long serialVersionUID = 0;
 	@Id
@@ -46,6 +54,16 @@ public class User implements Serializable {
 	private String born;
 	@Version
 	private int version;
+
+    public User(UserRegisterSOAP user) {
+        this.name = user.getName();
+        this.surname = user.getSurname();
+        this.email = user.getEmail();
+        this.password = user.getPassword();
+        this.active = true;
+        this.passport = user.getPassport();
+        this.born = user.getBorn();
+    }
 
 	public UserDTO toDTO(){
 		return UserDTO.builder()
