@@ -68,7 +68,7 @@ public class User implements Serializable {
     public UserDTO toDTO() {
         return UserDTO.builder()
                 .id(this.id)
-                .type(this.type.getName())
+                .type(this.type == null ? "Sin tipo" : this.type.getName())
                 .name(this.name)
                 .surname(this.surname)
                 .email(this.email)
