@@ -5,8 +5,8 @@ import java.util.Set;
 
 import business.travel.Travel;
 import business.type.Type;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -27,33 +27,33 @@ import common.dto.UserRegisterSOAP;
 @Setter
 @NoArgsConstructor
 @NamedQueries({
-    @NamedQuery(name = "findByEmail", query = "SELECT u FROM User u WHERE u.email = :email")
+        @NamedQuery(name = "business.user.User.findByEmail", query = "SELECT u FROM User u WHERE u.email = :email")
 })
 public class User implements Serializable {
-	private static final long serialVersionUID = 0;
-	@Id
+    private static final long serialVersionUID = 0;
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
-	@ManyToOne(optional = false)
-	private Type type;
-	@OneToMany(mappedBy = "user")
-	private Set<Travel> travel;
+    private int id;
+    @ManyToOne(optional = false)
+    private Type type;
+    @OneToMany(mappedBy = "user")
+    private Set<Travel> travel;
     @Column(nullable = false)
-	private String name;
+    private String name;
     @Column(nullable = false)
-	private String surname;
+    private String surname;
     @Column(nullable = false, unique = true)
-	private String email;
+    private String email;
     @Column(nullable = false)
-	private String password;
+    private String password;
     @Column(nullable = false)
-	private boolean active;
+    private boolean active;
     @Column(nullable = false)
-	private String passport;
+    private String passport;
     @Column(nullable = false)
-	private String born;
-	@Version
-	private int version;
+    private String born;
+    @Version
+    private int version;
 
     public User(UserRegisterSOAP user) {
         this.name = user.getName();
@@ -65,16 +65,16 @@ public class User implements Serializable {
         this.born = user.getBorn();
     }
 
-	public UserDTO toDTO(){
-		return UserDTO.builder()
-		.id(this.id)
-		.type(this.type.getName())
-		.name(this.name)
-		.surname(this.surname)
-		.email(this.email)
-		.active(this.active)
-		.passport(this.passport)
-		.born(this.born)
-		.build();
-	}
+    public UserDTO toDTO() {
+        return UserDTO.builder()
+                .id(this.id)
+                .type(this.type.getName())
+                .name(this.name)
+                .surname(this.surname)
+                .email(this.email)
+                .active(this.active)
+                .passport(this.passport)
+                .born(this.born)
+                .build();
+    }
 }
