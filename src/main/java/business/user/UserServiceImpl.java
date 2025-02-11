@@ -7,10 +7,9 @@ import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
-import org.apache.openjpa.util.UserException;
-
 import common.dto.UserLoginSOAP;
 import common.dto.UserRegisterSOAP;
+import common.exceptions.UserException;
 
 @Stateless
 public class UserServiceImpl implements UserService {
