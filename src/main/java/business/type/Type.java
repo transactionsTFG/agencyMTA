@@ -31,6 +31,10 @@ public class Type implements Serializable {
     // Constructor vacío (necesario para JPA)
     public Type() {}
 
+    public Type(int id) {
+        this.id = id;
+    }
+
     // Getters y Setters
     public int getId() {
         return id;

@@ -13,9 +13,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Version;
+import javax.validation.constraints.NotNull;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -35,6 +38,7 @@ public class User implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @ManyToOne(optional = false)
+    @JoinColumn(nullable = false)
     private Type type;
     @OneToMany(mappedBy = "user")
     private Set<Travel> travel;
@@ -63,12 +67,13 @@ public class User implements Serializable {
         this.active = true;
         this.passport = user.getPassport();
         this.born = user.getBorn();
+        this.type = new Type(user.getIdTypeUser()); 
     }
 
     public UserDTO toDTO() {
         return UserDTO.builder()
                 .id(this.id)
-                .type(this.type == null ? "Sin tipo" : this.type.getName())
+                .type(this.type.getName())
                 .name(this.name)
                 .surname(this.surname)
                 .email(this.email)

@@ -7,6 +7,8 @@ import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
+import org.apache.openjpa.util.UserException;
+
 import common.dto.UserLoginSOAP;
 import common.dto.UserRegisterSOAP;
 
@@ -25,7 +27,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public long createUser(UserRegisterSOAP userRegister) {
-
         User user = new User(userRegister);
         this.em.persist(user);
         this.em.flush();
@@ -38,13 +39,9 @@ public class UserServiceImpl implements UserService {
         query.setParameter("email", userLogin.getEmail());
         List<User> resultList = query.getResultList();
         User user = resultList.isEmpty() ? null : resultList.get(0);
-        if (user == null) {
-            return null;
-        }
-        if (userLogin.getPassword().equals(user.getPassword())) {
-            return user.toDTO();
-        }
-        return null;
+        if (user == null || (user.getPassword().equals(userLogin.getPassword()))) 
+            throw new UserException("Usuario no encontrado");
+        return user.toDTO();
     }
 
 }
