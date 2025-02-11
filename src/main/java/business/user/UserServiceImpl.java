@@ -39,7 +39,7 @@ public class UserServiceImpl implements UserService {
         query.setParameter("email", userLogin.getEmail());
         List<User> resultList = query.getResultList();
         User user = resultList.isEmpty() ? null : resultList.get(0);
-        if (user == null || (user.getPassword().equals(userLogin.getPassword()))) 
+        if (user == null || !(user.getPassword().equals(userLogin.getPassword()))) 
             throw new UserException("Usuario no encontrado");
         return user.toDTO();
     }
