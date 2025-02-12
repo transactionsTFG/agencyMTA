@@ -9,6 +9,7 @@ import business.room.RoomDTO;
 import business.room.RoomService;
 import common.consts.WebMethodConsts;
 import common.exceptions.SAException;
+import soapclient.hotel.room.RoomSOAP;
 import weblogic.wsee.wstx.wsat.Transactional;
 
 @WebService(serviceName = "AgencyRoomWS")
@@ -23,8 +24,8 @@ public class AgencyRoomWS {
 
     @WebMethod(operationName = WebMethodConsts.OP_SEARCH_ROOM)
     @Transactional
-    public RoomDTO readRoom(@WebParam(name = "number") int number) throws SAException {
-        return this.roomService.searchRoom(number);
+    public RoomSOAP readRoom(@WebParam(name = "number") int number) throws SAException {
+        return this.roomService.getRoom(number);
     }
     
 }

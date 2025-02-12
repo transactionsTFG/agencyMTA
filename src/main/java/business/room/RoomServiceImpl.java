@@ -1,34 +1,23 @@
 package business.room;
 
-import java.util.List;
-
 import javax.ejb.Stateless;
-import javax.inject.Inject;
-import javax.persistence.EntityManager;
-import javax.persistence.TypedQuery;
+import javax.xml.ws.WebServiceRef;
 
-import common.exceptions.RoomException;
+import soapclient.hotel.room.RoomSOAP;
+import soapclient.hotel.room.RoomWSB_Service;
+import weblogic.wsee.wstx.wsat.Transactional;
+import weblogic.wsee.wstx.wsat.Transactional.TransactionFlowType;
+import weblogic.wsee.wstx.wsat.Transactional.Version;
 
 @Stateless
 public class RoomServiceImpl implements RoomService {
 
-    private EntityManager em;
+    @WebServiceRef(wsdlLocation = "http://localhost:7001/hotelMTA/RoomWSB?wsdl")
+    @Transactional(version = Version.WSAT12, value = TransactionFlowType.MANDATORY)
+    private RoomWSB_Service roomService;
 
-    public RoomServiceImpl() {}
-    
-    @Inject
-    public RoomServiceImpl(EntityManager em) {
-        this.em = em;
-    }
     @Override
-    public RoomDTO searchRoom(int number) {
-        TypedQuery<Room> query = this.em.createNamedQuery("business.room.Room.findByNumber", Room.class);
-        query.setParameter("number", number);
-        List<Room> resultList = query.getResultList();
-        Room room = resultList.isEmpty() ? null : resultList.get(0);
-        if (room == null) {
-            throw new RoomException("Habitación no encontrada");
-        } 
-        return room.toDTO();
+    public RoomSOAP getRoom(int number) {
+        return (RoomSOAP) this.roomService.getRoomWSBPort().searchRoom(number).getData();
     }
 }

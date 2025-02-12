@@ -1,5 +1,7 @@
 package business.room;
 
+import soapclient.hotel.room.RoomSOAP;
+
 public interface RoomService {
-    public RoomDTO searchRoom(int number);
+    public RoomSOAP getRoom(int number);
 }
