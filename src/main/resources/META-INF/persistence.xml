@@ -9,6 +9,7 @@
         <class>business.travel.Travel</class>
         <class>business.type.Type</class>
         <class>business.user.User</class>
+        <class>business.room.Room</class>
         <properties>
             <property name="javax.persistence.jtaDataSource" value="jdbc/agency"/>
             <!-- <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>-->
