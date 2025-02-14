@@ -20,4 +20,5 @@ public class UserDTO {
     private boolean active;
     private String passport;
     private String born;
+    private String phone;
 }

@@ -32,6 +32,9 @@ public class UserRegisterSOAP {
     private String born;
 
     @XmlElement
+    private String phone;
+
+    @XmlElement
     private int idTypeUser;
 
 }

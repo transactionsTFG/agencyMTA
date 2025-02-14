@@ -56,6 +56,8 @@ public class User implements Serializable {
     private String passport;
     @Column(nullable = false)
     private String born;
+    @Column(nullable = false)
+    private String phone;
     @Version
     private int version;
 
@@ -67,6 +69,7 @@ public class User implements Serializable {
         this.active = true;
         this.passport = user.getPassport();
         this.born = user.getBorn();
+        this.phone = user.getPhone();
         this.type = new Type(user.getIdTypeUser()); 
     }
 
@@ -80,6 +83,7 @@ public class User implements Serializable {
                 .active(this.active)
                 .passport(this.passport)
                 .born(this.born)
+                .phone(this.phone)
                 .build();
     }
 }
