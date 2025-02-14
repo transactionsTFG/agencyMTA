@@ -3,8 +3,10 @@ package soap;
 
 import business.travel.SATravel;
 import common.consts.WebMethodConsts;
+import common.dto.MakeFlightReservationSOAP;
 import common.exceptions.SAException;
 import soapclient.airline.flight.FlightSOAP;
+import soapclient.airline.reservation.ReservationSOAP;
 import weblogic.wsee.wstx.wsat.Transactional;
 
 import javax.inject.Inject;
@@ -26,5 +28,11 @@ public class AgencyFlightWS {
     @Transactional
     public FlightSOAP search(@WebParam(name = "idFlightSearch") final long idFlight) throws SAException{
         return this.servicesTravel.getFlight(idFlight);
+    }
+
+    @WebMethod(operationName=WebMethodConsts.OP_MAKE_FLIGHT_RESERVATION)
+    @Transactional
+    public ReservationSOAP makeFlightReservation(@WebParam(name = "reservation") MakeFlightReservationSOAP reservation) throws SAException{
+        return this.servicesTravel.makeReservation(reservation);
     }
 }
