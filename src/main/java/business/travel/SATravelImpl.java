@@ -44,7 +44,7 @@ public class SATravelImpl implements SATravel {
 
         CustomerDTO customerDTO = new CustomerDTO();
         customerDTO.setActive(true);
-        customerDTO.setDni(reservation.getDate());
+        customerDTO.setDni(reservation.getDni());
         customerDTO.setEmail(reservation.getEmail());
         customerDTO.setId(reservation.getCustomerId());
         customerDTO.setName(reservation.getName());
