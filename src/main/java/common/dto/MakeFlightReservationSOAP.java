@@ -13,6 +13,15 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 public class MakeFlightReservationSOAP {
+
+    @XmlElement
+    private String dni;
+    @XmlElement
+    private String email;
+    @XmlElement
+    private String name;
+    @XmlElement
+    private String phone;
     @XmlElement
     private String date;
     @XmlElement
@@ -23,7 +32,5 @@ public class MakeFlightReservationSOAP {
     private long flightId;
     @XmlElement
     private int numberOfSeats;
-    @XmlElement
-    private String customerEmail;
 
 }

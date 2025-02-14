@@ -14,12 +14,7 @@ import weblogic.wsee.wstx.wsat.Transactional.Version;
 import javax.ejb.Stateless;
 import javax.xml.ws.WebServiceRef;
 
-import business.user.UserDTO;
-import business.user.UserService;
-import business.user.UserServiceImpl;
 import common.dto.MakeFlightReservationSOAP;
-import common.dto.UserLoginSOAP;
-import soap.UserWS;
 
 @Stateless
 public class SATravelImpl implements SATravel {
@@ -31,9 +26,6 @@ public class SATravelImpl implements SATravel {
     @WebServiceRef(wsdlLocation = "http://localhost:8001/airlineMTA/ReservationWS?wsdl")
     @Transactional(version = Version.WSAT12, value = TransactionFlowType.MANDATORY)
     private ReservationWS_Service reservationService;
-
-    private UserWS userWS;
-    // private UserWS userWS = new UserWS(new UserServiceImpl());
 
     @Override
     public FlightSOAP getFlight(long idFlight) {
@@ -50,19 +42,13 @@ public class SATravelImpl implements SATravel {
         reservationDTO.setIdCustomer(reservation.getCustomerId());
         reservationDTO.setTotal(reservation.getTotal());
 
-        UserLoginSOAP userLoginSOAP = new UserLoginSOAP();
-        userLoginSOAP.setEmail(reservation.getCustomerEmail());
-        userLoginSOAP.setPassword("");
-
-        UserDTO userDTO = userWS.readUser(userLoginSOAP);
-
         CustomerDTO customerDTO = new CustomerDTO();
-        customerDTO.setActive(userDTO.isActive());
-        customerDTO.setDni(userDTO.getPassport());
-        customerDTO.setEmail(userDTO.getEmail());
-        customerDTO.setId(userDTO.getId());
-        customerDTO.setName(userDTO.getName());
-        customerDTO.setPhone(userDTO.getPhone());
+        customerDTO.setActive(true);
+        customerDTO.setDni(reservation.getDate());
+        customerDTO.setEmail(reservation.getEmail());
+        customerDTO.setId(reservation.getCustomerId());
+        customerDTO.setName(reservation.getName());
+        customerDTO.setPhone(reservation.getPhone());
 
         reservationSOAP.setCustomer(customerDTO);
         reservationSOAP.setReservation(reservationDTO);
