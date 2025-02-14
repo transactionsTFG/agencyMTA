@@ -1,4 +1,4 @@
-package business.room;
+package business.hotel;
 
 import java.io.Serializable;
 
