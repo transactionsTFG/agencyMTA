@@ -16,7 +16,6 @@ import soapclient.hotel.room.RoomSOAP;
 import soapclient.hotel.room.BookingSOAP;
 import weblogic.wsee.wstx.wsat.Transactional;
 
-
 @WebService(serviceName = "AgencyRoomWS")
 public class AgencyRoomWS {
 
@@ -33,10 +32,4 @@ public class AgencyRoomWS {
         return this.roomService.getRoom(number);
     }
 
-    @WebMethod(operationName = WebMethodConsts.OP_MAKE_ROOM_RESERVATION)
-    @Transactional
-    public BookingSOAP makeRoomReservation(@WebParam(name = "booking") MakeBookingSOAP booking, @WebParam(name = "rooms") List<MakeRoomSOAP> rooms) throws SAException {
-        return this.roomService.makeBooking(booking, rooms);
-    }
-    
 }
