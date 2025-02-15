@@ -1,4 +1,4 @@
-package business.travel.services;
+package business.travel.services.impl;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
@@ -8,6 +8,7 @@ import javax.xml.ws.WebServiceRef;
 
 import business.travel.Travel;
 import business.travel.TravelDTO;
+import business.travel.services.SATravelReservation;
 import common.exceptions.TravelException;
 import soapclient.airline.reservation.ReservationSOAP;
 import soapclient.airline.reservation.ReservationWS_Service;
