@@ -8,33 +8,29 @@ import javax.xml.bind.annotation.XmlRootElement;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@XmlRootElement(name = "UserRegisterSOAP")
+@XmlRootElement(name = "MakeFlightReservationSOAP")
 @XmlAccessorType(XmlAccessType.FIELD)
 @Data
 @NoArgsConstructor
-public class UserRegisterSOAP {
-    @XmlElement
-    private String name;
+public class MakeFlightReservationSOAP {
 
     @XmlElement
-    private String surname;
-
+    private String dni;
     @XmlElement
     private String email;
-
     @XmlElement
-    private String password;
-
-    @XmlElement
-    private String passport;
-
-    @XmlElement
-    private String born;
-
+    private String name;
     @XmlElement
     private String phone;
-
     @XmlElement
-    private int idTypeUser;
+    private String date;
+    @XmlElement
+    private long customerId;
+    @XmlElement
+    private double total;
+    @XmlElement
+    private long flightId;
+    @XmlElement
+    private int numberOfSeats;
 
 }
