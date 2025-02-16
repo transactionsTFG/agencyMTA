@@ -97,4 +97,9 @@ public class SATravelImpl implements SATravel {
         return (ReservationSOAP) reservationService.getReservationWSPort().searchReservation(flightReservationId).getData();
     }
 
+    @Override
+    public ReservationSOAP cancelReservation(long flightReservationId, long flightInstanceId) {
+        return (ReservationSOAP) reservationService.getReservationWSPort().cancelReservation(flightReservationId, flightInstanceId).getData();
+    }
+
 }

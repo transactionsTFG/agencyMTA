@@ -48,4 +48,10 @@ public class AgencyFlightWS {
     public ReservationSOAP searchFlightReservation(@WebParam(name = "flightReservationId") long flightReservationId) throws SAException{
         return this.servicesTravel.searchReservation(flightReservationId);
     }
+
+    @WebMethod(operationName=WebMethodConsts.OP_CANCEL_FLIGHT_RESERVATION)
+    @Transactional
+    public ReservationSOAP cancelFlightReservation(@WebParam(name = "flightReservationId") long flightReservationId, @WebParam(name = "flightInstanceId") long flightInstanceId) throws SAException{
+        return this.servicesTravel.cancelReservation(flightReservationId, flightInstanceId);
+    }
 }

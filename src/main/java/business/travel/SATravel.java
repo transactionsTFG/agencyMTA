@@ -10,4 +10,5 @@ public interface SATravel {
     ReservationSOAP makeReservation(final MakeFlightReservationSOAP reservation);
     ReservationSOAP modifyReservation(final ModifyFlightReservationSOAP reservation);
     ReservationSOAP searchReservation(final long flightReservationId);
+    ReservationSOAP cancelReservation(final long flightReservationId, final long flightInstanceId);
 } 
