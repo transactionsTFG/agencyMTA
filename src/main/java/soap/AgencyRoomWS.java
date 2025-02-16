@@ -5,8 +5,7 @@ import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
 
-import business.room.RoomDTO;
-import business.room.RoomService;
+import business.hotel.RoomService;
 import common.consts.WebMethodConsts;
 import common.exceptions.SAException;
 import soapclient.hotel.room.RoomSOAP;
@@ -27,5 +26,5 @@ public class AgencyRoomWS {
     public RoomSOAP readRoom(@WebParam(name = "number") int number) throws SAException {
         return this.roomService.getRoom(number);
     }
-    
+
 }

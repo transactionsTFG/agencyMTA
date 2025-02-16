@@ -1,4 +1,4 @@
-package business.room;
+package business.hotel;
 
 import javax.ejb.Stateless;
 import javax.xml.ws.WebServiceRef;
@@ -20,4 +20,5 @@ public class RoomServiceImpl implements RoomService {
     public RoomSOAP getRoom(int number) {
         return (RoomSOAP) this.roomService.getRoomWSBPort().searchRoom(number).getData();
     }
+
 }

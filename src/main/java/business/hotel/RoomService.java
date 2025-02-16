@@ -1,4 +1,4 @@
-package business.room;
+package business.hotel;
 
 import soapclient.hotel.room.RoomSOAP;
 
