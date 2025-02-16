@@ -4,6 +4,7 @@ package soap;
 import business.travel.SATravel;
 import common.consts.WebMethodConsts;
 import common.dto.MakeFlightReservationSOAP;
+import common.dto.ModifyFlightReservationSOAP;
 import common.exceptions.SAException;
 import soapclient.airline.flight.FlightSOAP;
 import soapclient.airline.reservation.ReservationSOAP;
@@ -34,5 +35,11 @@ public class AgencyFlightWS {
     @Transactional
     public ReservationSOAP makeFlightReservation(@WebParam(name = "reservation") MakeFlightReservationSOAP reservation) throws SAException{
         return this.servicesTravel.makeReservation(reservation);
+    }
+
+    @WebMethod(operationName=WebMethodConsts.OP_MODIFY_FLIGHT_RESERVATION)
+    @Transactional
+    public ReservationSOAP modifyFlightReservation(@WebParam(name = "reservation") ModifyFlightReservationSOAP reservation) throws SAException{
+        return this.servicesTravel.modifyReservation(reservation);
     }
 }

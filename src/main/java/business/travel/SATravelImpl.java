@@ -4,7 +4,9 @@ import soapclient.airline.flight.FlightSOAP;
 import soapclient.airline.flight.FlightWS_Service;
 import soapclient.airline.reservation.CustomerDTO;
 import soapclient.airline.reservation.MakeReservationRequestSOAP;
+import soapclient.airline.reservation.ModifyReservationRequestSOAP;
 import soapclient.airline.reservation.ReservationDTO;
+import soapclient.airline.reservation.ReservationLineDTO;
 import soapclient.airline.reservation.ReservationSOAP;
 import soapclient.airline.reservation.ReservationWS_Service;
 import weblogic.wsee.wstx.wsat.Transactional;
@@ -15,6 +17,8 @@ import javax.ejb.Stateless;
 import javax.xml.ws.WebServiceRef;
 
 import common.dto.MakeFlightReservationSOAP;
+import common.dto.ModifyFlightReservationSOAP;
+import common.exceptions.TravelException;
 
 @Stateless
 public class SATravelImpl implements SATravel {
@@ -55,6 +59,37 @@ public class SATravelImpl implements SATravel {
         reservationSOAP.setIdFlight(reservation.getFlightId());
         reservationSOAP.setNumberOfSeats(reservation.getNumberOfSeats());
         return (ReservationSOAP) reservationService.getReservationWSPort().makeReservation(reservationSOAP).getData();
+    }
+
+    @Override
+    public ReservationSOAP modifyReservation(ModifyFlightReservationSOAP reservation) {
+        ReservationSOAP readReservationSOAP = (ReservationSOAP) reservationService.getReservationWSPort().searchReservation(reservation.getFlightReservationId()).getData();
+
+        if (readReservationSOAP == null) {
+            throw new TravelException("Reserva de vuelo no encontrada");
+        }
+        
+        if (!readReservationSOAP.isActive()) {
+            throw new TravelException("Reserva de vuelo inactiva");
+        }
+        
+        ModifyReservationRequestSOAP reservationSOAP = new ModifyReservationRequestSOAP();
+
+        ReservationDTO reservationDTO = new ReservationDTO();
+        reservationDTO.setId(reservation.getFlightReservationId());
+        reservationDTO.setActive(true);
+        reservationDTO.setDate(reservation.getDate());
+        reservationDTO.setIdCustomer(reservation.getCustomerId());
+        reservationDTO.setTotal(reservation.getTotal());
+
+        ReservationLineDTO reservationLineDTO = new ReservationLineDTO();
+        reservationLineDTO.setFlightInstanceId(reservation.getFlightInstanceId());
+        reservationLineDTO.setPassengerCount(reservation.getPassengerCount());
+        reservationLineDTO.setReservationId(reservation.getFlightReservationId());
+
+        reservationSOAP.setReservation(reservationDTO);
+        reservationSOAP.setReservationLine(reservationLineDTO);
+        return (ReservationSOAP) reservationService.getReservationWSPort().modifyReservation(reservationSOAP).getData();
     }
 
 }
