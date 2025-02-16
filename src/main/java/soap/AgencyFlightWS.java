@@ -42,4 +42,10 @@ public class AgencyFlightWS {
     public ReservationSOAP modifyFlightReservation(@WebParam(name = "reservation") ModifyFlightReservationSOAP reservation) throws SAException{
         return this.servicesTravel.modifyReservation(reservation);
     }
+
+    @WebMethod(operationName=WebMethodConsts.OP_SEARCH_FLIGHT_RESERVATION)
+    @Transactional
+    public ReservationSOAP searchFlightReservation(@WebParam(name = "flightReservationId") long flightReservationId) throws SAException{
+        return this.servicesTravel.searchReservation(flightReservationId);
+    }
 }

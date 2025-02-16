@@ -9,4 +9,5 @@ public interface SATravel {
     FlightSOAP getFlight(final long idTravel);
     ReservationSOAP makeReservation(final MakeFlightReservationSOAP reservation);
     ReservationSOAP modifyReservation(final ModifyFlightReservationSOAP reservation);
+    ReservationSOAP searchReservation(final long flightReservationId);
 } 
