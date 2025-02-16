@@ -1,7 +1,5 @@
 package soap;
 
-import java.util.List;
-
 import javax.inject.Inject;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
@@ -9,11 +7,8 @@ import javax.jws.WebService;
 
 import business.hotel.RoomService;
 import common.consts.WebMethodConsts;
-import common.dto.MakeBookingSOAP;
-import common.dto.MakeRoomSOAP;
 import common.exceptions.SAException;
 import soapclient.hotel.room.RoomSOAP;
-import soapclient.hotel.room.BookingSOAP;
 import weblogic.wsee.wstx.wsat.Transactional;
 
 @WebService(serviceName = "AgencyRoomWS")

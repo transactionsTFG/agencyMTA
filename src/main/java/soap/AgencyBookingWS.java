@@ -30,5 +30,11 @@ public class AgencyBookingWS {
     public BookingSOAP makeBooking(@WebParam(name = "booking") MakeBookingSOAP booking, @WebParam(name = "rooms") List<MakeRoomSOAP> rooms) throws SAException {
         return this.bookingService.makeBooking(booking, rooms);
     }
+
+    @WebMethod(operationName = WebMethodConsts.OP_SEARCH_HOTEL_BOOKING)
+    @Transactional
+    public BookingSOAP readBooking(@WebParam(name = "bookingId") int bookingId) throws SAException {
+        return this.bookingService.readBooking(bookingId);
+    }
     
 }

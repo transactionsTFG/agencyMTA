@@ -10,4 +10,5 @@ public class WebMethodConsts {
     public static final String OP_USER_LOGIN = "loginUser";
     public static final String OP_SEARCH_ROOM = "searchRoom";
     public static final String OP_MAKE_HOTEL_BOOKING = "makeHotelBooking";
+    public static final String OP_SEARCH_HOTEL_BOOKING = "readHotelBooking";
 }

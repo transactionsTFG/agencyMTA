@@ -44,6 +44,13 @@ public class BookingServiceImpl implements BookingService {
         bookingDTO.setPeopleNumber(booking.getPeopleNumber());
         bookingDTO.setCustomerId(booking.getCustomerId());
         return (BookingSOAP) this.bookingService.getBookingWSBPort().makeBooking(bookingDTO, roomsDTO).getData();
-        // return (BookingSOAP) this.bookingService.getBookingWSBPort().makeBooking(bookingDTO, roomsDTO).getData();
+        // return (BookingSOAP)
+        // this.bookingService.getBookingWSBPort().makeBooking(bookingDTO,
+        // roomsDTO).getData();
+    }
+
+    @Override
+    public BookingSOAP readBooking(int bookingId) {
+        return (BookingSOAP) this.bookingService.getBookingWSBPort().searchBooking(bookingId).getData();
     }
 }
