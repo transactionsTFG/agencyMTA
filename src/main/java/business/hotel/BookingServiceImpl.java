@@ -8,6 +8,9 @@ import javax.xml.ws.WebServiceRef;
 
 import common.dto.MakeBookingSOAP;
 import common.dto.MakeRoomSOAP;
+import lombok.extern.java.Log;
+import lombok.extern.log4j.Log4j;
+import lombok.extern.log4j.Log4j2;
 import soapclient.hotel.booking.BookingDTO;
 import soapclient.hotel.booking.RoomDTO;
 import soapclient.hotel.booking.BookingWSB_Service;
@@ -17,6 +20,7 @@ import weblogic.wsee.wstx.wsat.Transactional.TransactionFlowType;
 import weblogic.wsee.wstx.wsat.Transactional.Version;
 
 @Stateless
+@Log4j2
 public class BookingServiceImpl implements BookingService {
 
     @WebServiceRef(wsdlLocation = "http://localhost:7001/hotelMTA/BookingWSB?wsdl")
@@ -24,15 +28,15 @@ public class BookingServiceImpl implements BookingService {
     private BookingWSB_Service bookingService;
 
     @Override
-    public BookingSOAP makeBooking(MakeBookingSOAP booking, List<MakeRoomSOAP> rooms) {
+    public BookingSOAP makeBooking(MakeBookingSOAP booking) {
 
         List<RoomDTO> roomsDTO = new ArrayList<RoomDTO>();
 
-        for (MakeRoomSOAP r : rooms) {
+        for (Integer roomNumber : booking.getRoomsNumber()) {
             RoomDTO roomDTO = new RoomDTO();
-            roomDTO.setNumber(r.getNumber());
-            roomDTO.setPeopleNumber(r.getPeopleNumber());
-            roomDTO.setSingleBed(r.isSingleBed());
+            roomDTO.setNumber(roomNumber);
+            // roomDTO.setPeopleNumber(r.getPeopleNumber());
+            // roomDTO.setSingleBed(r.isSingleBed());
             roomsDTO.add(roomDTO);
         }
 
@@ -43,6 +47,7 @@ public class BookingServiceImpl implements BookingService {
         bookingDTO.setAgencyName(booking.getAgencyName());
         bookingDTO.setPeopleNumber(booking.getPeopleNumber());
         bookingDTO.setCustomerId(booking.getCustomerId());
+        log.info("{}{} Aqui no peta: ", bookingDTO.toString(), roomsDTO.toString());
         return (BookingSOAP) this.bookingService.getBookingWSBPort().makeBooking(bookingDTO, roomsDTO).getData();
         // return (BookingSOAP)
         // this.bookingService.getBookingWSBPort().makeBooking(bookingDTO,

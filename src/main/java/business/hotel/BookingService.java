@@ -7,6 +7,6 @@ import common.dto.MakeRoomSOAP;
 import soapclient.hotel.booking.BookingSOAP;
 
 public interface BookingService {
-    public BookingSOAP makeBooking(MakeBookingSOAP booking, List<MakeRoomSOAP> rooms);
+    public BookingSOAP makeBooking(MakeBookingSOAP booking);
     public BookingSOAP readBooking(int bookingId);
 }

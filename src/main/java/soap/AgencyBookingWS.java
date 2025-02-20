@@ -27,8 +27,8 @@ public class AgencyBookingWS {
 
     @WebMethod(operationName = WebMethodConsts.OP_MAKE_HOTEL_BOOKING)
     @Transactional
-    public BookingSOAP makeBooking(@WebParam(name = "booking") MakeBookingSOAP booking, @WebParam(name = "rooms") List<MakeRoomSOAP> rooms) throws SAException {
-        return this.bookingService.makeBooking(booking, rooms);
+    public BookingSOAP makeBooking(@WebParam(name = "booking") MakeBookingSOAP booking) throws SAException {
+        return this.bookingService.makeBooking(booking);
     }
 
     @WebMethod(operationName = WebMethodConsts.OP_SEARCH_HOTEL_BOOKING)
