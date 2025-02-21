@@ -1,6 +1,7 @@
 
 package soapclient.airline.flight;
 
+import java.util.List;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebResult;
@@ -38,5 +39,20 @@ public interface FlightWS {
     public SoapResponse searchFlight(
         @WebParam(name = "idFlightSearch", targetNamespace = "")
         long idFlightSearch);
+
+    /**
+     * 
+     * @param paramSearch
+     * @return
+     *     returns java.util.List<soapclient.airline.flight.FlightDataListSOAP>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "searchFlights", targetNamespace = "http://soap/", className = "soapclient.airline.flight.SearchFlights")
+    @ResponseWrapper(localName = "searchFlightsResponse", targetNamespace = "http://soap/", className = "soapclient.airline.flight.SearchFlightsResponse")
+    @Action(input = "http://soap/FlightWS/searchFlightsRequest", output = "http://soap/FlightWS/searchFlightsResponse")
+    public List<FlightDataListSOAP> searchFlights(
+        @WebParam(name = "paramSearch", targetNamespace = "")
+        ParamFlightSOAP paramSearch);
 
 }

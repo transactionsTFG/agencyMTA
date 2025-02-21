@@ -1,40 +1,29 @@
-package common.dto;
+package common.dto.soap.request;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
-
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@XmlRootElement(name = "UserRegisterSOAP")
+@XmlRootElement(name = "paramSearchFlightSOAP")
 @XmlAccessorType(XmlAccessType.FIELD)
 @Data
+@Builder
 @NoArgsConstructor
-public class UserRegisterSOAP {
+@AllArgsConstructor
+public class ParamSearchFlightSOAP {
     @XmlElement
-    private String name;
-
+    private String countryOrigin;
     @XmlElement
-    private String surname;
-
+    private String countryDestination;
     @XmlElement
-    private String email;
-
+    private String cityOrigin;
     @XmlElement
-    private String password;
-
+    private String cityDestination;
     @XmlElement
-    private String passport;
-
-    @XmlElement
-    private String born;
-
-    @XmlElement
-    private String phone;
-
-    @XmlElement
-    private int idTypeUser;
-
+    private String dateOrigin;
 }

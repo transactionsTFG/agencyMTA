@@ -124,7 +124,7 @@ public class BookingSOAP {
     }
 
     /**
-     * Gets the value of the peopleNumber property.
+     * Obtiene el valor de la propiedad peopleNumber.
      * 
      */
     public int getPeopleNumber() {
