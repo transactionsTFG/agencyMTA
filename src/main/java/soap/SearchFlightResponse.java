@@ -1,5 +1,5 @@
 
-package soapclient.airline.flight;
+package soap;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -8,12 +8,12 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para modifyReservationResponse complex type.
+ * <p>Clase Java para searchFlightResponse complex type.
  * 
  * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
- * &lt;complexType name="modifyReservationResponse"&gt;
+ * &lt;complexType name="searchFlightResponse"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
@@ -27,10 +27,10 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "modifyReservationResponse", propOrder = {
+@XmlType(name = "searchFlightResponse", propOrder = {
     "_return"
 })
-public class ModifyReservationResponse {
+public class SearchFlightResponse {
 
     @XmlElement(name = "return")
     protected SoapResponse _return;

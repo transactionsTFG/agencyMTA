@@ -49,10 +49,10 @@ public interface BookingWSB {
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "modifyBooking", targetNamespace = "http://soap/", className = "soapclient.hotel.booking.ModifyBooking")
-    @ResponseWrapper(localName = "modifyBookingResponse", targetNamespace = "http://soap/", className = "soapclient.hotel.booking.ModifyBookingResponse")
-    @Action(input = "http://soap/BookingWSB/modifyBookingRequest", output = "http://soap/BookingWSB/modifyBookingResponse")
-    public SoapResponse modifyBooking(
+    @RequestWrapper(localName = "makeBooking", targetNamespace = "http://soap/", className = "soapclient.hotel.booking.MakeBooking")
+    @ResponseWrapper(localName = "makeBookingResponse", targetNamespace = "http://soap/", className = "soapclient.hotel.booking.MakeBookingResponse")
+    @Action(input = "http://soap/BookingWSB/makeBookingRequest", output = "http://soap/BookingWSB/makeBookingResponse")
+    public SoapResponse makeBooking(
         @WebParam(name = "arg0", targetNamespace = "")
         BookingDTO arg0,
         @WebParam(name = "arg1", targetNamespace = "")
@@ -82,10 +82,10 @@ public interface BookingWSB {
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "makeBooking", targetNamespace = "http://soap/", className = "soapclient.hotel.booking.MakeBooking")
-    @ResponseWrapper(localName = "makeBookingResponse", targetNamespace = "http://soap/", className = "soapclient.hotel.booking.MakeBookingResponse")
-    @Action(input = "http://soap/BookingWSB/makeBookingRequest", output = "http://soap/BookingWSB/makeBookingResponse")
-    public SoapResponse makeBooking(
+    @RequestWrapper(localName = "modifyBooking", targetNamespace = "http://soap/", className = "soapclient.hotel.booking.ModifyBooking")
+    @ResponseWrapper(localName = "modifyBookingResponse", targetNamespace = "http://soap/", className = "soapclient.hotel.booking.ModifyBookingResponse")
+    @Action(input = "http://soap/BookingWSB/modifyBookingRequest", output = "http://soap/BookingWSB/modifyBookingResponse")
+    public SoapResponse modifyBooking(
         @WebParam(name = "arg0", targetNamespace = "")
         BookingDTO arg0,
         @WebParam(name = "arg1", targetNamespace = "")

@@ -20,7 +20,6 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="date" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="numberOfNights" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
  *         &lt;element name="withBreakfast" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
- *         &lt;element name="agencyName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="peopleNumber" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
  *         &lt;element name="customerId" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
  *         &lt;element name="active" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
@@ -38,7 +37,6 @@ import javax.xml.bind.annotation.XmlType;
     "date",
     "numberOfNights",
     "withBreakfast",
-    "agencyName",
     "peopleNumber",
     "customerId",
     "active"
@@ -49,7 +47,6 @@ public class BookingSOAP {
     protected String date;
     protected int numberOfNights;
     protected boolean withBreakfast;
-    protected String agencyName;
     protected int peopleNumber;
     protected int customerId;
     protected boolean active;
@@ -124,30 +121,6 @@ public class BookingSOAP {
      */
     public void setWithBreakfast(boolean value) {
         this.withBreakfast = value;
-    }
-
-    /**
-     * Obtiene el valor de la propiedad agencyName.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getAgencyName() {
-        return agencyName;
-    }
-
-    /**
-     * Define el valor de la propiedad agencyName.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setAgencyName(String value) {
-        this.agencyName = value;
     }
 
     /**
