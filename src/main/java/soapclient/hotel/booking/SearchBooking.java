@@ -7,16 +7,16 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para searchBooking complex type.
+ * <p>Java class for searchBooking complex type.
  * 
- * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="searchBooking"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="arg0" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="bookingID" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -27,26 +27,26 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "searchBooking", propOrder = {
-    "arg0"
+    "bookingID"
 })
 public class SearchBooking {
 
-    protected int arg0;
+    protected int bookingID;
 
     /**
-     * Obtiene el valor de la propiedad arg0.
+     * Gets the value of the bookingID property.
      * 
      */
-    public int getArg0() {
-        return arg0;
+    public int getBookingID() {
+        return bookingID;
     }
 
     /**
-     * Define el valor de la propiedad arg0.
+     * Sets the value of the bookingID property.
      * 
      */
-    public void setArg0(int value) {
-        this.arg0 = value;
+    public void setBookingID(int value) {
+        this.bookingID = value;
     }
 
 }

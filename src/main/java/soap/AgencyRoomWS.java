@@ -33,5 +33,5 @@ public class AgencyRoomWS {
     public List<RoomListDTO> readRooms(@WebParam(name = "nameHotel") String nameHotel, @WebParam(name = "nameCountry") String nameCountry) {
         return this.hotelRoomQueryService.getRooms(nameHotel, nameCountry);
     }
-    
+
 }
