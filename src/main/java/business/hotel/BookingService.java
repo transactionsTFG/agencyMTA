@@ -1,12 +1,9 @@
 package business.hotel;
 
-import java.util.List;
-
-import common.dto.MakeBookingSOAP;
-import common.dto.MakeRoomSOAP;
 import soapclient.hotel.booking.BookingSOAP;
+import soapclient.hotel.booking.MakeBookingRequestSOAP;
 
 public interface BookingService {
-    public BookingSOAP makeBooking(MakeBookingSOAP booking);
+    public BookingSOAP makeBooking(MakeBookingRequestSOAP booking);
     public BookingSOAP readBooking(int bookingId);
 }
