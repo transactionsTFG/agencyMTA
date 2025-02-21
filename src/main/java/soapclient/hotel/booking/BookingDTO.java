@@ -17,7 +17,6 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
  *         &lt;element name="active" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
- *         &lt;element name="agencyName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="customerId" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
  *         &lt;element name="date" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
@@ -35,7 +34,6 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "bookingDTO", propOrder = {
     "active",
-    "agencyName",
     "customerId",
     "date",
     "id",
@@ -46,7 +44,6 @@ import javax.xml.bind.annotation.XmlType;
 public class BookingDTO {
 
     protected boolean active;
-    protected String agencyName;
     protected int customerId;
     protected String date;
     protected int id;
@@ -68,30 +65,6 @@ public class BookingDTO {
      */
     public void setActive(boolean value) {
         this.active = value;
-    }
-
-    /**
-     * Obtiene el valor de la propiedad agencyName.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getAgencyName() {
-        return agencyName;
-    }
-
-    /**
-     * Define el valor de la propiedad agencyName.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setAgencyName(String value) {
-        this.agencyName = value;
     }
 
     /**

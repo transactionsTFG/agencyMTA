@@ -1,5 +1,5 @@
 
-package soapclient.airline.flight;
+package soap;
 
 import java.util.List;
 import javax.jws.WebMethod;
@@ -29,12 +29,12 @@ public interface FlightWS {
      * 
      * @param idFlightSearch
      * @return
-     *     returns soapclient.airline.flight.SoapResponse
+     *     returns soap.SoapResponse
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "searchFlight", targetNamespace = "http://soap/", className = "soapclient.airline.flight.SearchFlight")
-    @ResponseWrapper(localName = "searchFlightResponse", targetNamespace = "http://soap/", className = "soapclient.airline.flight.SearchFlightResponse")
+    @RequestWrapper(localName = "searchFlight", targetNamespace = "http://soap/", className = "soap.SearchFlight")
+    @ResponseWrapper(localName = "searchFlightResponse", targetNamespace = "http://soap/", className = "soap.SearchFlightResponse")
     @Action(input = "http://soap/FlightWS/searchFlightRequest", output = "http://soap/FlightWS/searchFlightResponse")
     public SoapResponse searchFlight(
         @WebParam(name = "idFlightSearch", targetNamespace = "")
@@ -44,12 +44,12 @@ public interface FlightWS {
      * 
      * @param paramSearch
      * @return
-     *     returns java.util.List<soapclient.airline.flight.FlightDataListSOAP>
+     *     returns java.util.List<soap.FlightDataListSOAP>
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "searchFlights", targetNamespace = "http://soap/", className = "soapclient.airline.flight.SearchFlights")
-    @ResponseWrapper(localName = "searchFlightsResponse", targetNamespace = "http://soap/", className = "soapclient.airline.flight.SearchFlightsResponse")
+    @RequestWrapper(localName = "searchFlights", targetNamespace = "http://soap/", className = "soap.SearchFlights")
+    @ResponseWrapper(localName = "searchFlightsResponse", targetNamespace = "http://soap/", className = "soap.SearchFlightsResponse")
     @Action(input = "http://soap/FlightWS/searchFlightsRequest", output = "http://soap/FlightWS/searchFlightsResponse")
     public List<FlightDataListSOAP> searchFlights(
         @WebParam(name = "paramSearch", targetNamespace = "")

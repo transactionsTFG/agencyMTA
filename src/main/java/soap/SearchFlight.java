@@ -1,5 +1,5 @@
 
-package soapclient.airline.flight;
+package soap;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -7,16 +7,16 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para searchReservation complex type.
+ * <p>Clase Java para searchFlight complex type.
  * 
  * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
- * &lt;complexType name="searchReservation"&gt;
+ * &lt;complexType name="searchFlight"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="idReservation" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
+ *         &lt;element name="idFlightSearch" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -26,27 +26,27 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "searchReservation", propOrder = {
-    "idReservation"
+@XmlType(name = "searchFlight", propOrder = {
+    "idFlightSearch"
 })
-public class SearchReservation {
+public class SearchFlight {
 
-    protected long idReservation;
+    protected long idFlightSearch;
 
     /**
-     * Obtiene el valor de la propiedad idReservation.
+     * Obtiene el valor de la propiedad idFlightSearch.
      * 
      */
-    public long getIdReservation() {
-        return idReservation;
+    public long getIdFlightSearch() {
+        return idFlightSearch;
     }
 
     /**
-     * Define el valor de la propiedad idReservation.
+     * Define el valor de la propiedad idFlightSearch.
      * 
      */
-    public void setIdReservation(long value) {
-        this.idReservation = value;
+    public void setIdFlightSearch(long value) {
+        this.idFlightSearch = value;
     }
 
 }

@@ -1,6 +1,7 @@
 
 package soapclient.hotel.room;
 
+import java.util.List;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebResult;
@@ -38,5 +39,23 @@ public interface RoomWSB {
     public SoapResponse searchRoom(
         @WebParam(name = "arg0", targetNamespace = "")
         int arg0);
+
+    /**
+     * 
+     * @param arg1
+     * @param arg0
+     * @return
+     *     returns java.util.List<soapclient.hotel.room.RoomParamsDTO>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "searchRooms", targetNamespace = "http://soap/", className = "soapclient.hotel.room.SearchRooms")
+    @ResponseWrapper(localName = "searchRoomsResponse", targetNamespace = "http://soap/", className = "soapclient.hotel.room.SearchRoomsResponse")
+    @Action(input = "http://soap/RoomWSB/searchRoomsRequest", output = "http://soap/RoomWSB/searchRoomsResponse")
+    public List<RoomParamsDTO> searchRooms(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        String arg1);
 
 }

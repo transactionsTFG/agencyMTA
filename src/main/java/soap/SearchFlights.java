@@ -1,23 +1,22 @@
 
-package soapclient.airline.flight;
+package soap;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para searchRoomResponse complex type.
+ * <p>Clase Java para searchFlights complex type.
  * 
  * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
- * &lt;complexType name="searchRoomResponse"&gt;
+ * &lt;complexType name="searchFlights"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="return" type="{http://soap/}soapResponse" minOccurs="0"/&gt;
+ *         &lt;element name="paramSearch" type="{http://soap/}paramFlightSOAP" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -27,36 +26,35 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "searchRoomResponse", propOrder = {
-    "_return"
+@XmlType(name = "searchFlights", propOrder = {
+    "paramSearch"
 })
-public class SearchRoomResponse {
+public class SearchFlights {
 
-    @XmlElement(name = "return")
-    protected SoapResponse _return;
+    protected ParamFlightSOAP paramSearch;
 
     /**
-     * Obtiene el valor de la propiedad return.
+     * Obtiene el valor de la propiedad paramSearch.
      * 
      * @return
      *     possible object is
-     *     {@link SoapResponse }
+     *     {@link ParamFlightSOAP }
      *     
      */
-    public SoapResponse getReturn() {
-        return _return;
+    public ParamFlightSOAP getParamSearch() {
+        return paramSearch;
     }
 
     /**
-     * Define el valor de la propiedad return.
+     * Define el valor de la propiedad paramSearch.
      * 
      * @param value
      *     allowed object is
-     *     {@link SoapResponse }
+     *     {@link ParamFlightSOAP }
      *     
      */
-    public void setReturn(SoapResponse value) {
-        this._return = value;
+    public void setParamSearch(ParamFlightSOAP value) {
+        this.paramSearch = value;
     }
 
 }

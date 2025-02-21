@@ -1,5 +1,5 @@
 
-package soapclient.airline.flight;
+package soap;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -7,20 +7,20 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para reservationDTO complex type.
+ * <p>Clase Java para reservationSOAP complex type.
  * 
  * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
- * &lt;complexType name="reservationDTO"&gt;
+ * &lt;complexType name="reservationSOAP"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="active" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
- *         &lt;element name="date" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
- *         &lt;element name="idCustomer" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
+ *         &lt;element name="date" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="total" type="{http://www.w3.org/2001/XMLSchema}double"/&gt;
+ *         &lt;element name="idCustomer" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
+ *         &lt;element name="active" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -30,35 +30,35 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "reservationDTO", propOrder = {
-    "active",
-    "date",
+@XmlType(name = "reservationSOAP", propOrder = {
     "id",
+    "date",
+    "total",
     "idCustomer",
-    "total"
+    "active"
 })
-public class ReservationDTO {
+public class ReservationSOAP {
 
-    protected boolean active;
-    protected String date;
     protected long id;
-    protected long idCustomer;
+    protected String date;
     protected double total;
+    protected long idCustomer;
+    protected boolean active;
 
     /**
-     * Obtiene el valor de la propiedad active.
+     * Obtiene el valor de la propiedad id.
      * 
      */
-    public boolean isActive() {
-        return active;
+    public long getId() {
+        return id;
     }
 
     /**
-     * Define el valor de la propiedad active.
+     * Define el valor de la propiedad id.
      * 
      */
-    public void setActive(boolean value) {
-        this.active = value;
+    public void setId(long value) {
+        this.id = value;
     }
 
     /**
@@ -86,19 +86,19 @@ public class ReservationDTO {
     }
 
     /**
-     * Obtiene el valor de la propiedad id.
+     * Obtiene el valor de la propiedad total.
      * 
      */
-    public long getId() {
-        return id;
+    public double getTotal() {
+        return total;
     }
 
     /**
-     * Define el valor de la propiedad id.
+     * Define el valor de la propiedad total.
      * 
      */
-    public void setId(long value) {
-        this.id = value;
+    public void setTotal(double value) {
+        this.total = value;
     }
 
     /**
@@ -118,19 +118,19 @@ public class ReservationDTO {
     }
 
     /**
-     * Obtiene el valor de la propiedad total.
+     * Obtiene el valor de la propiedad active.
      * 
      */
-    public double getTotal() {
-        return total;
+    public boolean isActive() {
+        return active;
     }
 
     /**
-     * Define el valor de la propiedad total.
+     * Define el valor de la propiedad active.
      * 
      */
-    public void setTotal(double value) {
-        this.total = value;
+    public void setActive(boolean value) {
+        this.active = value;
     }
 
 }

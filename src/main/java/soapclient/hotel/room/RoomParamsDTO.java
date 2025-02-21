@@ -1,5 +1,5 @@
 
-package soapclient.airline.flight;
+package soapclient.hotel.room;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -7,23 +7,23 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para bookingDTO complex type.
+ * <p>Clase Java para roomParamsDTO complex type.
  * 
  * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
- * &lt;complexType name="bookingDTO"&gt;
+ * &lt;complexType name="roomParamsDTO"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
  *         &lt;element name="active" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
- *         &lt;element name="agencyName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="customerId" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
- *         &lt;element name="date" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="countryName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="hotelName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
- *         &lt;element name="numberOfNights" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="number" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="occupied" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
  *         &lt;element name="peopleNumber" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
- *         &lt;element name="withBreakfast" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
+ *         &lt;element name="singleBed" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -33,26 +33,26 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "bookingDTO", propOrder = {
+@XmlType(name = "roomParamsDTO", propOrder = {
     "active",
-    "agencyName",
-    "customerId",
-    "date",
+    "countryName",
+    "hotelName",
     "id",
-    "numberOfNights",
+    "number",
+    "occupied",
     "peopleNumber",
-    "withBreakfast"
+    "singleBed"
 })
-public class BookingDTO {
+public class RoomParamsDTO {
 
     protected boolean active;
-    protected String agencyName;
-    protected int customerId;
-    protected String date;
+    protected String countryName;
+    protected String hotelName;
     protected int id;
-    protected int numberOfNights;
+    protected int number;
+    protected boolean occupied;
     protected int peopleNumber;
-    protected boolean withBreakfast;
+    protected boolean singleBed;
 
     /**
      * Obtiene el valor de la propiedad active.
@@ -71,67 +71,51 @@ public class BookingDTO {
     }
 
     /**
-     * Obtiene el valor de la propiedad agencyName.
+     * Obtiene el valor de la propiedad countryName.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getAgencyName() {
-        return agencyName;
+    public String getCountryName() {
+        return countryName;
     }
 
     /**
-     * Define el valor de la propiedad agencyName.
+     * Define el valor de la propiedad countryName.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setAgencyName(String value) {
-        this.agencyName = value;
+    public void setCountryName(String value) {
+        this.countryName = value;
     }
 
     /**
-     * Obtiene el valor de la propiedad customerId.
-     * 
-     */
-    public int getCustomerId() {
-        return customerId;
-    }
-
-    /**
-     * Define el valor de la propiedad customerId.
-     * 
-     */
-    public void setCustomerId(int value) {
-        this.customerId = value;
-    }
-
-    /**
-     * Obtiene el valor de la propiedad date.
+     * Obtiene el valor de la propiedad hotelName.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getDate() {
-        return date;
+    public String getHotelName() {
+        return hotelName;
     }
 
     /**
-     * Define el valor de la propiedad date.
+     * Define el valor de la propiedad hotelName.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setDate(String value) {
-        this.date = value;
+    public void setHotelName(String value) {
+        this.hotelName = value;
     }
 
     /**
@@ -151,19 +135,35 @@ public class BookingDTO {
     }
 
     /**
-     * Obtiene el valor de la propiedad numberOfNights.
+     * Obtiene el valor de la propiedad number.
      * 
      */
-    public int getNumberOfNights() {
-        return numberOfNights;
+    public int getNumber() {
+        return number;
     }
 
     /**
-     * Define el valor de la propiedad numberOfNights.
+     * Define el valor de la propiedad number.
      * 
      */
-    public void setNumberOfNights(int value) {
-        this.numberOfNights = value;
+    public void setNumber(int value) {
+        this.number = value;
+    }
+
+    /**
+     * Obtiene el valor de la propiedad occupied.
+     * 
+     */
+    public boolean isOccupied() {
+        return occupied;
+    }
+
+    /**
+     * Define el valor de la propiedad occupied.
+     * 
+     */
+    public void setOccupied(boolean value) {
+        this.occupied = value;
     }
 
     /**
@@ -183,19 +183,19 @@ public class BookingDTO {
     }
 
     /**
-     * Obtiene el valor de la propiedad withBreakfast.
+     * Obtiene el valor de la propiedad singleBed.
      * 
      */
-    public boolean isWithBreakfast() {
-        return withBreakfast;
+    public boolean isSingleBed() {
+        return singleBed;
     }
 
     /**
-     * Define el valor de la propiedad withBreakfast.
+     * Define el valor de la propiedad singleBed.
      * 
      */
-    public void setWithBreakfast(boolean value) {
-        this.withBreakfast = value;
+    public void setSingleBed(boolean value) {
+        this.singleBed = value;
     }
 
 }
