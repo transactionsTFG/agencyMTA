@@ -13,7 +13,6 @@ import common.consts.WebMethodConsts;
 import common.dto.services.RoomListDTO;
 import common.exceptions.SAException;
 import soapclient.hotel.room.RoomSOAP;
-import weblogic.wsee.wstx.wsat.Transactional;
 
 @WebService(serviceName = "AgencyRoomWS")
 public class AgencyRoomWS {
