@@ -32,27 +32,12 @@ public interface BookingWSB {
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "makeBooking", targetNamespace = "http://soap/", className = "soapclient.hotel.booking.MakeBooking")
-    @ResponseWrapper(localName = "makeBookingResponse", targetNamespace = "http://soap/", className = "soapclient.hotel.booking.MakeBookingResponse")
-    @Action(input = "http://soap/BookingWSB/makeBookingRequest", output = "http://soap/BookingWSB/makeBookingResponse")
-    public SoapResponse makeBooking(
+    @RequestWrapper(localName = "modifyBooking", targetNamespace = "http://soap/", className = "soapclient.hotel.booking.ModifyBooking")
+    @ResponseWrapper(localName = "modifyBookingResponse", targetNamespace = "http://soap/", className = "soapclient.hotel.booking.ModifyBookingResponse")
+    @Action(input = "http://soap/BookingWSB/modifyBookingRequest", output = "http://soap/BookingWSB/modifyBookingResponse")
+    public SoapResponse modifyBooking(
         @WebParam(name = "booking", targetNamespace = "")
-        MakeBookingRequestSOAP booking);
-
-    /**
-     * 
-     * @param bookingID
-     * @return
-     *     returns soapclient.hotel.booking.SoapResponse
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "cancelBooking", targetNamespace = "http://soap/", className = "soapclient.hotel.booking.CancelBooking")
-    @ResponseWrapper(localName = "cancelBookingResponse", targetNamespace = "http://soap/", className = "soapclient.hotel.booking.CancelBookingResponse")
-    @Action(input = "http://soap/BookingWSB/cancelBookingRequest", output = "http://soap/BookingWSB/cancelBookingResponse")
-    public SoapResponse cancelBooking(
-        @WebParam(name = "bookingID", targetNamespace = "")
-        int bookingID);
+        ModifyBookingRequestSOAP booking);
 
     /**
      * 
@@ -77,11 +62,26 @@ public interface BookingWSB {
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "modifyBooking", targetNamespace = "http://soap/", className = "soapclient.hotel.booking.ModifyBooking")
-    @ResponseWrapper(localName = "modifyBookingResponse", targetNamespace = "http://soap/", className = "soapclient.hotel.booking.ModifyBookingResponse")
-    @Action(input = "http://soap/BookingWSB/modifyBookingRequest", output = "http://soap/BookingWSB/modifyBookingResponse")
-    public SoapResponse modifyBooking(
+    @RequestWrapper(localName = "makeBooking", targetNamespace = "http://soap/", className = "soapclient.hotel.booking.MakeBooking")
+    @ResponseWrapper(localName = "makeBookingResponse", targetNamespace = "http://soap/", className = "soapclient.hotel.booking.MakeBookingResponse")
+    @Action(input = "http://soap/BookingWSB/makeBookingRequest", output = "http://soap/BookingWSB/makeBookingResponse")
+    public SoapResponse makeBooking(
         @WebParam(name = "booking", targetNamespace = "")
-        ModifyBookingRequestSOAP booking);
+        MakeBookingRequestSOAP booking);
+
+    /**
+     * 
+     * @param bookingID
+     * @return
+     *     returns soapclient.hotel.booking.SoapResponse
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "cancelBooking", targetNamespace = "http://soap/", className = "soapclient.hotel.booking.CancelBooking")
+    @ResponseWrapper(localName = "cancelBookingResponse", targetNamespace = "http://soap/", className = "soapclient.hotel.booking.CancelBookingResponse")
+    @Action(input = "http://soap/BookingWSB/cancelBookingRequest", output = "http://soap/BookingWSB/cancelBookingResponse")
+    public SoapResponse cancelBooking(
+        @WebParam(name = "bookingID", targetNamespace = "")
+        int bookingID);
 
 }

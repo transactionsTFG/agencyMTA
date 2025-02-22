@@ -46,19 +46,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ModifyBookingRequestSOAP }
-     * 
-     */
-    public ModifyBookingRequestSOAP createModifyBookingRequestSOAP() {
-        return new ModifyBookingRequestSOAP();
-    }
-
-    /**
      * Create an instance of {@link MakeBookingRequestSOAP }
      * 
      */
     public MakeBookingRequestSOAP createMakeBookingRequestSOAP() {
         return new MakeBookingRequestSOAP();
+    }
+
+    /**
+     * Create an instance of {@link ModifyBookingRequestSOAP }
+     * 
+     */
+    public ModifyBookingRequestSOAP createModifyBookingRequestSOAP() {
+        return new ModifyBookingRequestSOAP();
     }
 
     /**
@@ -147,14 +147,6 @@ public class ObjectFactory {
      */
     public SearchBookingResponse createSearchBookingResponse() {
         return new SearchBookingResponse();
-    }
-
-    /**
-     * Create an instance of {@link ModifyBookingRequestSOAP.RoomIds }
-     * 
-     */
-    public ModifyBookingRequestSOAP.RoomIds createModifyBookingRequestSOAPRoomIds() {
-        return new ModifyBookingRequestSOAP.RoomIds();
     }
 
     /**

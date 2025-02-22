@@ -16,7 +16,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
  *         &lt;element name="date" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="numberOfNights" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
  *         &lt;element name="withBreakfast" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
@@ -43,7 +43,7 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class BookingSOAP {
 
-    protected int id;
+    protected long id;
     protected String date;
     protected int numberOfNights;
     protected boolean withBreakfast;
@@ -55,7 +55,7 @@ public class BookingSOAP {
      * Gets the value of the id property.
      * 
      */
-    public int getId() {
+    public long getId() {
         return id;
     }
 
@@ -63,7 +63,7 @@ public class BookingSOAP {
      * Sets the value of the id property.
      * 
      */
-    public void setId(int value) {
+    public void setId(long value) {
         this.id = value;
     }
 
@@ -124,7 +124,7 @@ public class BookingSOAP {
     }
 
     /**
-     * Obtiene el valor de la propiedad peopleNumber.
+     * Gets the value of the peopleNumber property.
      * 
      */
     public int getPeopleNumber() {

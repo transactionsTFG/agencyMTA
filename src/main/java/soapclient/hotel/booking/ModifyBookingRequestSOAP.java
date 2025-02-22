@@ -26,17 +26,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="agencyName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="peopleNumber" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
  *         &lt;element name="customerId" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
- *         &lt;element name="roomIds" minOccurs="0"&gt;
- *           &lt;complexType&gt;
- *             &lt;complexContent&gt;
- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *                 &lt;sequence&gt;
- *                   &lt;element name="room" type="{http://www.w3.org/2001/XMLSchema}int" maxOccurs="unbounded" minOccurs="0"/&gt;
- *                 &lt;/sequence&gt;
- *               &lt;/restriction&gt;
- *             &lt;/complexContent&gt;
- *           &lt;/complexType&gt;
- *         &lt;/element&gt;
+ *         &lt;element name="room" type="{http://www.w3.org/2001/XMLSchema}int" maxOccurs="unbounded" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -54,7 +44,7 @@ import javax.xml.bind.annotation.XmlType;
     "agencyName",
     "peopleNumber",
     "customerId",
-    "roomIds"
+    "room"
 })
 public class ModifyBookingRequestSOAP {
 
@@ -65,7 +55,8 @@ public class ModifyBookingRequestSOAP {
     protected String agencyName;
     protected int peopleNumber;
     protected int customerId;
-    protected ModifyBookingRequestSOAP.RoomIds roomIds;
+    @XmlElement(type = Integer.class)
+    protected List<Integer> room;
 
     /**
      * Gets the value of the id property.
@@ -196,87 +187,32 @@ public class ModifyBookingRequestSOAP {
     }
 
     /**
-     * Gets the value of the roomIds property.
+     * Gets the value of the room property.
      * 
-     * @return
-     *     possible object is
-     *     {@link ModifyBookingRequestSOAP.RoomIds }
-     *     
-     */
-    public ModifyBookingRequestSOAP.RoomIds getRoomIds() {
-        return roomIds;
-    }
-
-    /**
-     * Sets the value of the roomIds property.
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the room property.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link ModifyBookingRequestSOAP.RoomIds }
-     *     
-     */
-    public void setRoomIds(ModifyBookingRequestSOAP.RoomIds value) {
-        this.roomIds = value;
-    }
-
-
-    /**
-     * <p>Java class for anonymous complex type.
-     * 
-     * <p>The following schema fragment specifies the expected content contained within this class.
-     * 
+     * <p>
+     * For example, to add a new item, do as follows:
      * <pre>
-     * &lt;complexType&gt;
-     *   &lt;complexContent&gt;
-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
-     *       &lt;sequence&gt;
-     *         &lt;element name="room" type="{http://www.w3.org/2001/XMLSchema}int" maxOccurs="unbounded" minOccurs="0"/&gt;
-     *       &lt;/sequence&gt;
-     *     &lt;/restriction&gt;
-     *   &lt;/complexContent&gt;
-     * &lt;/complexType&gt;
+     *    getRoom().add(newItem);
      * </pre>
      * 
      * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link Integer }
+     * 
+     * 
      */
-    @XmlAccessorType(XmlAccessType.FIELD)
-    @XmlType(name = "", propOrder = {
-        "room"
-    })
-    public static class RoomIds {
-
-        @XmlElement(type = Integer.class)
-        protected List<Integer> room;
-
-        /**
-         * Gets the value of the room property.
-         * 
-         * <p>
-         * This accessor method returns a reference to the live list,
-         * not a snapshot. Therefore any modification you make to the
-         * returned list will be present inside the JAXB object.
-         * This is why there is not a <CODE>set</CODE> method for the room property.
-         * 
-         * <p>
-         * For example, to add a new item, do as follows:
-         * <pre>
-         *    getRoom().add(newItem);
-         * </pre>
-         * 
-         * 
-         * <p>
-         * Objects of the following type(s) are allowed in the list
-         * {@link Integer }
-         * 
-         * 
-         */
-        public List<Integer> getRoom() {
-            if (room == null) {
-                room = new ArrayList<Integer>();
-            }
-            return this.room;
+    public List<Integer> getRoom() {
+        if (room == null) {
+            room = new ArrayList<Integer>();
         }
-
+        return this.room;
     }
 
 }

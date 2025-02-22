@@ -7,6 +7,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Version;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,6 +18,9 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
+@NamedQueries({
+    @NamedQuery(name = "business.travel.Travel.findTravelByHotelReservationID", query = "SELECT t FROM Travel t where t.hotelReservationID = :hotelReservationID")
+})
 public class Travel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

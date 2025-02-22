@@ -7,7 +7,6 @@ import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
 
-import business.externalservices.hotelmta.room.command.HotelRoomCommandService;
 import business.externalservices.hotelmta.room.query.HotelRoomQueryService;
 import common.consts.WebMethodConsts;
 import common.dto.services.RoomListDTO;
