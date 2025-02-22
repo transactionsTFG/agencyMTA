@@ -6,6 +6,7 @@ public class WebMethodConsts {
 
     public static final String OP_SEARCH_FLIGHT = "search";
     public static final String OP_SEARCH_FLIGHTS = "searchFlight";
+    public static final String OP_SEARCH_FLIGHTS_AND_HOTEL = "searchFlightHotel";
     public static final String OP_SEARCH_RESERVATION = "reservation";
     public static final String OP_MAKE_FLIGHT_RESERVATION = "makeFlightReservation";
     public static final String OP_USER_REGISTRATION = "registerUser";
