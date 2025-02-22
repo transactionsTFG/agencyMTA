@@ -53,6 +53,18 @@ public class AgencyBookingWS {
         return bookingSOAP;
     }
 
+    @WebMethod(operationName = WebMethodConsts.OP_CANCEL_HOTEL_BOOKING)
+    @Transactional
+    public BookingSOAP cancelBooking(@WebParam(name = "bookingId") int bookingId) throws SAException {
+        BookingSOAP bookingSOAP = this.bookingCommandService.cancelBooking(bookingId);
+        System.out.println(
+                "AgencyBookingWS.cancelBooking-----------------------------------------------------------------"
+                        + bookingSOAP.toString());
+
+        return bookingSOAP;
+    }
+
+
     @WebMethod(operationName = WebMethodConsts.OP_SEARCH_HOTEL_BOOKING)
     @Transactional
     public BookingSOAP readBooking(@WebParam(name = "bookingId") int bookingId) throws SAException {

@@ -52,7 +52,7 @@ public interface BookingWSB {
     @Action(input = "http://soap/BookingWSB/searchBookingRequest", output = "http://soap/BookingWSB/searchBookingResponse")
     public SoapResponse searchBooking(
         @WebParam(name = "bookingID", targetNamespace = "")
-        int bookingID);
+        long bookingID);
 
     /**
      * 
@@ -82,6 +82,6 @@ public interface BookingWSB {
     @Action(input = "http://soap/BookingWSB/cancelBookingRequest", output = "http://soap/BookingWSB/cancelBookingResponse")
     public SoapResponse cancelBooking(
         @WebParam(name = "bookingID", targetNamespace = "")
-        int bookingID);
+        long bookingID);
 
 }
