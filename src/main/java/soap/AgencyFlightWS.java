@@ -14,7 +14,7 @@ import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
 
-import business.externalservices.airlinemta.flight.query.FlightAirlineQueryService;
+import business.services.externalservices.airlinemta.flight.query.FlightAirlineQueryService;
 
 @WebService(serviceName = "AgencyFlight")
 public class AgencyFlightWS {

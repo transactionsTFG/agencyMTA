@@ -5,8 +5,8 @@ import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
 
-import business.externalservices.hotelmta.booking.command.HotelBookingCommandService;
-import business.externalservices.hotelmta.booking.query.HotelBookingQueryService;
+import business.services.externalservices.hotelmta.booking.command.HotelBookingCommandService;
+import business.services.externalservices.hotelmta.booking.query.HotelBookingQueryService;
 import common.consts.WebMethodConsts;
 import common.exceptions.SAException;
 import soapclient.hotel.booking.BookingSOAP;
