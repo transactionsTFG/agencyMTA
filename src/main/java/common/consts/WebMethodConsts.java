@@ -15,4 +15,6 @@ public class WebMethodConsts {
     public static final String OP_MAKE_HOTEL_BOOKING = "makeHotelBooking";
     public static final String OP_SEARCH_HOTEL_BOOKING = "readHotelBooking";
     public static final String OP_SEARCH_ROOMS = "searchRooms";
+    public static final String OP_MODIFY_HOTEL_BOOKING = "modifyHotelBooking";
+    public static final String OP_CANCEL_HOTEL_BOOKING = "cancelHotelBooking";
 }

@@ -16,7 +16,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="bookingID" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="bookingID" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -31,13 +31,13 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class CancelBooking {
 
-    protected int bookingID;
+    protected long bookingID;
 
     /**
      * Gets the value of the bookingID property.
      * 
      */
-    public int getBookingID() {
+    public long getBookingID() {
         return bookingID;
     }
 
@@ -45,7 +45,7 @@ public class CancelBooking {
      * Sets the value of the bookingID property.
      * 
      */
-    public void setBookingID(int value) {
+    public void setBookingID(long value) {
         this.bookingID = value;
     }
 
