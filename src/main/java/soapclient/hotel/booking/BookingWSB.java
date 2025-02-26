@@ -47,10 +47,10 @@ public interface BookingWSB {
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "searchBooking", targetNamespace = "http://soap/", className = "soapclient.hotel.booking.SearchBooking")
-    @ResponseWrapper(localName = "searchBookingResponse", targetNamespace = "http://soap/", className = "soapclient.hotel.booking.SearchBookingResponse")
-    @Action(input = "http://soap/BookingWSB/searchBookingRequest", output = "http://soap/BookingWSB/searchBookingResponse")
-    public SoapResponse searchBooking(
+    @RequestWrapper(localName = "cancelBooking", targetNamespace = "http://soap/", className = "soapclient.hotel.booking.CancelBooking")
+    @ResponseWrapper(localName = "cancelBookingResponse", targetNamespace = "http://soap/", className = "soapclient.hotel.booking.CancelBookingResponse")
+    @Action(input = "http://soap/BookingWSB/cancelBookingRequest", output = "http://soap/BookingWSB/cancelBookingResponse")
+    public SoapResponse cancelBooking(
         @WebParam(name = "bookingID", targetNamespace = "")
         long bookingID);
 
@@ -77,10 +77,10 @@ public interface BookingWSB {
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "cancelBooking", targetNamespace = "http://soap/", className = "soapclient.hotel.booking.CancelBooking")
-    @ResponseWrapper(localName = "cancelBookingResponse", targetNamespace = "http://soap/", className = "soapclient.hotel.booking.CancelBookingResponse")
-    @Action(input = "http://soap/BookingWSB/cancelBookingRequest", output = "http://soap/BookingWSB/cancelBookingResponse")
-    public SoapResponse cancelBooking(
+    @RequestWrapper(localName = "searchBooking", targetNamespace = "http://soap/", className = "soapclient.hotel.booking.SearchBooking")
+    @ResponseWrapper(localName = "searchBookingResponse", targetNamespace = "http://soap/", className = "soapclient.hotel.booking.SearchBookingResponse")
+    @Action(input = "http://soap/BookingWSB/searchBookingRequest", output = "http://soap/BookingWSB/searchBookingResponse")
+    public SoapResponse searchBooking(
         @WebParam(name = "bookingID", targetNamespace = "")
         long bookingID);
 

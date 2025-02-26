@@ -42,7 +42,7 @@ public class AgencyBookingWS {
 
     @WebMethod(operationName = WebMethodConsts.OP_MODIFY_HOTEL_BOOKING)
     @Transactional
-    public BookingSOAP makeBooking(@WebParam(name = "booking") ModifyBookingRequestSOAP booking) throws SAException {
+    public BookingSOAP modifyBooking(@WebParam(name = "booking") ModifyBookingRequestSOAP booking) throws SAException {
         System.out.println(
                 "AgencyBookingWS.modifyBooking-----------------------------------------------------------------"
                         + booking.toString());

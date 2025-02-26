@@ -25,7 +25,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="agencyName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="peopleNumber" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
  *         &lt;element name="customerId" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
- *         &lt;element name="room" type="{http://www.w3.org/2001/XMLSchema}int" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="roomId" type="{http://www.w3.org/2001/XMLSchema}int" maxOccurs="unbounded" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -42,7 +42,7 @@ import javax.xml.bind.annotation.XmlType;
     "agencyName",
     "peopleNumber",
     "customerId",
-    "room"
+    "roomId"
 })
 public class MakeBookingRequestSOAP {
 
@@ -53,7 +53,7 @@ public class MakeBookingRequestSOAP {
     protected int peopleNumber;
     protected int customerId;
     @XmlElement(type = Integer.class)
-    protected List<Integer> room;
+    protected List<Integer> roomId;
 
     /**
      * Gets the value of the date property.
@@ -168,18 +168,18 @@ public class MakeBookingRequestSOAP {
     }
 
     /**
-     * Gets the value of the room property.
+     * Gets the value of the roomId property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the room property.
+     * This is why there is not a <CODE>set</CODE> method for the roomId property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getRoom().add(newItem);
+     *    getRoomId().add(newItem);
      * </pre>
      * 
      * 
@@ -189,11 +189,11 @@ public class MakeBookingRequestSOAP {
      * 
      * 
      */
-    public List<Integer> getRoom() {
-        if (room == null) {
-            room = new ArrayList<Integer>();
+    public List<Integer> getRoomId() {
+        if (roomId == null) {
+            roomId = new ArrayList<Integer>();
         }
-        return this.room;
+        return this.roomId;
     }
 
 }
