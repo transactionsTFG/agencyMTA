@@ -27,21 +27,6 @@ public interface RoomWSB {
 
     /**
      * 
-     * @param arg0
-     * @return
-     *     returns soapclient.hotel.room.SoapResponse
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "searchRoom", targetNamespace = "http://soap/", className = "soapclient.hotel.room.SearchRoom")
-    @ResponseWrapper(localName = "searchRoomResponse", targetNamespace = "http://soap/", className = "soapclient.hotel.room.SearchRoomResponse")
-    @Action(input = "http://soap/RoomWSB/searchRoomRequest", output = "http://soap/RoomWSB/searchRoomResponse")
-    public SoapResponse searchRoom(
-        @WebParam(name = "arg0", targetNamespace = "")
-        int arg0);
-
-    /**
-     * 
      * @param arg1
      * @param arg0
      * @return
@@ -57,5 +42,20 @@ public interface RoomWSB {
         String arg0,
         @WebParam(name = "arg1", targetNamespace = "")
         String arg1);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns soapclient.hotel.room.RoomDTO
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "searchRoom", targetNamespace = "http://soap/", className = "soapclient.hotel.room.SearchRoom")
+    @ResponseWrapper(localName = "searchRoomResponse", targetNamespace = "http://soap/", className = "soapclient.hotel.room.SearchRoomResponse")
+    @Action(input = "http://soap/RoomWSB/searchRoomRequest", output = "http://soap/RoomWSB/searchRoomResponse")
+    public RoomDTO searchRoom(
+        @WebParam(name = "arg0", targetNamespace = "")
+        long arg0);
 
 }
