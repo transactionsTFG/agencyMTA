@@ -17,12 +17,12 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
  *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
- *         &lt;element name="date" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="numberOfNights" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="date" type="{http://www.w3.org/2001/XMLSchema}anySimpleType" minOccurs="0"/&gt;
  *         &lt;element name="withBreakfast" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
  *         &lt;element name="peopleNumber" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
- *         &lt;element name="customerId" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
- *         &lt;element name="active" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
+ *         &lt;element name="customerId" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
+ *         &lt;element name="available" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
+ *         &lt;element name="totalPrice" type="{http://www.w3.org/2001/XMLSchema}double"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -35,21 +35,21 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "bookingSOAP", propOrder = {
     "id",
     "date",
-    "numberOfNights",
     "withBreakfast",
     "peopleNumber",
     "customerId",
-    "active"
+    "available",
+    "totalPrice"
 })
 public class BookingSOAP {
 
     protected long id;
-    protected String date;
-    protected int numberOfNights;
+    protected Object date;
     protected boolean withBreakfast;
     protected int peopleNumber;
-    protected int customerId;
-    protected boolean active;
+    protected long customerId;
+    protected boolean available;
+    protected double totalPrice;
 
     /**
      * Gets the value of the id property.
@@ -72,10 +72,10 @@ public class BookingSOAP {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link Object }
      *     
      */
-    public String getDate() {
+    public Object getDate() {
         return date;
     }
 
@@ -84,27 +84,11 @@ public class BookingSOAP {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link Object }
      *     
      */
-    public void setDate(String value) {
+    public void setDate(Object value) {
         this.date = value;
-    }
-
-    /**
-     * Gets the value of the numberOfNights property.
-     * 
-     */
-    public int getNumberOfNights() {
-        return numberOfNights;
-    }
-
-    /**
-     * Sets the value of the numberOfNights property.
-     * 
-     */
-    public void setNumberOfNights(int value) {
-        this.numberOfNights = value;
     }
 
     /**
@@ -143,7 +127,7 @@ public class BookingSOAP {
      * Gets the value of the customerId property.
      * 
      */
-    public int getCustomerId() {
+    public long getCustomerId() {
         return customerId;
     }
 
@@ -151,24 +135,40 @@ public class BookingSOAP {
      * Sets the value of the customerId property.
      * 
      */
-    public void setCustomerId(int value) {
+    public void setCustomerId(long value) {
         this.customerId = value;
     }
 
     /**
-     * Gets the value of the active property.
+     * Gets the value of the available property.
      * 
      */
-    public boolean isActive() {
-        return active;
+    public boolean isAvailable() {
+        return available;
     }
 
     /**
-     * Sets the value of the active property.
+     * Sets the value of the available property.
      * 
      */
-    public void setActive(boolean value) {
-        this.active = value;
+    public void setAvailable(boolean value) {
+        this.available = value;
+    }
+
+    /**
+     * Gets the value of the totalPrice property.
+     * 
+     */
+    public double getTotalPrice() {
+        return totalPrice;
+    }
+
+    /**
+     * Sets the value of the totalPrice property.
+     * 
+     */
+    public void setTotalPrice(double value) {
+        this.totalPrice = value;
     }
 
 }

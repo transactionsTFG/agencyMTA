@@ -36,7 +36,7 @@ public class User implements Serializable {
     private static final long serialVersionUID = 0;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private long id;
     @ManyToOne(optional = false)
     @JoinColumn(nullable = false)
     private Type type;

@@ -55,13 +55,13 @@ public class AgencyBookingWS {
 
     @WebMethod(operationName = WebMethodConsts.OP_CANCEL_HOTEL_BOOKING)
     @Transactional
-    public BookingSOAP cancelBooking(@WebParam(name = "bookingId") int bookingId) throws SAException {
-        BookingSOAP bookingSOAP = this.bookingCommandService.cancelBooking(bookingId);
+    public double cancelBooking(@WebParam(name = "bookingId") int bookingId) throws SAException {
+        double moneyReturned = this.bookingCommandService.cancelBooking(bookingId);
         System.out.println(
-                "AgencyBookingWS.cancelBooking-----------------------------------------------------------------"
-                        + bookingSOAP.toString());
+                "AgencyBookingWS.cancelBooking----------------------------------------------------------------- dinero devuelto: "
+                        + moneyReturned);
 
-        return bookingSOAP;
+        return moneyReturned;
     }
 
 

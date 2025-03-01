@@ -46,7 +46,8 @@ public class HotelBookingCommandServiceImpl implements HotelBookingCommandServic
         Travel travel = new Travel();
         travel.setActive(true);
         travel.setCost(50);
-        travel.setDate(booking.getDate());
+        travel.setDate(booking.getStartDate());
+        travel.setReturnDate(booking.getEndDate());
         travel.setFlightCost(0);
         travel.setFlightReservationID(0);
         travel.setHotelCost(50);
@@ -70,7 +71,8 @@ public class HotelBookingCommandServiceImpl implements HotelBookingCommandServic
                 "BookingServiceImpl.modifyBooking--------------------------------------------------------------"
                         + bookingSOAP.toString());
 
-        TypedQuery<Travel> query = this.em.createNamedQuery("business.travel.Travel.findTravelByHotelReservationID", Travel.class);
+        TypedQuery<Travel> query = this.em.createNamedQuery("business.travel.Travel.findTravelByHotelReservationID",
+                Travel.class);
         query.setParameter("hotelReservationID", booking.getId());
         Travel travel = query.getResultList().isEmpty() ? null : query.getResultList().get(0);
 
@@ -85,7 +87,8 @@ public class HotelBookingCommandServiceImpl implements HotelBookingCommandServic
 
         travel.setActive(true);
         travel.setCost(50);
-        travel.setDate(booking.getDate());
+        travel.setDate(booking.getStartDate());
+        travel.setReturnDate(booking.getEndDate());
         travel.setFlightCost(0);
         travel.setFlightReservationID(0);
         travel.setHotelCost(50);
@@ -98,14 +101,12 @@ public class HotelBookingCommandServiceImpl implements HotelBookingCommandServic
     }
 
     @Override
-    public BookingSOAP cancelBooking(int bookingId) {
-        BookingSOAP bookingSOAP = (BookingSOAP) this.bookingService.getBookingWSBPort().searchBooking(bookingId)
+    public double cancelBooking(int bookingId) {
+        double moneyReturned = (double) this.bookingService.getBookingWSBPort().cancelBooking(bookingId)
                 .getData();
-        System.out.println(
-                "BookingServiceImpl.modifyBooking--------------------------------------------------------------"
-                        + bookingSOAP.toString());
 
-        TypedQuery<Travel> query = this.em.createNamedQuery("business.travel.Travel.findTravelByHotelReservationID", Travel.class);
+        TypedQuery<Travel> query = this.em.createNamedQuery("business.travel.Travel.findTravelByHotelReservationID",
+                Travel.class);
         query.setParameter("hotelReservationID", bookingId);
         Travel travel = query.getResultList().isEmpty() ? null : query.getResultList().get(0);
 
@@ -113,13 +114,17 @@ public class HotelBookingCommandServiceImpl implements HotelBookingCommandServic
             throw new SAException("modifyBooking: reserva de hotel no encontrada: " + bookingId);
         }
 
+        System.out.println(
+                "BookingServiceImpl.cancelBooking-------------------------------------------------------------- reserva de hotel activa?"
+                        + travel.isActive());
+
         if (!travel.isActive()) {
             throw new SAException("modifyBooking: reserva de hotel cancelada: " +
                     bookingId);
         }
 
         travel.setActive(false);
-        return bookingSOAP;
+        return moneyReturned;
     }
 
 }

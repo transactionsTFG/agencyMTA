@@ -19,13 +19,13 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="date" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="startDate" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="endDate" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="numberOfNights" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
  *         &lt;element name="withBreakfast" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
- *         &lt;element name="agencyName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="peopleNumber" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
- *         &lt;element name="customerId" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
- *         &lt;element name="roomId" type="{http://www.w3.org/2001/XMLSchema}int" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="customerId" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
+ *         &lt;element name="roomId" type="{http://www.w3.org/2001/XMLSchema}long" maxOccurs="unbounded" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -36,47 +36,71 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "makeBookingRequestSOAP", propOrder = {
-    "date",
+    "startDate",
+    "endDate",
     "numberOfNights",
     "withBreakfast",
-    "agencyName",
     "peopleNumber",
     "customerId",
     "roomId"
 })
 public class MakeBookingRequestSOAP {
 
-    protected String date;
+    protected String startDate;
+    protected String endDate;
     protected int numberOfNights;
     protected boolean withBreakfast;
-    protected String agencyName;
     protected int peopleNumber;
-    protected int customerId;
-    @XmlElement(type = Integer.class)
-    protected List<Integer> roomId;
+    protected long customerId;
+    @XmlElement(type = Long.class)
+    protected List<Long> roomId;
 
     /**
-     * Gets the value of the date property.
+     * Gets the value of the startDate property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getDate() {
-        return date;
+    public String getStartDate() {
+        return startDate;
     }
 
     /**
-     * Sets the value of the date property.
+     * Sets the value of the startDate property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setDate(String value) {
-        this.date = value;
+    public void setStartDate(String value) {
+        this.startDate = value;
+    }
+
+    /**
+     * Gets the value of the endDate property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getEndDate() {
+        return endDate;
+    }
+
+    /**
+     * Sets the value of the endDate property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setEndDate(String value) {
+        this.endDate = value;
     }
 
     /**
@@ -112,30 +136,6 @@ public class MakeBookingRequestSOAP {
     }
 
     /**
-     * Gets the value of the agencyName property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getAgencyName() {
-        return agencyName;
-    }
-
-    /**
-     * Sets the value of the agencyName property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setAgencyName(String value) {
-        this.agencyName = value;
-    }
-
-    /**
      * Gets the value of the peopleNumber property.
      * 
      */
@@ -155,7 +155,7 @@ public class MakeBookingRequestSOAP {
      * Gets the value of the customerId property.
      * 
      */
-    public int getCustomerId() {
+    public long getCustomerId() {
         return customerId;
     }
 
@@ -163,7 +163,7 @@ public class MakeBookingRequestSOAP {
      * Sets the value of the customerId property.
      * 
      */
-    public void setCustomerId(int value) {
+    public void setCustomerId(long value) {
         this.customerId = value;
     }
 
@@ -185,13 +185,13 @@ public class MakeBookingRequestSOAP {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link Integer }
+     * {@link Long }
      * 
      * 
      */
-    public List<Integer> getRoomId() {
+    public List<Long> getRoomId() {
         if (roomId == null) {
-            roomId = new ArrayList<Integer>();
+            roomId = new ArrayList<Long>();
         }
         return this.roomId;
     }

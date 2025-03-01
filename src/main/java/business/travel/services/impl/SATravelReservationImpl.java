@@ -60,7 +60,7 @@ public class SATravelReservationImpl implements SATravelReservation {
             this.bookingService.getBookingWSBPort().cancelBooking(idHotel);
 
         SoapResponse sResponse = this.reservationService.getReservationWSPort().searchReservation(t.getFlightReservationID()); //TODO: Devolver flightInstance tambien
-        final ReservationSOAP reservation = (ReservationSOAP) sResponse.getData();
+        // final ReservationSOAP reservation = (ReservationSOAP) sResponse.getData();
         
         this.reservationService.getReservationWSPort().cancelReservation(t.getFlightReservationID(), 0);
         this.em.remove(bookingService);
