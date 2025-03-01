@@ -36,7 +36,8 @@ public class AgencyBookingWS {
 
     @WebMethod(operationName = WebMethodConsts.OP_MODIFY_HOTEL_BOOKING)
     @Transactional
-    public BookingDTO modifyBooking(@WebParam(name = "booking") ModifyBookingReservationDTO booking) throws SAException {
+    public BookingDTO modifyBooking(@WebParam(name = "booking") ModifyBookingReservationDTO booking)
+            throws SAException {
         return this.bookingCommandService.modifyBooking(booking);
     }
 
@@ -59,10 +60,8 @@ public class AgencyBookingWS {
 
     @WebMethod(operationName = WebMethodConsts.OP_SEARCH_HOTEL_BOOKING)
     @Transactional
-    public BookingSOAP readBooking(@WebParam(name = "bookingId") int bookingId) throws SAException {
-        BookingSOAP bookingSOAP = this.bookingQueryService.readBooking(bookingId);
-
-        return bookingSOAP;
+    public BookingDTO readBooking(@WebParam(name = "bookingId") int bookingId) throws SAException {
+        return this.bookingQueryService.readBooking(bookingId);
     }
 
 }

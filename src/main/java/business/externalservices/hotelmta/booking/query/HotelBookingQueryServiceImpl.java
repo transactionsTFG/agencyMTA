@@ -3,6 +3,8 @@ package business.externalservices.hotelmta.booking.query;
 import javax.ejb.Stateless;
 import javax.xml.ws.WebServiceRef;
 
+import business.booking.BookingDTO;
+import common.mapper.BookingMapper;
 import soapclient.hotel.booking.BookingSOAP;
 import soapclient.hotel.booking.BookingWSB_Service;
 import weblogic.wsee.wstx.wsat.Transactional;
@@ -17,8 +19,10 @@ public class HotelBookingQueryServiceImpl implements HotelBookingQueryService {
     private BookingWSB_Service bookingService;
 
     @Override
-    public BookingSOAP readBooking(int bookingId) {
-        return (BookingSOAP) this.bookingService.getBookingWSBPort().searchBooking(bookingId).getData();
+    public BookingDTO readBooking(int bookingId) {
+        BookingSOAP bookingSOAP = (BookingSOAP) this.bookingService.getBookingWSBPort().searchBooking(bookingId)
+                .getData();
+        return BookingMapper.INSTANCE.fromSOAPToDTO(bookingSOAP);
     }
 
 }
