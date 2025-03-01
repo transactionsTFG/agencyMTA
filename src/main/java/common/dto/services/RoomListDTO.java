@@ -11,7 +11,7 @@ import soapclient.hotel.room.RoomParamsDTO;
 @AllArgsConstructor
 @Builder
 public class RoomListDTO {
-    private int id;
+    private long id;
     private int number;
     private boolean occupied;
     private boolean singleBed;
@@ -25,9 +25,8 @@ public class RoomListDTO {
         return RoomListDTO.builder()
                 .id(roomParamsDTO.getId())
                 .number(roomParamsDTO.getNumber())
-                .occupied(roomParamsDTO.isOccupied())
                 .singleBed(roomParamsDTO.isSingleBed())
-                .active(roomParamsDTO.isActive())
+                .active(roomParamsDTO.isAvailable())
                 .peopleNumber(roomParamsDTO.getPeopleNumber())
                 .hotelName(roomParamsDTO.getHotelName())
                 .countryName(roomParamsDTO.getCountryName())

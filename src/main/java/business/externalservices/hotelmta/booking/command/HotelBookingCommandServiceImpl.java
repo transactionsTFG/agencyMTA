@@ -3,16 +3,19 @@ package business.externalservices.hotelmta.booking.command;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.persistence.LockModeType;
 import javax.persistence.TypedQuery;
 import javax.xml.ws.WebServiceRef;
 
+import business.booking.BookingDTO;
+import business.booking.MakeBookingReservationDTO;
+import business.booking.ModifyBookingReservationDTO;
 import business.travel.Travel;
 import business.user.User;
 import common.exceptions.SAException;
+import common.mapper.BookingMapper;
 import soapclient.hotel.booking.BookingSOAP;
 import soapclient.hotel.booking.BookingWSB_Service;
-import soapclient.hotel.booking.MakeBookingRequestSOAP;
-import soapclient.hotel.booking.ModifyBookingRequestSOAP;
 import weblogic.wsee.wstx.wsat.Transactional;
 import weblogic.wsee.wstx.wsat.Transactional.TransactionFlowType;
 import weblogic.wsee.wstx.wsat.Transactional.Version;
@@ -35,29 +38,29 @@ public class HotelBookingCommandServiceImpl implements HotelBookingCommandServic
     }
 
     @Override
-    public BookingSOAP makeBooking(MakeBookingRequestSOAP booking) {
-
-        BookingSOAP bookingSOAP = (BookingSOAP) this.bookingService.getBookingWSBPort().makeBooking(booking).getData();
+    public BookingDTO makeBooking(MakeBookingReservationDTO booking) {
+        BookingSOAP bookingSOAP = (BookingSOAP) this.bookingService.getBookingWSBPort()
+                .makeBooking(BookingMapper.INSTANCE.fromMakeDTOToRequestSOAP(booking)).getData();
         Travel travel = new Travel();
         travel.setActive(true);
-        travel.setCost(50);
+        travel.setCost(bookingSOAP.getTotalPrice());
         travel.setDate(booking.getStartDate());
         travel.setReturnDate(booking.getEndDate());
         travel.setFlightCost(0);
         travel.setFlightReservationID(0);
-        travel.setHotelCost(50);
+        travel.setHotelCost(bookingSOAP.getTotalPrice());
         travel.setHotelReservationID(bookingSOAP.getId());
-        travel.setReturnDate("");
         travel.setStatus("");
-        User user = this.em.find(User.class, booking.getCustomerId());
+        User user = this.em.find(User.class, booking.getCustomerId(), LockModeType.OPTIMISTIC);
         travel.setUser(user);
         this.em.persist(travel);
-        return bookingSOAP;
+        return BookingMapper.INSTANCE.fromSOAPToDTO(bookingSOAP);
     }
 
     @Override
-    public BookingSOAP modifyBooking(ModifyBookingRequestSOAP booking) {
-        BookingSOAP bookingSOAP = (BookingSOAP) this.bookingService.getBookingWSBPort().modifyBooking(booking)
+    public BookingDTO modifyBooking(ModifyBookingReservationDTO booking) {
+        BookingSOAP bookingSOAP = (BookingSOAP) this.bookingService.getBookingWSBPort()
+                .modifyBooking(BookingMapper.INSTANCE.fromModifyDTOToRequestSOAP(booking))
                 .getData();
 
         TypedQuery<Travel> query = this.em.createNamedQuery("business.travel.Travel.findTravelByHotelReservationID",
@@ -69,24 +72,23 @@ public class HotelBookingCommandServiceImpl implements HotelBookingCommandServic
             throw new SAException("modifyBooking: reserva de hotel no encontrada: " + booking.getId());
         }
 
-        // if (!travel.isActive()) {
-        // throw new SAException("modifyBooking: reserva de hotel cancelada: " +
-        // booking.getId());
-        // }
+        if (!travel.isActive()) {
+        throw new SAException("modifyBooking: reserva de hotel cancelada: " +
+        booking.getId());
+        }
 
         travel.setActive(true);
-        travel.setCost(50);
         travel.setDate(booking.getStartDate());
         travel.setReturnDate(booking.getEndDate());
         travel.setFlightCost(0);
         travel.setFlightReservationID(0);
-        travel.setHotelCost(50);
+        travel.setHotelCost(bookingSOAP.getTotalPrice());
+        travel.setCost(travel.getFlightCost() + travel.getHotelCost());
         travel.setHotelReservationID(bookingSOAP.getId());
-        travel.setReturnDate("");
         travel.setStatus("");
         User user = this.em.find(User.class, booking.getCustomerId());
         travel.setUser(user);
-        return bookingSOAP;
+        return BookingMapper.INSTANCE.fromSOAPToDTO(bookingSOAP);
     }
 
     @Override

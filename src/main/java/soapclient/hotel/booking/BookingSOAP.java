@@ -17,7 +17,6 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
  *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
- *         &lt;element name="date" type="{http://www.w3.org/2001/XMLSchema}anySimpleType" minOccurs="0"/&gt;
  *         &lt;element name="withBreakfast" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
  *         &lt;element name="peopleNumber" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
  *         &lt;element name="customerId" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
@@ -34,7 +33,6 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "bookingSOAP", propOrder = {
     "id",
-    "date",
     "withBreakfast",
     "peopleNumber",
     "customerId",
@@ -44,7 +42,6 @@ import javax.xml.bind.annotation.XmlType;
 public class BookingSOAP {
 
     protected long id;
-    protected Object date;
     protected boolean withBreakfast;
     protected int peopleNumber;
     protected long customerId;
@@ -65,30 +62,6 @@ public class BookingSOAP {
      */
     public void setId(long value) {
         this.id = value;
-    }
-
-    /**
-     * Gets the value of the date property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Object }
-     *     
-     */
-    public Object getDate() {
-        return date;
-    }
-
-    /**
-     * Sets the value of the date property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Object }
-     *     
-     */
-    public void setDate(Object value) {
-        this.date = value;
     }
 
     /**

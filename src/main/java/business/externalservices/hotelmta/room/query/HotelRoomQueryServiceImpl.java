@@ -6,7 +6,7 @@ import javax.ejb.Stateless;
 import javax.xml.ws.WebServiceRef;
 
 import common.dto.services.RoomListDTO;
-import soapclient.hotel.room.RoomSOAP;
+import soapclient.hotel.room.RoomDTO;
 import soapclient.hotel.room.RoomWSB_Service;
 
 @Stateless
@@ -23,8 +23,8 @@ public class HotelRoomQueryServiceImpl implements HotelRoomQueryService {
     }
 
     @Override
-    public RoomSOAP getRoom(int id) {
-        return (RoomSOAP) this.roomServiceWithTransactionRead.getRoomWSBPort().searchRoom(id).getData();
+    public RoomDTO getRoom(long id) {
+        return this.roomServiceWithTransactionRead.getRoomWSBPort().searchRoom(id);
     }
     
 }

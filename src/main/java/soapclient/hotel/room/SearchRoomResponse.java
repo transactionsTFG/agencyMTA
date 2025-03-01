@@ -8,16 +8,16 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para searchRoomResponse complex type.
+ * <p>Java class for searchRoomResponse complex type.
  * 
- * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="searchRoomResponse"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="return" type="{http://soap/}soapResponse" minOccurs="0"/&gt;
+ *         &lt;element name="return" type="{http://soap/}roomDTO" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -33,29 +33,29 @@ import javax.xml.bind.annotation.XmlType;
 public class SearchRoomResponse {
 
     @XmlElement(name = "return")
-    protected SoapResponse _return;
+    protected RoomDTO _return;
 
     /**
-     * Obtiene el valor de la propiedad return.
+     * Gets the value of the return property.
      * 
      * @return
      *     possible object is
-     *     {@link SoapResponse }
+     *     {@link RoomDTO }
      *     
      */
-    public SoapResponse getReturn() {
+    public RoomDTO getReturn() {
         return _return;
     }
 
     /**
-     * Define el valor de la propiedad return.
+     * Sets the value of the return property.
      * 
      * @param value
      *     allowed object is
-     *     {@link SoapResponse }
+     *     {@link RoomDTO }
      *     
      */
-    public void setReturn(SoapResponse value) {
+    public void setReturn(RoomDTO value) {
         this._return = value;
     }
 
