@@ -36,13 +36,8 @@ public class HotelBookingCommandServiceImpl implements HotelBookingCommandServic
 
     @Override
     public BookingSOAP makeBooking(MakeBookingRequestSOAP booking) {
-        System.out.println(
-                "BookingServiceImpl.makeBooking-------------------------------------------------------------- roomNumber:"
-                        + booking);
+
         BookingSOAP bookingSOAP = (BookingSOAP) this.bookingService.getBookingWSBPort().makeBooking(booking).getData();
-        System.out.println(
-                "BookingServiceImpl.makeBooking-------------------------------------------------------------- BookingSOAP:"
-                        + bookingSOAP.toString());
         Travel travel = new Travel();
         travel.setActive(true);
         travel.setCost(50);
@@ -62,14 +57,8 @@ public class HotelBookingCommandServiceImpl implements HotelBookingCommandServic
 
     @Override
     public BookingSOAP modifyBooking(ModifyBookingRequestSOAP booking) {
-        System.out.println(
-                "BookingServiceImpl.modifyBooking--------------------------------------------------------------"
-                        + booking);
         BookingSOAP bookingSOAP = (BookingSOAP) this.bookingService.getBookingWSBPort().modifyBooking(booking)
                 .getData();
-        System.out.println(
-                "BookingServiceImpl.modifyBooking--------------------------------------------------------------"
-                        + bookingSOAP.toString());
 
         TypedQuery<Travel> query = this.em.createNamedQuery("business.travel.Travel.findTravelByHotelReservationID",
                 Travel.class);
@@ -114,10 +103,6 @@ public class HotelBookingCommandServiceImpl implements HotelBookingCommandServic
             throw new SAException("modifyBooking: reserva de hotel no encontrada: " + bookingId);
         }
 
-        System.out.println(
-                "BookingServiceImpl.cancelBooking-------------------------------------------------------------- reserva de hotel activa?"
-                        + travel.isActive());
-
         if (!travel.isActive()) {
             throw new SAException("modifyBooking: reserva de hotel cancelada: " +
                     bookingId);
@@ -141,10 +126,6 @@ public class HotelBookingCommandServiceImpl implements HotelBookingCommandServic
         if (travel == null) {
             throw new SAException("modifyBooking: reserva de hotel no encontrada: " + bookingId);
         }
-
-        System.out.println(
-                "BookingServiceImpl.cancelBooking-------------------------------------------------------------- reserva de hotel activa?"
-                        + travel.isActive());
 
         if (!travel.isActive()) {
             throw new SAException("modifyBooking: reserva de hotel cancelada: " +
