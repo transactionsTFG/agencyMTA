@@ -30,48 +30,38 @@ public class AgencyBookingWS {
     @WebMethod(operationName = WebMethodConsts.OP_MAKE_HOTEL_BOOKING)
     @Transactional
     public BookingSOAP makeBooking(@WebParam(name = "booking") MakeBookingRequestSOAP booking) throws SAException {
-        System.out
-                .println("AgencyBookingWS.makeBooking-----------------------------------------------------------------"
-                        + booking.toString());
         BookingSOAP bookingSOAP = this.bookingCommandService.makeBooking(booking);
-        System.out
-                .println("AgencyBookingWS.makeBooking-----------------------------------------------------------------"
-                        + bookingSOAP.toString());
         return bookingSOAP;
     }
 
     @WebMethod(operationName = WebMethodConsts.OP_MODIFY_HOTEL_BOOKING)
     @Transactional
-    public BookingSOAP makeBooking(@WebParam(name = "booking") ModifyBookingRequestSOAP booking) throws SAException {
-        System.out.println(
-                "AgencyBookingWS.modifyBooking-----------------------------------------------------------------"
-                        + booking.toString());
+    public BookingSOAP modifyBooking(@WebParam(name = "booking") ModifyBookingRequestSOAP booking) throws SAException {
         BookingSOAP bookingSOAP = this.bookingCommandService.modifyBooking(booking);
-        System.out.println(
-                "AgencyBookingWS.modifyBooking-----------------------------------------------------------------"
-                        + bookingSOAP.toString());
         return bookingSOAP;
     }
 
     @WebMethod(operationName = WebMethodConsts.OP_CANCEL_HOTEL_BOOKING)
     @Transactional
-    public BookingSOAP cancelBooking(@WebParam(name = "bookingId") int bookingId) throws SAException {
-        BookingSOAP bookingSOAP = this.bookingCommandService.cancelBooking(bookingId);
-        System.out.println(
-                "AgencyBookingWS.cancelBooking-----------------------------------------------------------------"
-                        + bookingSOAP.toString());
+    public double cancelBooking(@WebParam(name = "bookingId") long bookingId) throws SAException {
+        double moneyReturned = this.bookingCommandService.cancelBooking(bookingId);
 
-        return bookingSOAP;
+        return moneyReturned;
     }
 
+    @WebMethod(operationName = WebMethodConsts.OP_CANCEL_HOTEL_BOOKING_LINE)
+    @Transactional
+    public double cancelBooking(@WebParam(name = "bookingId") long bookingId, @WebParam(name = "roomId") long roomId)
+            throws SAException {
+        double moneyReturned = this.bookingCommandService.cancelBookingLine(bookingId, roomId);
+
+        return moneyReturned;
+    }
 
     @WebMethod(operationName = WebMethodConsts.OP_SEARCH_HOTEL_BOOKING)
     @Transactional
     public BookingSOAP readBooking(@WebParam(name = "bookingId") int bookingId) throws SAException {
         BookingSOAP bookingSOAP = this.bookingQueryService.readBooking(bookingId);
-        System.out.println(
-                "AgencyBookingWS.cancelBooking-----------------------------------------------------------------"
-                        + bookingSOAP.toString());
 
         return bookingSOAP;
     }
