@@ -73,8 +73,8 @@ public class HotelBookingCommandServiceImpl implements HotelBookingCommandServic
         }
 
         if (!travel.isActive()) {
-        throw new SAException("modifyBooking: reserva de hotel cancelada: " +
-        booking.getId());
+            throw new SAException("modifyBooking: reserva de hotel cancelada: " +
+                    booking.getId());
         }
 
         travel.setActive(true);
@@ -110,8 +110,12 @@ public class HotelBookingCommandServiceImpl implements HotelBookingCommandServic
                     bookingId);
         }
 
-        travel.setActive(false);
-        travel.setCost(travel.getCost() - moneyReturned);
+        travel.setHotelCost(travel.getHotelCost() - moneyReturned);
+        travel.setCost(travel.getHotelCost() + travel.getFlightCost());
+        if (travel.getCost() <= 0) {
+            travel.setCost(0);
+            travel.setActive(false);
+        }
         return moneyReturned;
     }
 
