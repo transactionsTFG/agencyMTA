@@ -7,5 +7,6 @@ import soapclient.hotel.booking.ModifyBookingRequestSOAP;
 public interface HotelBookingCommandService {
     BookingSOAP makeBooking(MakeBookingRequestSOAP booking);
     BookingSOAP modifyBooking(ModifyBookingRequestSOAP booking);
-    double cancelBooking(int bookingId);
+    double cancelBooking(long bookingId);
+    double cancelBookingLine(long bookingId, long roomId);
 }

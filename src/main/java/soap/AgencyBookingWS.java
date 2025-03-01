@@ -55,8 +55,19 @@ public class AgencyBookingWS {
 
     @WebMethod(operationName = WebMethodConsts.OP_CANCEL_HOTEL_BOOKING)
     @Transactional
-    public double cancelBooking(@WebParam(name = "bookingId") int bookingId) throws SAException {
+    public double cancelBooking(@WebParam(name = "bookingId") long bookingId) throws SAException {
         double moneyReturned = this.bookingCommandService.cancelBooking(bookingId);
+        System.out.println(
+                "AgencyBookingWS.cancelBooking----------------------------------------------------------------- dinero devuelto: "
+                        + moneyReturned);
+
+        return moneyReturned;
+    }
+
+    @WebMethod(operationName = WebMethodConsts.OP_CANCEL_HOTEL_BOOKING_LINE)
+    @Transactional
+    public double cancelBooking(@WebParam(name = "bookingId") long bookingId, @WebParam(name = "roomId") long roomId) throws SAException {
+        double moneyReturned = this.bookingCommandService.cancelBookingLine(bookingId, roomId);
         System.out.println(
                 "AgencyBookingWS.cancelBooking----------------------------------------------------------------- dinero devuelto: "
                         + moneyReturned);

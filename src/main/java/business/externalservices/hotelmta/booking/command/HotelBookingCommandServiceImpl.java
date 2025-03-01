@@ -101,7 +101,7 @@ public class HotelBookingCommandServiceImpl implements HotelBookingCommandServic
     }
 
     @Override
-    public double cancelBooking(int bookingId) {
+    public double cancelBooking(long bookingId) {
         double moneyReturned = (double) this.bookingService.getBookingWSBPort().cancelBooking(bookingId)
                 .getData();
 
@@ -124,6 +124,41 @@ public class HotelBookingCommandServiceImpl implements HotelBookingCommandServic
         }
 
         travel.setActive(false);
+        travel.setCost(travel.getCost() - moneyReturned);
+        return moneyReturned;
+    }
+
+    @Override
+    public double cancelBookingLine(long bookingId, long roomId) {
+        double moneyReturned = (double) this.bookingService.getBookingWSBPort().cancelBookingLine(bookingId, roomId)
+                .getData();
+
+        TypedQuery<Travel> query = this.em.createNamedQuery("business.travel.Travel.findTravelByHotelReservationID",
+                Travel.class);
+        query.setParameter("hotelReservationID", bookingId);
+        Travel travel = query.getResultList().isEmpty() ? null : query.getResultList().get(0);
+
+        if (travel == null) {
+            throw new SAException("modifyBooking: reserva de hotel no encontrada: " + bookingId);
+        }
+
+        System.out.println(
+                "BookingServiceImpl.cancelBooking-------------------------------------------------------------- reserva de hotel activa?"
+                        + travel.isActive());
+
+        if (!travel.isActive()) {
+            throw new SAException("modifyBooking: reserva de hotel cancelada: " +
+                    bookingId);
+        }
+
+        travel.setHotelCost(travel.getHotelCost() - moneyReturned);
+        travel.setCost(travel.getCost() - moneyReturned);
+        if (travel.getCost() <= 0) {
+            travel.setHotelCost(0);
+            travel.setFlightCost(0);
+            travel.setCost(0);
+            travel.setActive(false);
+        }
         return moneyReturned;
     }
 
