@@ -5,13 +5,14 @@ import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
 
+import business.booking.BookingDTO;
+import business.booking.MakeBookingReservationDTO;
+import business.booking.ModifyBookingReservationDTO;
 import business.externalservices.hotelmta.booking.command.HotelBookingCommandService;
 import business.externalservices.hotelmta.booking.query.HotelBookingQueryService;
 import common.consts.WebMethodConsts;
 import common.exceptions.SAException;
 import soapclient.hotel.booking.BookingSOAP;
-import soapclient.hotel.booking.MakeBookingRequestSOAP;
-import soapclient.hotel.booking.ModifyBookingRequestSOAP;
 import weblogic.wsee.wstx.wsat.Transactional;
 
 @WebService(serviceName = "AgencyBookingWS")
@@ -29,16 +30,14 @@ public class AgencyBookingWS {
 
     @WebMethod(operationName = WebMethodConsts.OP_MAKE_HOTEL_BOOKING)
     @Transactional
-    public BookingSOAP makeBooking(@WebParam(name = "booking") MakeBookingRequestSOAP booking) throws SAException {
-        BookingSOAP bookingSOAP = this.bookingCommandService.makeBooking(booking);
-        return bookingSOAP;
+    public BookingDTO makeBooking(@WebParam(name = "booking") MakeBookingReservationDTO booking) throws SAException {
+        return this.bookingCommandService.makeBooking(booking);
     }
 
     @WebMethod(operationName = WebMethodConsts.OP_MODIFY_HOTEL_BOOKING)
     @Transactional
-    public BookingSOAP modifyBooking(@WebParam(name = "booking") ModifyBookingRequestSOAP booking) throws SAException {
-        BookingSOAP bookingSOAP = this.bookingCommandService.modifyBooking(booking);
-        return bookingSOAP;
+    public BookingDTO modifyBooking(@WebParam(name = "booking") ModifyBookingReservationDTO booking) throws SAException {
+        return this.bookingCommandService.modifyBooking(booking);
     }
 
     @WebMethod(operationName = WebMethodConsts.OP_CANCEL_HOTEL_BOOKING)
