@@ -28,9 +28,10 @@ public class ObjectFactory {
     private final static QName _FlightSOAP_QNAME = new QName("http://soap/", "FlightSOAP");
     private final static QName _ReservationSOAP_QNAME = new QName("http://soap/", "ReservationSOAP");
     private final static QName _SoapResponse_QNAME = new QName("http://soap/", "SoapResponse");
-    private final static QName _SearchFlight_QNAME = new QName("http://soap/", "searchFlight");
+    private final static QName _UpdateReservationSOAP_QNAME = new QName("http://soap/", "UpdateReservationSOAP");
     private final static QName _SearchFlights_QNAME = new QName("http://soap/", "searchFlights");
     private final static QName _SearchFlightsResponse_QNAME = new QName("http://soap/", "searchFlightsResponse");
+    private final static QName _SearchFlight_QNAME = new QName("http://soap/", "searchFlight");
     private final static QName _SearchFlightResponse_QNAME = new QName("http://soap/", "searchFlightResponse");
 
     /**
@@ -73,11 +74,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link SearchFlight }
+     * Create an instance of {@link UpdateReservationSOAP }
      * 
      */
-    public SearchFlight createSearchFlight() {
-        return new SearchFlight();
+    public UpdateReservationSOAP createUpdateReservationSOAP() {
+        return new UpdateReservationSOAP();
     }
 
     /**
@@ -94,6 +95,14 @@ public class ObjectFactory {
      */
     public SearchFlightsResponse createSearchFlightsResponse() {
         return new SearchFlightsResponse();
+    }
+
+    /**
+     * Create an instance of {@link SearchFlight }
+     * 
+     */
+    public SearchFlight createSearchFlight() {
+        return new SearchFlight();
     }
 
     /**
@@ -165,16 +174,16 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SearchFlight }{@code >}
+     * Create an instance of {@link JAXBElement }{@code <}{@link UpdateReservationSOAP }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link SearchFlight }{@code >}
+     *     the new instance of {@link JAXBElement }{@code <}{@link UpdateReservationSOAP }{@code >}
      */
-    @XmlElementDecl(namespace = "http://soap/", name = "searchFlight")
-    public JAXBElement<SearchFlight> createSearchFlight(SearchFlight value) {
-        return new JAXBElement<SearchFlight>(_SearchFlight_QNAME, SearchFlight.class, null, value);
+    @XmlElementDecl(namespace = "http://soap/", name = "UpdateReservationSOAP")
+    public JAXBElement<UpdateReservationSOAP> createUpdateReservationSOAP(UpdateReservationSOAP value) {
+        return new JAXBElement<UpdateReservationSOAP>(_UpdateReservationSOAP_QNAME, UpdateReservationSOAP.class, null, value);
     }
 
     /**
@@ -201,6 +210,19 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://soap/", name = "searchFlightsResponse")
     public JAXBElement<SearchFlightsResponse> createSearchFlightsResponse(SearchFlightsResponse value) {
         return new JAXBElement<SearchFlightsResponse>(_SearchFlightsResponse_QNAME, SearchFlightsResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SearchFlight }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link SearchFlight }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://soap/", name = "searchFlight")
+    public JAXBElement<SearchFlight> createSearchFlight(SearchFlight value) {
+        return new JAXBElement<SearchFlight>(_SearchFlight_QNAME, SearchFlight.class, null, value);
     }
 
     /**
