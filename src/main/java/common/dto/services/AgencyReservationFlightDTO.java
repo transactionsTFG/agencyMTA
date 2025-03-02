@@ -1,7 +1,6 @@
 package common.dto.services;
 
 
-import business.travel.TravelDTO;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

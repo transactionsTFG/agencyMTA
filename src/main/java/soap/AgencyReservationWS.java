@@ -25,7 +25,7 @@ public class AgencyReservationWS {
     @WebMethod(operationName=WebMethodConsts.OP_MAKE_FLIGHT_RESERVATION)
     @Transactional
     public ReservationSOAP makeFlightReservation(@WebParam(name = "reservation") MakeFlightReservationSOAP reservation) throws SAException{
-        return null;
+        return this.getewAgencyCommandService.makeReservationFlight(null);
     }
     
     @WebMethod(operationName=WebMethodConsts.OP_MAKE_FLIGHT_RESERVATION)
