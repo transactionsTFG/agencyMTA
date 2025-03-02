@@ -44,6 +44,23 @@ public class Travel {
     private boolean active;
     @Version
     private int version;
+    
+    public Travel(TravelDTO dto){
+        this.id = dto.getId();
+        this.user = new User();
+        this.user.setId(dto.getUserId());  
+        this.date = dto.getDate();
+        this.returnDate = dto.getReturnDate();
+        this.passengerCounter = dto.getPassengerCounter();
+        this.cost = dto.getCost();
+        this.status = dto.getStatus();
+        this.flightReservationID = dto.getFlightReservationID();
+        this.hotelReservationID = dto.getHotelReservationID();
+        this.flightCost = dto.getFlightCost();
+        this.hotelCost = dto.getHotelCost();
+        this.active = dto.isActive();
+    }
+
     public TravelDTO toDTO(){
         return TravelDTO.builder()
             .id(this.id)

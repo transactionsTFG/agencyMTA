@@ -5,11 +5,12 @@ import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
 
+
 import business.booking.BookingDTO;
 import business.booking.MakeBookingReservationDTO;
 import business.booking.ModifyBookingReservationDTO;
-import business.externalservices.hotelmta.booking.command.HotelBookingCommandService;
-import business.externalservices.hotelmta.booking.query.HotelBookingQueryService;
+import business.services.externalservices.hotelmta.booking.command.HotelBookingCommandService;
+import business.services.externalservices.hotelmta.booking.query.HotelBookingQueryService;
 import business.user.UserDTO;
 import common.consts.WebMethodConsts;
 import common.exceptions.SAException;
