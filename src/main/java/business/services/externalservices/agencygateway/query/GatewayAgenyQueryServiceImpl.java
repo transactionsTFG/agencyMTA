@@ -18,6 +18,8 @@ public class GatewayAgenyQueryServiceImpl implements GatewayAgencyQueryService {
 
     private HotelRoomQueryService hotelRoomQueryService;
     private FlightAirlineQueryService flightQueryService;
+    private HotelBookingQueryService hotelBookingQueryService;
+    private FlightReservationQueryService flightReservationQueryService;
 
     public GatewayAgenyQueryServiceImpl() {}
 
@@ -41,4 +43,11 @@ public class GatewayAgenyQueryServiceImpl implements GatewayAgencyQueryService {
                                     Collectors.toMap(Map.Entry::getKey, entry -> new FlightHotelDTO(entry.getValue(), hotelsByCountry.get(entry.getKey())))
                                 );
     }    
+
+    @Override
+    public HotelFlightReservationDTO getHotelAndFlightReservation(long hotelBookingId, long flightReservationId) {
+        HotelFlightReservationDTO dto = new HotelFlightReservationDTO();
+        this.hotelRoomQueryService.
+        return dto;
+    }
 }

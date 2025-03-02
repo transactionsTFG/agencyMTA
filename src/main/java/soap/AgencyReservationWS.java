@@ -27,4 +27,17 @@ public class AgencyReservationWS {
     public ReservationSOAP makeFlightReservation(@WebParam(name = "reservation") MakeFlightReservationSOAP reservation) throws SAException{
         return null;
     }
+    
+    @WebMethod(operationName=WebMethodConsts.OP_MAKE_FLIGHT_RESERVATION)
+    @Transactional
+    public ReservationSOAP modifyReservation(@WebParam(name = "reservation") MakeFlightReservationSOAP reservation) throws SAException{
+        return null;
+    }
+
+    @WebMethod(operationName=WebMethodConsts.OP_MAKE_FLIGHT_RESERVATION)
+    @Transactional
+    public ReservationSOAP cancelReservation(@WebParam(name = "reservation") MakeFlightReservationSOAP reservation) throws SAException{
+        return null;
+    }
+
 }

@@ -32,5 +32,7 @@ public class MakeFlightReservationSOAP {
     private long flightId;
     @XmlElement
     private int numberOfSeats;
-
+    @XmlElementWrapper(name = "flights")
+    @XmlElement(name = "flight")
+    private List<IdFlightInstanceWithSeatsDTO> idsFlightWithSeats;
 }
