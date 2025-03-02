@@ -1,5 +1,6 @@
-package business.user;
+package business.services.agency.user;
 
+import business.user.UserDTO;
 import common.dto.UserLoginSOAP;
 import common.dto.UserRegisterSOAP;
 

@@ -5,8 +5,8 @@ import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
 
+import business.services.agency.user.UserService;
 import business.user.UserDTO;
-import business.user.UserService;
 import common.consts.WebMethodConsts;
 import common.dto.UserLoginSOAP;
 import common.dto.UserRegisterSOAP;

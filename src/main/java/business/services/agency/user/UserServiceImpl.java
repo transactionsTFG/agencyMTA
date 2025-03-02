@@ -1,4 +1,4 @@
-package business.user;
+package business.services.agency.user;
 
 import java.util.List;
 
@@ -7,6 +7,8 @@ import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
+import business.user.User;
+import business.user.UserDTO;
 import common.dto.UserLoginSOAP;
 import common.dto.UserRegisterSOAP;
 import common.exceptions.UserException;
