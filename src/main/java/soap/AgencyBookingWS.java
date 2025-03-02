@@ -14,8 +14,7 @@ import business.services.externalservices.hotelmta.booking.query.HotelBookingQue
 import business.user.UserDTO;
 import common.consts.WebMethodConsts;
 import common.exceptions.SAException;
-import soapclient.hotel.booking.BookingSOAP;
-import soapclient.hotel.booking.UserSOAP;
+
 import weblogic.wsee.wstx.wsat.Transactional;
 
 @WebService(serviceName = "AgencyBookingWS")

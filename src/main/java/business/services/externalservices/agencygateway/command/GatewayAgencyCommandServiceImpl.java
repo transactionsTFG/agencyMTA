@@ -21,7 +21,7 @@ public class GatewayAgencyCommandServiceImpl implements GatewayAgencyCommandServ
     public GatewayAgencyCommandServiceImpl() {}
 
     @Inject
-    private GatewayAgencyCommandServiceImpl(AgencyTravelService agencyTravelService, AirlineReservationCommandService airlineReservationCommandService) {
+    public GatewayAgencyCommandServiceImpl(AgencyTravelService agencyTravelService, AirlineReservationCommandService airlineReservationCommandService) {
         this.agencyTravelService = agencyTravelService;
         this.airlineReservationCommandService = airlineReservationCommandService;
     }
