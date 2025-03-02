@@ -26,6 +26,7 @@ public class ObjectFactory {
 
     private final static QName _MakeBookingRequestSOAP_QNAME = new QName("http://soap/", "MakeBookingRequestSOAP");
     private final static QName _ModifyBookingRequestSOAP_QNAME = new QName("http://soap/", "ModifyBookingRequestSOAP");
+    private final static QName _UserSOAP_QNAME = new QName("http://soap/", "UserSOAP");
     private final static QName _BookingSOAP_QNAME = new QName("http://soap/", "BookingSOAP");
     private final static QName _RoomSOAP_QNAME = new QName("http://soap/", "RoomSOAP");
     private final static QName _SoapResponse_QNAME = new QName("http://soap/", "SoapResponse");
@@ -61,6 +62,14 @@ public class ObjectFactory {
      */
     public ModifyBookingRequestSOAP createModifyBookingRequestSOAP() {
         return new ModifyBookingRequestSOAP();
+    }
+
+    /**
+     * Create an instance of {@link UserSOAP }
+     * 
+     */
+    public UserSOAP createUserSOAP() {
+        return new UserSOAP();
     }
 
     /**
@@ -191,6 +200,19 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://soap/", name = "ModifyBookingRequestSOAP")
     public JAXBElement<ModifyBookingRequestSOAP> createModifyBookingRequestSOAP(ModifyBookingRequestSOAP value) {
         return new JAXBElement<ModifyBookingRequestSOAP>(_ModifyBookingRequestSOAP_QNAME, ModifyBookingRequestSOAP.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link UserSOAP }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link UserSOAP }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://soap/", name = "UserSOAP")
+    public JAXBElement<UserSOAP> createUserSOAP(UserSOAP value) {
+        return new JAXBElement<UserSOAP>(_UserSOAP_QNAME, UserSOAP.class, null, value);
     }
 
     /**

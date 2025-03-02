@@ -31,8 +31,6 @@ public class Room implements Serializable {
     private boolean singleBed;
     @Column(nullable = false)
     private boolean active;
-    // @ManyToMany()
-    // private List<Booking> bookings;
     @Version
     private int version;
 

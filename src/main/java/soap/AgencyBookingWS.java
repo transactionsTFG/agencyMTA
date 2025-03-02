@@ -10,9 +10,11 @@ import business.booking.MakeBookingReservationDTO;
 import business.booking.ModifyBookingReservationDTO;
 import business.externalservices.hotelmta.booking.command.HotelBookingCommandService;
 import business.externalservices.hotelmta.booking.query.HotelBookingQueryService;
+import business.user.UserDTO;
 import common.consts.WebMethodConsts;
 import common.exceptions.SAException;
 import soapclient.hotel.booking.BookingSOAP;
+import soapclient.hotel.booking.UserSOAP;
 import weblogic.wsee.wstx.wsat.Transactional;
 
 @WebService(serviceName = "AgencyBookingWS")
@@ -30,8 +32,8 @@ public class AgencyBookingWS {
 
     @WebMethod(operationName = WebMethodConsts.OP_MAKE_HOTEL_BOOKING)
     @Transactional
-    public BookingDTO makeBooking(@WebParam(name = "booking") MakeBookingReservationDTO booking) throws SAException {
-        return this.bookingCommandService.makeBooking(booking);
+    public BookingDTO makeBooking(@WebParam(name = "booking") MakeBookingReservationDTO booking, @WebParam(name = "user") UserDTO userDTO) throws SAException {
+        return this.bookingCommandService.makeBooking(booking, userDTO);
     }
 
     @WebMethod(operationName = WebMethodConsts.OP_MODIFY_HOTEL_BOOKING)

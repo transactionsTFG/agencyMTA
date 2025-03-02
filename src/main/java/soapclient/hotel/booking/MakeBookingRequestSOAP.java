@@ -26,6 +26,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="peopleNumber" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
  *         &lt;element name="customerId" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
  *         &lt;element name="roomId" type="{http://www.w3.org/2001/XMLSchema}long" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="user" type="{http://soap/}userSOAP" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -42,7 +43,8 @@ import javax.xml.bind.annotation.XmlType;
     "withBreakfast",
     "peopleNumber",
     "customerId",
-    "roomId"
+    "roomId",
+    "user"
 })
 public class MakeBookingRequestSOAP {
 
@@ -54,6 +56,7 @@ public class MakeBookingRequestSOAP {
     protected long customerId;
     @XmlElement(type = Long.class)
     protected List<Long> roomId;
+    protected UserSOAP user;
 
     /**
      * Gets the value of the startDate property.
@@ -194,6 +197,30 @@ public class MakeBookingRequestSOAP {
             roomId = new ArrayList<Long>();
         }
         return this.roomId;
+    }
+
+    /**
+     * Gets the value of the user property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link UserSOAP }
+     *     
+     */
+    public UserSOAP getUser() {
+        return user;
+    }
+
+    /**
+     * Sets the value of the user property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link UserSOAP }
+     *     
+     */
+    public void setUser(UserSOAP value) {
+        this.user = value;
     }
 
 }

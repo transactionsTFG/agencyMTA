@@ -12,8 +12,10 @@ import business.booking.MakeBookingReservationDTO;
 import business.booking.ModifyBookingReservationDTO;
 import business.travel.Travel;
 import business.user.User;
+import business.user.UserDTO;
 import common.exceptions.SAException;
 import common.mapper.BookingMapper;
+import common.mapper.UserMapper;
 import soapclient.hotel.booking.BookingSOAP;
 import soapclient.hotel.booking.BookingWSB_Service;
 import weblogic.wsee.wstx.wsat.Transactional;
@@ -38,9 +40,9 @@ public class HotelBookingCommandServiceImpl implements HotelBookingCommandServic
     }
 
     @Override
-    public BookingDTO makeBooking(MakeBookingReservationDTO booking) {
+    public BookingDTO makeBooking(MakeBookingReservationDTO booking, UserDTO userDTO) {
         BookingSOAP bookingSOAP = (BookingSOAP) this.bookingService.getBookingWSBPort()
-                .makeBooking(BookingMapper.INSTANCE.fromMakeDTOToRequestSOAP(booking)).getData();
+                .makeBooking(BookingMapper.INSTANCE.fromMakeDTOToRequestSOAP(booking), UserMapper.INSTANCE.fromDTOToSOAP(userDTO)).getData();
         Travel travel = new Travel();
         travel.setActive(true);
         travel.setCost(bookingSOAP.getTotalPrice());
