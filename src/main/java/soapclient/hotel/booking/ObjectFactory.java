@@ -26,10 +26,13 @@ public class ObjectFactory {
 
     private final static QName _MakeBookingRequestSOAP_QNAME = new QName("http://soap/", "MakeBookingRequestSOAP");
     private final static QName _ModifyBookingRequestSOAP_QNAME = new QName("http://soap/", "ModifyBookingRequestSOAP");
+    private final static QName _UserSOAP_QNAME = new QName("http://soap/", "UserSOAP");
     private final static QName _BookingSOAP_QNAME = new QName("http://soap/", "BookingSOAP");
     private final static QName _RoomSOAP_QNAME = new QName("http://soap/", "RoomSOAP");
     private final static QName _SoapResponse_QNAME = new QName("http://soap/", "SoapResponse");
     private final static QName _CancelBooking_QNAME = new QName("http://soap/", "cancelBooking");
+    private final static QName _CancelBookingLine_QNAME = new QName("http://soap/", "cancelBookingLine");
+    private final static QName _CancelBookingLineResponse_QNAME = new QName("http://soap/", "cancelBookingLineResponse");
     private final static QName _CancelBookingResponse_QNAME = new QName("http://soap/", "cancelBookingResponse");
     private final static QName _MakeBooking_QNAME = new QName("http://soap/", "makeBooking");
     private final static QName _MakeBookingResponse_QNAME = new QName("http://soap/", "makeBookingResponse");
@@ -62,6 +65,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link UserSOAP }
+     * 
+     */
+    public UserSOAP createUserSOAP() {
+        return new UserSOAP();
+    }
+
+    /**
      * Create an instance of {@link BookingSOAP }
      * 
      */
@@ -91,6 +102,22 @@ public class ObjectFactory {
      */
     public CancelBooking createCancelBooking() {
         return new CancelBooking();
+    }
+
+    /**
+     * Create an instance of {@link CancelBookingLine }
+     * 
+     */
+    public CancelBookingLine createCancelBookingLine() {
+        return new CancelBookingLine();
+    }
+
+    /**
+     * Create an instance of {@link CancelBookingLineResponse }
+     * 
+     */
+    public CancelBookingLineResponse createCancelBookingLineResponse() {
+        return new CancelBookingLineResponse();
     }
 
     /**
@@ -176,6 +203,19 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link UserSOAP }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link UserSOAP }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://soap/", name = "UserSOAP")
+    public JAXBElement<UserSOAP> createUserSOAP(UserSOAP value) {
+        return new JAXBElement<UserSOAP>(_UserSOAP_QNAME, UserSOAP.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link BookingSOAP }{@code >}
      * 
      * @param value
@@ -225,6 +265,32 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://soap/", name = "cancelBooking")
     public JAXBElement<CancelBooking> createCancelBooking(CancelBooking value) {
         return new JAXBElement<CancelBooking>(_CancelBooking_QNAME, CancelBooking.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link CancelBookingLine }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link CancelBookingLine }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://soap/", name = "cancelBookingLine")
+    public JAXBElement<CancelBookingLine> createCancelBookingLine(CancelBookingLine value) {
+        return new JAXBElement<CancelBookingLine>(_CancelBookingLine_QNAME, CancelBookingLine.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link CancelBookingLineResponse }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link CancelBookingLineResponse }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://soap/", name = "cancelBookingLineResponse")
+    public JAXBElement<CancelBookingLineResponse> createCancelBookingLineResponse(CancelBookingLineResponse value) {
+        return new JAXBElement<CancelBookingLineResponse>(_CancelBookingLineResponse_QNAME, CancelBookingLineResponse.class, null, value);
     }
 
     /**

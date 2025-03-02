@@ -7,19 +7,18 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for roomParamsDTO complex type.
+ * <p>Java class for roomDTO complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="roomParamsDTO"&gt;
+ * &lt;complexType name="roomDTO"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
  *         &lt;element name="available" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
- *         &lt;element name="countryName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="dailyPrice" type="{http://www.w3.org/2001/XMLSchema}double"/&gt;
- *         &lt;element name="hotelName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="hotelId" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
  *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
  *         &lt;element name="number" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
  *         &lt;element name="peopleNumber" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
@@ -33,22 +32,20 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "roomParamsDTO", propOrder = {
+@XmlType(name = "roomDTO", propOrder = {
     "available",
-    "countryName",
     "dailyPrice",
-    "hotelName",
+    "hotelId",
     "id",
     "number",
     "peopleNumber",
     "singleBed"
 })
-public class RoomParamsDTO {
+public class RoomDTO {
 
     protected boolean available;
-    protected String countryName;
     protected double dailyPrice;
-    protected String hotelName;
+    protected long hotelId;
     protected long id;
     protected int number;
     protected int peopleNumber;
@@ -71,30 +68,6 @@ public class RoomParamsDTO {
     }
 
     /**
-     * Gets the value of the countryName property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getCountryName() {
-        return countryName;
-    }
-
-    /**
-     * Sets the value of the countryName property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setCountryName(String value) {
-        this.countryName = value;
-    }
-
-    /**
      * Gets the value of the dailyPrice property.
      * 
      */
@@ -111,27 +84,19 @@ public class RoomParamsDTO {
     }
 
     /**
-     * Gets the value of the hotelName property.
+     * Gets the value of the hotelId property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
      */
-    public String getHotelName() {
-        return hotelName;
+    public long getHotelId() {
+        return hotelId;
     }
 
     /**
-     * Sets the value of the hotelName property.
+     * Sets the value of the hotelId property.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
      */
-    public void setHotelName(String value) {
-        this.hotelName = value;
+    public void setHotelId(long value) {
+        this.hotelId = value;
     }
 
     /**

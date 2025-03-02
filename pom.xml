@@ -1,69 +1,86 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>ucm.tfg</groupId>
-  <artifactId>mta-agency</artifactId>
-  <version>1.0.0</version>
-  <packaging>war</packaging>
-  <name>agencyMTA</name>
-  <properties>
-    <maven.compiler.source>17</maven.compiler.source>
-    <maven.compiler.target>17</maven.compiler.target>
-  </properties>
-  <dependencies>
-	
-	<dependency>
-    	<groupId>org.eclipse.persistence</groupId>
-    	<artifactId>org.eclipse.persistence.jpa</artifactId>
-    	<version>4.0.4</version>
-	</dependency>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>ucm.tfg</groupId>
+    <artifactId>mta-agency</artifactId>
+    <version>1.0.0</version>
+    <packaging>war</packaging>
+    <name>agencyMTA</name>
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+    </properties>
+    <dependencies>
 
-	<dependency>
-	    <groupId>com.mysql</groupId>
-	    <artifactId>mysql-connector-j</artifactId>
-	    <version>8.3.0</version>
-	</dependency>
-	
-	<dependency>
-    	<groupId>junit</groupId>
-    	<artifactId>junit</artifactId>
-    	<version>4.13.2</version>
-    	<scope>test</scope>
-	</dependency>
-	
-	<dependency>
-        <groupId>jakarta.platform</groupId>
-        <artifactId>jakarta.jakartaee-api</artifactId>
-        <version>8.0.0</version>
-    	<scope>provided</scope>
-    </dependency>
+        <dependency>
+            <groupId>org.eclipse.persistence</groupId>
+            <artifactId>org.eclipse.persistence.jpa</artifactId>
+            <version>4.0.4</version>
+        </dependency>
 
-	<dependency>
-	    <groupId>com.oracle.weblogic</groupId>
-	    <artifactId>weblogic-server-pom</artifactId>
-	    <version>14.1.2-0-0</version>
-	    <type>pom</type>
-	    <scope>provided</scope>
-  	</dependency>
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <version>8.3.0</version>
+        </dependency>
 
-	<dependency>
-    	<groupId>org.projectlombok</groupId>
-    	<artifactId>lombok</artifactId>
-    	<version>1.18.36</version>
-    	<scope>provided</scope>
-	</dependency>
-  </dependencies>
-	<build>
-		<finalName>agencyMTA</finalName>
-		<plugins>
-	        <plugin>
-	            <groupId>org.apache.maven.plugins</groupId>
-	            <artifactId>maven-war-plugin</artifactId>
-	            <version>3.3.1</version>
-	        </plugin>
-			<!-- Configuración de wsimport -->
-			<!-- Comando: mvn jaxws:wsimport -->
-			<!-- Se comenta porque genera de mas paquetes -->
-        	 <!-- <plugin>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>jakarta.platform</groupId>
+            <artifactId>jakarta.jakartaee-api</artifactId>
+            <version>8.0.0</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.oracle.weblogic</groupId>
+            <artifactId>weblogic-server-pom</artifactId>
+            <version>14.1.2-0-0</version>
+            <type>pom</type>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.36</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct</artifactId>
+            <version>1.6.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct-processor</artifactId>
+            <version>1.6.3</version>
+            <scope>provided</scope>
+        </dependency>
+
+
+    </dependencies>
+    <build>
+        <finalName>agencyMTA</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.3.1</version>
+            </plugin>
+            <!-- Configuración de wsimport -->
+            <!-- Comando: mvn jaxws:wsimport -->
+            <!-- Se comenta porque genera de mas paquetes -->
+            <!-- <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>jaxws-maven-plugin</artifactId>
                 <version>2.6</version>
@@ -76,16 +93,16 @@
                 </executions>
                 <configuration>
                     <wsdlUrls>
-						<wsdlUrl>http://localhost:7001/hotelMTA/BookingWSB?wsdl</wsdlUrl>
+                        <wsdlUrl>http://localhost:7001/hotelMTA/BookingWSB?wsdl</wsdlUrl>
                         <wsdlUrl>http://localhost:7001/hotelMTA/RoomWSB?wsdl</wsdlUrl>
-						<wsdlUrl>http://localhost:8001/airlineMTA/ReservationWS?wsdl</wsdlUrl>
-						<wsdlUrl>http://localhost:8001/airlineMTA/FlightWS?wsdl</wsdlUrl> 
+                        <wsdlUrl>http://localhost:8001/airlineMTA/ReservationWS?wsdl</wsdlUrl>
+                        <wsdlUrl>http://localhost:8001/airlineMTA/FlightWS?wsdl</wsdlUrl> 
                     </wsdlUrls>
                     <sourceDestDir>src/main/java</sourceDestDir>
-                    <packageName>soapclient.hotel.booking</packageName>   
+                    <packageName>soapclient.hotel.booking</packageName>
                 </configuration>
             </plugin> -->
-			
-	    </plugins>
-	</build>
+
+        </plugins>
+    </build>
 </project>

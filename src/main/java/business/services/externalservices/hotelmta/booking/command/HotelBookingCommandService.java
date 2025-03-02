@@ -1,11 +1,13 @@
 package business.services.externalservices.hotelmta.booking.command;
 
-import soapclient.hotel.booking.BookingSOAP;
-import soapclient.hotel.booking.MakeBookingRequestSOAP;
-import soapclient.hotel.booking.ModifyBookingRequestSOAP;
+import business.booking.BookingDTO;
+import business.booking.MakeBookingReservationDTO;
+import business.booking.ModifyBookingReservationDTO;
+import business.user.UserDTO;
 
 public interface HotelBookingCommandService {
-    BookingSOAP makeBooking(MakeBookingRequestSOAP booking);
-    BookingSOAP modifyBooking(ModifyBookingRequestSOAP booking);
-    BookingSOAP cancelBooking(int bookingId);
+    BookingDTO makeBooking(MakeBookingReservationDTO booking, UserDTO userDTO);
+    BookingDTO modifyBooking(ModifyBookingReservationDTO booking);
+    double cancelBooking(long bookingId);
+    double cancelBookingLine(long bookingId, long roomId);
 }

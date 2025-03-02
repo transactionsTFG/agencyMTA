@@ -11,7 +11,7 @@ import business.services.externalservices.hotelmta.room.query.HotelRoomQueryServ
 import common.consts.WebMethodConsts;
 import common.dto.services.RoomListDTO;
 import common.exceptions.SAException;
-import soapclient.hotel.room.RoomSOAP;
+import soapclient.hotel.room.RoomDTO;
 
 @WebService(serviceName = "AgencyRoomWS")
 public class AgencyRoomWS {
@@ -24,7 +24,7 @@ public class AgencyRoomWS {
     }
 
     @WebMethod(operationName = WebMethodConsts.OP_SEARCH_ROOM)
-    public RoomSOAP readRoom(@WebParam(name = "number") int id) throws SAException {
+    public RoomDTO readRoom(@WebParam(name = "id") long id) throws SAException {
         return this.hotelRoomQueryService.getRoom(id);
     }
     

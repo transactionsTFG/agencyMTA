@@ -19,7 +19,7 @@ public class GetTravelSOAP {
     @XmlElement
     private long id;
     @XmlElement
-    private int userId; 
+    private long userId; 
     @XmlElement
     private String date;
     @XmlElement

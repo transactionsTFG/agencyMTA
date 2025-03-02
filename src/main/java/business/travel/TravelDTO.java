@@ -14,7 +14,7 @@ import lombok.Setter;
 @Builder
 public class TravelDTO {
     private long id;
-    private int userId; // Relación con User representada por el ID del usuario.
+    private long userId; // Relación con User representada por el ID del usuario.
     private String date;
     private String returnDate;
     private int passengerCounter;

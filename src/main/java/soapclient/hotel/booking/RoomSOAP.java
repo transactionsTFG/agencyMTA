@@ -16,12 +16,13 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
+ *         &lt;element name="hotelId" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
  *         &lt;element name="number" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
- *         &lt;element name="occupied" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
  *         &lt;element name="singleBed" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
- *         &lt;element name="active" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
+ *         &lt;element name="available" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
  *         &lt;element name="peopleNumber" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="dailyPrice" type="{http://www.w3.org/2001/XMLSchema}double"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -33,26 +34,28 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "roomSOAP", propOrder = {
     "id",
+    "hotelId",
     "number",
-    "occupied",
     "singleBed",
-    "active",
-    "peopleNumber"
+    "available",
+    "peopleNumber",
+    "dailyPrice"
 })
 public class RoomSOAP {
 
-    protected int id;
+    protected long id;
+    protected long hotelId;
     protected int number;
-    protected boolean occupied;
     protected boolean singleBed;
-    protected boolean active;
+    protected boolean available;
     protected int peopleNumber;
+    protected double dailyPrice;
 
     /**
      * Gets the value of the id property.
      * 
      */
-    public int getId() {
+    public long getId() {
         return id;
     }
 
@@ -60,8 +63,24 @@ public class RoomSOAP {
      * Sets the value of the id property.
      * 
      */
-    public void setId(int value) {
+    public void setId(long value) {
         this.id = value;
+    }
+
+    /**
+     * Gets the value of the hotelId property.
+     * 
+     */
+    public long getHotelId() {
+        return hotelId;
+    }
+
+    /**
+     * Sets the value of the hotelId property.
+     * 
+     */
+    public void setHotelId(long value) {
+        this.hotelId = value;
     }
 
     /**
@@ -81,22 +100,6 @@ public class RoomSOAP {
     }
 
     /**
-     * Gets the value of the occupied property.
-     * 
-     */
-    public boolean isOccupied() {
-        return occupied;
-    }
-
-    /**
-     * Sets the value of the occupied property.
-     * 
-     */
-    public void setOccupied(boolean value) {
-        this.occupied = value;
-    }
-
-    /**
      * Gets the value of the singleBed property.
      * 
      */
@@ -113,19 +116,19 @@ public class RoomSOAP {
     }
 
     /**
-     * Gets the value of the active property.
+     * Gets the value of the available property.
      * 
      */
-    public boolean isActive() {
-        return active;
+    public boolean isAvailable() {
+        return available;
     }
 
     /**
-     * Sets the value of the active property.
+     * Sets the value of the available property.
      * 
      */
-    public void setActive(boolean value) {
-        this.active = value;
+    public void setAvailable(boolean value) {
+        this.available = value;
     }
 
     /**
@@ -142,6 +145,22 @@ public class RoomSOAP {
      */
     public void setPeopleNumber(int value) {
         this.peopleNumber = value;
+    }
+
+    /**
+     * Gets the value of the dailyPrice property.
+     * 
+     */
+    public double getDailyPrice() {
+        return dailyPrice;
+    }
+
+    /**
+     * Sets the value of the dailyPrice property.
+     * 
+     */
+    public void setDailyPrice(double value) {
+        this.dailyPrice = value;
     }
 
 }

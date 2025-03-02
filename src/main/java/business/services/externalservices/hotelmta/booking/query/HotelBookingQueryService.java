@@ -1,7 +1,7 @@
 package business.services.externalservices.hotelmta.booking.query;
 
-import soapclient.hotel.booking.BookingSOAP;
+import business.booking.BookingDTO;
 
 public interface HotelBookingQueryService {
-    public BookingSOAP readBooking(int bookingId);
+    public BookingDTO readBooking(int bookingId);
 }

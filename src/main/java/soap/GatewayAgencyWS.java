@@ -8,9 +8,7 @@ import javax.jws.WebParam;
 import javax.jws.WebService;
 
 import business.services.agency.travel.AgencyTravelService;
-import business.services.externalservices.agencygateway.command.GatewayAgencyCommandService;
 import business.services.externalservices.agencygateway.query.GatewayAgencyQueryService;
-import business.travel.TravelDTO;
 import common.consts.WebMethodConsts;
 import common.dto.services.FlightHotelDTO;
 import common.dto.soap.request.SearchAirlineHotelRequestSOAP;
@@ -40,5 +38,4 @@ public class GatewayAgencyWS {
     public GetTravelSOAP searchTravel(@WebParam(name = "paramSearchTravel") final long id) throws SAException {
         return GetTravelSOAP.toSOAP(this.agencyTravelService.findWithOptimisticLockById(id));
     }
-
 }
