@@ -29,6 +29,7 @@ public class ObjectFactory {
     private final static QName _FlightSOAP_QNAME = new QName("http://soap/", "FlightSOAP");
     private final static QName _ReservationSOAP_QNAME = new QName("http://soap/", "ReservationSOAP");
     private final static QName _SoapResponse_QNAME = new QName("http://soap/", "SoapResponse");
+    private final static QName _UpdateReservationSOAP_QNAME = new QName("http://soap/", "UpdateReservationSOAP");
     private final static QName _CancelReservation_QNAME = new QName("http://soap/", "cancelReservation");
     private final static QName _CancelReservationResponse_QNAME = new QName("http://soap/", "cancelReservationResponse");
     private final static QName _MakeReservation_QNAME = new QName("http://soap/", "makeReservation");
@@ -46,19 +47,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link MakeReservationRequestSOAP }
-     * 
-     */
-    public MakeReservationRequestSOAP createMakeReservationRequestSOAP() {
-        return new MakeReservationRequestSOAP();
-    }
-
-    /**
      * Create an instance of {@link ModifyReservationRequestSOAP }
      * 
      */
     public ModifyReservationRequestSOAP createModifyReservationRequestSOAP() {
         return new ModifyReservationRequestSOAP();
+    }
+
+    /**
+     * Create an instance of {@link MakeReservationRequestSOAP }
+     * 
+     */
+    public MakeReservationRequestSOAP createMakeReservationRequestSOAP() {
+        return new MakeReservationRequestSOAP();
     }
 
     /**
@@ -83,6 +84,14 @@ public class ObjectFactory {
      */
     public SoapResponse createSoapResponse() {
         return new SoapResponse();
+    }
+
+    /**
+     * Create an instance of {@link UpdateReservationSOAP }
+     * 
+     */
+    public UpdateReservationSOAP createUpdateReservationSOAP() {
+        return new UpdateReservationSOAP();
     }
 
     /**
@@ -166,11 +175,27 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ReservationLineDTO }
+     * Create an instance of {@link IdFlightInstanceWithSeatsDTO }
      * 
      */
-    public ReservationLineDTO createReservationLineDTO() {
-        return new ReservationLineDTO();
+    public IdFlightInstanceWithSeatsDTO createIdFlightInstanceWithSeatsDTO() {
+        return new IdFlightInstanceWithSeatsDTO();
+    }
+
+    /**
+     * Create an instance of {@link ModifyReservationRequestSOAP.Flights }
+     * 
+     */
+    public ModifyReservationRequestSOAP.Flights createModifyReservationRequestSOAPFlights() {
+        return new ModifyReservationRequestSOAP.Flights();
+    }
+
+    /**
+     * Create an instance of {@link MakeReservationRequestSOAP.Flights }
+     * 
+     */
+    public MakeReservationRequestSOAP.Flights createMakeReservationRequestSOAPFlights() {
+        return new MakeReservationRequestSOAP.Flights();
     }
 
     /**
@@ -236,6 +261,19 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://soap/", name = "SoapResponse")
     public JAXBElement<SoapResponse> createSoapResponse(SoapResponse value) {
         return new JAXBElement<SoapResponse>(_SoapResponse_QNAME, SoapResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link UpdateReservationSOAP }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link UpdateReservationSOAP }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://soap/", name = "UpdateReservationSOAP")
+    public JAXBElement<UpdateReservationSOAP> createUpdateReservationSOAP(UpdateReservationSOAP value) {
+        return new JAXBElement<UpdateReservationSOAP>(_UpdateReservationSOAP_QNAME, UpdateReservationSOAP.class, null, value);
     }
 
     /**

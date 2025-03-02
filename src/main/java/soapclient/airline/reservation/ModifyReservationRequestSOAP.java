@@ -1,6 +1,8 @@
 
 package soapclient.airline.reservation;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlType;
@@ -16,8 +18,19 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="reservation" type="{http://soap/}reservationDTO" minOccurs="0"/&gt;
- *         &lt;element name="reservationLine" type="{http://soap/}reservationLineDTO" minOccurs="0"/&gt;
+ *         &lt;element name="idReservation" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
+ *         &lt;element name="idCustomer" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
+ *         &lt;element name="flights" minOccurs="0"&gt;
+ *           &lt;complexType&gt;
+ *             &lt;complexContent&gt;
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *                 &lt;sequence&gt;
+ *                   &lt;element name="flight" type="{http://soap/}idFlightInstanceWithSeatsDTO" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *                 &lt;/sequence&gt;
+ *               &lt;/restriction&gt;
+ *             &lt;/complexContent&gt;
+ *           &lt;/complexType&gt;
+ *         &lt;/element&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -28,60 +41,129 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "modifyReservationRequestSOAP", propOrder = {
-    "reservation",
-    "reservationLine"
+    "idReservation",
+    "idCustomer",
+    "flights"
 })
 public class ModifyReservationRequestSOAP {
 
-    protected ReservationDTO reservation;
-    protected ReservationLineDTO reservationLine;
+    protected long idReservation;
+    protected long idCustomer;
+    protected ModifyReservationRequestSOAP.Flights flights;
 
     /**
-     * Obtiene el valor de la propiedad reservation.
+     * Obtiene el valor de la propiedad idReservation.
+     * 
+     */
+    public long getIdReservation() {
+        return idReservation;
+    }
+
+    /**
+     * Define el valor de la propiedad idReservation.
+     * 
+     */
+    public void setIdReservation(long value) {
+        this.idReservation = value;
+    }
+
+    /**
+     * Obtiene el valor de la propiedad idCustomer.
+     * 
+     */
+    public long getIdCustomer() {
+        return idCustomer;
+    }
+
+    /**
+     * Define el valor de la propiedad idCustomer.
+     * 
+     */
+    public void setIdCustomer(long value) {
+        this.idCustomer = value;
+    }
+
+    /**
+     * Obtiene el valor de la propiedad flights.
      * 
      * @return
      *     possible object is
-     *     {@link ReservationDTO }
+     *     {@link ModifyReservationRequestSOAP.Flights }
      *     
      */
-    public ReservationDTO getReservation() {
-        return reservation;
+    public ModifyReservationRequestSOAP.Flights getFlights() {
+        return flights;
     }
 
     /**
-     * Define el valor de la propiedad reservation.
+     * Define el valor de la propiedad flights.
      * 
      * @param value
      *     allowed object is
-     *     {@link ReservationDTO }
+     *     {@link ModifyReservationRequestSOAP.Flights }
      *     
      */
-    public void setReservation(ReservationDTO value) {
-        this.reservation = value;
+    public void setFlights(ModifyReservationRequestSOAP.Flights value) {
+        this.flights = value;
     }
 
-    /**
-     * Obtiene el valor de la propiedad reservationLine.
-     * 
-     * @return
-     *     possible object is
-     *     {@link ReservationLineDTO }
-     *     
-     */
-    public ReservationLineDTO getReservationLine() {
-        return reservationLine;
-    }
 
     /**
-     * Define el valor de la propiedad reservationLine.
+     * <p>Clase Java para anonymous complex type.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link ReservationLineDTO }
-     *     
+     * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+     * 
+     * <pre>
+     * &lt;complexType&gt;
+     *   &lt;complexContent&gt;
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+     *       &lt;sequence&gt;
+     *         &lt;element name="flight" type="{http://soap/}idFlightInstanceWithSeatsDTO" maxOccurs="unbounded" minOccurs="0"/&gt;
+     *       &lt;/sequence&gt;
+     *     &lt;/restriction&gt;
+     *   &lt;/complexContent&gt;
+     * &lt;/complexType&gt;
+     * </pre>
+     * 
+     * 
      */
-    public void setReservationLine(ReservationLineDTO value) {
-        this.reservationLine = value;
+    @XmlAccessorType(XmlAccessType.FIELD)
+    @XmlType(name = "", propOrder = {
+        "flight"
+    })
+    public static class Flights {
+
+        protected List<IdFlightInstanceWithSeatsDTO> flight;
+
+        /**
+         * Gets the value of the flight property.
+         * 
+         * <p>
+         * This accessor method returns a reference to the live list,
+         * not a snapshot. Therefore any modification you make to the
+         * returned list will be present inside the JAXB object.
+         * This is why there is not a <CODE>set</CODE> method for the flight property.
+         * 
+         * <p>
+         * For example, to add a new item, do as follows:
+         * <pre>
+         *    getFlight().add(newItem);
+         * </pre>
+         * 
+         * 
+         * <p>
+         * Objects of the following type(s) are allowed in the list
+         * {@link IdFlightInstanceWithSeatsDTO }
+         * 
+         * 
+         */
+        public List<IdFlightInstanceWithSeatsDTO> getFlight() {
+            if (flight == null) {
+                flight = new ArrayList<IdFlightInstanceWithSeatsDTO>();
+            }
+            return this.flight;
+        }
+
     }
 
 }

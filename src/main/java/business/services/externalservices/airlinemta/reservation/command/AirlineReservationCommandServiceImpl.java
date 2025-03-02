@@ -41,15 +41,15 @@ public class AirlineReservationCommandServiceImpl implements AirlineReservationC
 
         reservationSOAP.setCustomer(customerDTO);
         reservationSOAP.setReservation(reservationDTO);
-        reservationSOAP.setIdFlight(mDto.getFlightId());
-        reservationSOAP.setNumberOfSeats(mDto.getNumberOfSeats());
+        //reservationSOAP.setIdFlight(mDto.getFlightId());
+        //reservationSOAP.setNumberOfSeats(mDto.getNumberOfSeats());
         ReservationSOAP r = (ReservationSOAP) reservationService.getReservationWSPort().makeReservation(reservationSOAP).getData();
         return AirlineReservationDTO.toDTO(r);  
     }
 
     @Override
     public boolean cancelReservation(long idReservation, long idFlightInstance) {
-        return reservationService.getReservationWSPort().cancelReservation(idReservation, idFlightInstance).isSuccess();
+        return false;//return reservationService.getReservationWSPort().cancelReservation(idReservation, idFlightInstance).isSuccess();
     }
 
     @Override
