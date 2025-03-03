@@ -17,6 +17,6 @@ public class MakeBookingReservationDTO {
     private int numberOfNights;
     private boolean withBreakfast;
     private int peopleNumber;
-    private long customerId;
+    private String customerDNI;
     private List<Long> roomId;
 }

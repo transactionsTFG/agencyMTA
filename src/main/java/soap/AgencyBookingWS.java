@@ -33,6 +33,7 @@ public class AgencyBookingWS {
     @WebMethod(operationName = WebMethodConsts.OP_MAKE_HOTEL_BOOKING)
     @Transactional
     public BookingDTO makeBooking(@WebParam(name = "booking") MakeBookingReservationDTO booking, @WebParam(name = "user") UserDTO userDTO) throws SAException {
+        System.out.println("AgencyMTA.AgencyBookingWS.makeBooking-----------------------------------------------" + booking.getCustomerDNI() + " " + userDTO.getDni());
         return this.bookingCommandService.makeBooking(booking, userDTO);
     }
 

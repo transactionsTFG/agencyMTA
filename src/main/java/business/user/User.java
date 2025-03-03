@@ -30,7 +30,8 @@ import common.dto.UserRegisterSOAP;
 @Setter
 @NoArgsConstructor
 @NamedQueries({
-        @NamedQuery(name = "business.user.User.findByEmail", query = "SELECT u FROM User u WHERE u.email = :email")
+        @NamedQuery(name = "business.user.User.findByEmail", query = "SELECT u FROM User u WHERE u.email = :email"),
+        @NamedQuery(name = "business.user.User.findByDni", query = "SELECT u FROM User u WHERE u.dni = :dni"),
 })
 public class User implements Serializable {
     private static final long serialVersionUID = 0;
@@ -52,8 +53,8 @@ public class User implements Serializable {
     private String password;
     @Column(nullable = false)
     private boolean active;
-    @Column(nullable = false)
-    private String passport;
+    @Column(nullable = false, unique = true)
+    private String dni;
     @Column(nullable = false)
     private String born;
     @Column(nullable = false)
@@ -67,7 +68,7 @@ public class User implements Serializable {
         this.email = user.getEmail();
         this.password = user.getPassword();
         this.active = true;
-        this.passport = user.getPassport();
+        this.dni = user.getDni();
         this.born = user.getBorn();
         this.phone = user.getPhone();
         this.type = new Type(user.getIdTypeUser()); 
@@ -81,7 +82,7 @@ public class User implements Serializable {
                 .surname(this.surname)
                 .email(this.email)
                 .active(this.active)
-                .passport(this.passport)
+                .dni(this.dni)
                 .born(this.born)
                 .phone(this.phone)
                 .build();

@@ -18,7 +18,7 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;sequence&gt;
  *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="email" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="passport" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="dni" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="phone" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
@@ -32,14 +32,14 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "userSOAP", propOrder = {
     "name",
     "email",
-    "passport",
+    "dni",
     "phone"
 })
 public class UserSOAP {
 
     protected String name;
     protected String email;
-    protected String passport;
+    protected String dni;
     protected String phone;
 
     /**
@@ -91,27 +91,27 @@ public class UserSOAP {
     }
 
     /**
-     * Gets the value of the passport property.
+     * Gets the value of the dni property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getPassport() {
-        return passport;
+    public String getDni() {
+        return dni;
     }
 
     /**
-     * Sets the value of the passport property.
+     * Sets the value of the dni property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setPassport(String value) {
-        this.passport = value;
+    public void setDni(String value) {
+        this.dni = value;
     }
 
     /**

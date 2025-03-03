@@ -53,7 +53,13 @@ public class HotelBookingCommandServiceImpl implements HotelBookingCommandServic
         travel.setHotelCost(bookingSOAP.getTotalPrice());
         travel.setHotelReservationID(bookingSOAP.getId());
         travel.setStatus("");
-        User user = this.em.find(User.class, booking.getCustomerId(), LockModeType.OPTIMISTIC);
+        TypedQuery<User> query = this.em.createNamedQuery("business.user.User.findByDni", User.class);
+        query.setParameter("dni", booking.getCustomerDNI());
+        User user = query.getResultList().isEmpty() ? null : query.getResultList().get(0);
+        if (user == null) {
+            throw new SAException("HotelBookingCommandService.makeBooking: usuario no encontrado: " + booking.getCustomerDNI());
+        }
+        this.em.lock(user, LockModeType.OPTIMISTIC);
         travel.setUser(user);
         this.em.persist(travel);
         return BookingMapper.INSTANCE.fromSOAPToDTO(bookingSOAP);
