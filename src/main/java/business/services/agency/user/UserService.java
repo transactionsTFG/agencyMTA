@@ -8,4 +8,5 @@ public interface UserService {
     public long createUser(UserRegisterSOAP user);
     public UserDTO loginUser(UserLoginSOAP user);
     public UserDTO readUser(UserLoginSOAP user);
+    UserDTO readUserById(long id);
 }

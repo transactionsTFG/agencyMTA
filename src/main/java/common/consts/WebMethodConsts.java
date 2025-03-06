@@ -10,6 +10,8 @@ public class WebMethodConsts {
     public static final String OP_SEARCH_FLIGHTS_AND_HOTEL = "searchFlightHotel";
     public static final String OP_SEARCH_RESERVATION = "reservation";
     public static final String OP_MAKE_FLIGHT_RESERVATION = "makeFlightReservation";
+    public static final String OP_MOD_FLIGHT_RESERVATION = "modFlightReservation";
+    public static final String OP_DEL_FLIGHT_RESERVATION = "delFlightReservation";
     public static final String OP_USER_REGISTRATION = "registerUser";
     public static final String OP_USER_LOGIN = "loginUser";
     public static final String OP_SEARCH_USER = "searchUser";
@@ -20,4 +22,9 @@ public class WebMethodConsts {
     public static final String OP_MODIFY_HOTEL_BOOKING = "modifyHotelBooking";
     public static final String OP_CANCEL_HOTEL_BOOKING = "cancelHotelBooking";
     public static final String OP_CANCEL_HOTEL_BOOKING_LINE = "cancelHotelBookingLine";
+    public static final String OP_GET_FLIGHT_AND_HOTEL = "getFlightHotelReservation";
+    public static final String OP_MAKE_FLIGHT_AND_HOTEL = "makeFlightHotelReservation";
+    public static final String OP_MOD_FLIGHT_AND_HOTEL = "modFlightHotelReservation";
+    public static final String OP_DEL_FLIGHT_AND_HOTEL = "delFlightHotelReservation";
+
 }

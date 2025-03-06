@@ -1,14 +1,17 @@
 package business.services.externalservices.airlinemta.reservation.command;
 
 import java.util.List;
+import java.util.Map;
 
+import business.user.UserDTO;
 import common.dto.services.AirlineReservationDTO;
 import common.dto.services.IdFlightWithSeatsDTO;
-import common.dto.services.MakeFlightReservationDTO;
-import common.dto.services.ModifyFlightReservationDTO;
+import common.dto.services.ReservationDTO;
+import common.dto.services.UpdateReservationDTO;
 
 public interface AirlineReservationCommandService {
-    AirlineReservationDTO makeReservation(MakeFlightReservationDTO mDto, List<IdFlightWithSeatsDTO> idsFlightWithSeats);
-    Object modifyReservation(ModifyFlightReservationDTO mDto);
-    boolean cancelReservation(final long idReservation, final long idFlightInstance);
+    ReservationDTO getAirlineReservationWithLockMode(final long idAirlineReservation);
+    AirlineReservationDTO makeReservation(final UserDTO user, final String dni, List<IdFlightWithSeatsDTO> idsFlightWithSeats);
+    UpdateReservationDTO modifyReservation(final long idReservation, final Map<Long, Integer> idFlightInstanceWithSeatsMap);
+    double cancelReservation(final long idReservation);
 }

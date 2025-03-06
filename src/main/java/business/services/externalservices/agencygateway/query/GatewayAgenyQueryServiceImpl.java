@@ -12,15 +12,12 @@ import business.services.externalservices.hotelmta.room.query.HotelRoomQueryServ
 import common.dto.services.FlightHotelDTO;
 import common.dto.services.FlightListDTO;
 import common.dto.services.RoomListDTO;
-import common.dto.HotelFlightReservationDTO;
 
 @Stateless
 public class GatewayAgenyQueryServiceImpl implements GatewayAgencyQueryService {
-
+    
     private HotelRoomQueryService hotelRoomQueryService;
     private FlightAirlineQueryService flightQueryService;
-    private HotelBookingQueryService hotelBookingQueryService;
-    private AirlineReservationQueryService airlineReservationQueryService;
 
     public GatewayAgenyQueryServiceImpl() {}
 
@@ -43,15 +40,5 @@ public class GatewayAgenyQueryServiceImpl implements GatewayAgencyQueryService {
                                 .collect(
                                     Collectors.toMap(Map.Entry::getKey, entry -> new FlightHotelDTO(entry.getValue(), hotelsByCountry.get(entry.getKey())))
                                 );
-    }    
-
-    @Override
-    public HotelFlightReservationDTO getHotelAndFlightReservation(long hotelBookingId, long flightReservationId) {
-        HotelFlightReservationDTO dto = new HotelFlightReservationDTO();
-        BookingDTO booking = this.hotelBookingQueryService.readBooking(hotelBookingId);
-        ReservationDTO reservation = this.airlineReservationQueryService.readReservation(flightReservationId);
-        dto.setBooking(booking);
-        dto.setReservation(reservation);
-        return dto;
-    }
+    } 
 }

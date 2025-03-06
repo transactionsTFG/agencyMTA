@@ -1,7 +1,4 @@
 package business.services.externalservices.hotelmta.booking.query;
 
-import business.booking.BookingDTO;
 
-public interface HotelBookingQueryService {
-    public BookingDTO readBooking(int bookingId);
-}
+public interface HotelBookingQueryService {}

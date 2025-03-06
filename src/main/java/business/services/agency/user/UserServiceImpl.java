@@ -5,7 +5,10 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.persistence.LockModeType;
 import javax.persistence.TypedQuery;
+
+import com.tangosol.internal.sleepycat.je.LockMode;
 
 import business.user.User;
 import business.user.UserDTO;
@@ -54,6 +57,14 @@ public class UserServiceImpl implements UserService {
         if (user == null) 
             throw new UserException("Usuario no encontrado");
         return user.toDTO();
+    }
+
+    @Override
+    public UserDTO readUserById(long id) {
+        User u = this.em.find(User.class, id, LockModeType.OPTIMISTIC);
+        if (u == null) 
+            throw new UserException("Usuario no encontrado");
+        return u.toDTO();
     }
 
 }

@@ -98,8 +98,7 @@
                     <sourceDestDir>src/main/java</sourceDestDir>
                     <packageName>soapclient.airline.reservation</packageName>
                 </configuration>
-            </plugin>
-            -->
+            </plugin> -->
         </plugins>
     </build>
 </project>

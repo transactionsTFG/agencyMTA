@@ -56,21 +56,6 @@ public interface ReservationWS {
 
     /**
      * 
-     * @param request
-     * @return
-     *     returns soapclient.airline.reservation.SoapResponse
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "modifyReservation", targetNamespace = "http://soap/", className = "soapclient.airline.reservation.ModifyReservation")
-    @ResponseWrapper(localName = "modifyReservationResponse", targetNamespace = "http://soap/", className = "soapclient.airline.reservation.ModifyReservationResponse")
-    @Action(input = "http://soap/ReservationWS/modifyReservationRequest", output = "http://soap/ReservationWS/modifyReservationResponse")
-    public SoapResponse modifyReservation(
-        @WebParam(name = "request", targetNamespace = "")
-        ModifyReservationRequestSOAP request);
-
-    /**
-     * 
      * @param idReservation
      * @return
      *     returns soapclient.airline.reservation.SoapResponse
@@ -83,5 +68,20 @@ public interface ReservationWS {
     public SoapResponse searchReservation(
         @WebParam(name = "idReservation", targetNamespace = "")
         long idReservation);
+
+    /**
+     * 
+     * @param request
+     * @return
+     *     returns soapclient.airline.reservation.SoapResponse
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "modifyReservation", targetNamespace = "http://soap/", className = "soapclient.airline.reservation.ModifyReservation")
+    @ResponseWrapper(localName = "modifyReservationResponse", targetNamespace = "http://soap/", className = "soapclient.airline.reservation.ModifyReservationResponse")
+    @Action(input = "http://soap/ReservationWS/modifyReservationRequest", output = "http://soap/ReservationWS/modifyReservationResponse")
+    public SoapResponse modifyReservation(
+        @WebParam(name = "request", targetNamespace = "")
+        ModifyReservationRequestSOAP request);
 
 }

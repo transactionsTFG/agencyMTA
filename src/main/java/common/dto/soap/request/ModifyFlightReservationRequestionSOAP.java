@@ -1,4 +1,4 @@
-package common.dto;
+package common.dto.soap.request;
 
 import java.util.List;
 
@@ -8,23 +8,20 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 
-import common.dto.soap.request.IdFlightInstanceWithSeatsSOAP;
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Builder;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
-@XmlRootElement(name = "MakeFlightReservationSOAP")
+@XmlRootElement(name = "ModifyFlightReservationRequestionSOAP")
 @XmlAccessorType(XmlAccessType.FIELD)
-@AllArgsConstructor
-@Getter
-@Setter
+@Data
+@Builder
 @NoArgsConstructor
-public class MakeFlightReservationSOAP {
+@AllArgsConstructor
+public class ModifyFlightReservationRequestionSOAP {
     @XmlElement
-    private String dni;
-    @XmlElement
-    private long idCustomer;
+    private long idReservation;
     @XmlElementWrapper(name = "flights")
     @XmlElement(name = "flight")
     private List<IdFlightInstanceWithSeatsSOAP> listIdFlightInstanceSeats;

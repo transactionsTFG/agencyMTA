@@ -19,7 +19,6 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
  *         &lt;element name="idReservation" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
- *         &lt;element name="idCustomer" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
  *         &lt;element name="flights" minOccurs="0"&gt;
  *           &lt;complexType&gt;
  *             &lt;complexContent&gt;
@@ -42,13 +41,11 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "modifyReservationRequestSOAP", propOrder = {
     "idReservation",
-    "idCustomer",
     "flights"
 })
 public class ModifyReservationRequestSOAP {
 
     protected long idReservation;
-    protected long idCustomer;
     protected ModifyReservationRequestSOAP.Flights flights;
 
     /**
@@ -65,22 +62,6 @@ public class ModifyReservationRequestSOAP {
      */
     public void setIdReservation(long value) {
         this.idReservation = value;
-    }
-
-    /**
-     * Obtiene el valor de la propiedad idCustomer.
-     * 
-     */
-    public long getIdCustomer() {
-        return idCustomer;
-    }
-
-    /**
-     * Define el valor de la propiedad idCustomer.
-     * 
-     */
-    public void setIdCustomer(long value) {
-        this.idCustomer = value;
     }
 
     /**

@@ -6,6 +6,7 @@ import business.booking.ModifyBookingReservationDTO;
 import business.user.UserDTO;
 
 public interface HotelBookingCommandService {
+    BookingDTO getBookingWithLockMode(long bookingId);
     BookingDTO makeBooking(MakeBookingReservationDTO booking, UserDTO userDTO);
     BookingDTO modifyBooking(ModifyBookingReservationDTO booking);
     double cancelBooking(long bookingId);

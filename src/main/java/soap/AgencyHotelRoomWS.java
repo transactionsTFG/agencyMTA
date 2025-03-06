@@ -13,13 +13,13 @@ import common.dto.services.RoomListDTO;
 import common.exceptions.SAException;
 import soapclient.hotel.room.RoomDTO;
 
-@WebService(serviceName = "AgencyRoomWS")
-public class AgencyRoomWS {
+@WebService(serviceName = "AgencyHotelRoomWS")
+public class AgencyHotelRoomWS {
 
     private final HotelRoomQueryService hotelRoomQueryService;
 
     @Inject
-    public AgencyRoomWS(final HotelRoomQueryService hotelRoomQueryService) {
+    public AgencyHotelRoomWS(final HotelRoomQueryService hotelRoomQueryService) {
         this.hotelRoomQueryService = hotelRoomQueryService;
     }
 

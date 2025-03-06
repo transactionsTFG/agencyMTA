@@ -1,5 +1,7 @@
 package business.services.agency.travel;
 
+import java.util.List;
+
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
@@ -65,6 +67,33 @@ public class AgencyTravelServiceImpl implements AgencyTravelService{
         this.em.merge(t);
         return true;
     }
-    
+
+    @Override
+    public List<TravelDTO> findTravelByIdReservationFlight(final long idReservationFlight) {
+        return this.em.createNamedQuery("business.travel.Travel.findTravelByFlightReservation", Travel.class)
+                .setParameter("idReservationFlight", idReservationFlight)
+                .getResultList()
+                .stream()
+                .map(Travel::toDTO)
+                .toList();
+    }
+
+    @Override
+    public TravelDTO findTravelByIdReservationHotel(long idReservationHotel) {
+        return this.em.createNamedQuery("business.travel.Travel.findTravelByHotelReservationID", Travel.class)
+            .setParameter("hotelReservationID", idReservationHotel)
+            .getSingleResult()
+            .toDTO();
+    }
+
+    @Override
+    public List<TravelDTO> findTravelByIdReservationFlightAndHotel(long idReservationFlight, long idReservationHotel) {
+        return this.em.createNamedQuery("business.travel.Travel.findTravelByFlightReservationAndHotelId", Travel.class)
+                .setParameter("idReservationFlight", idReservationFlight).setParameter("hotelReservationID", idReservationHotel)
+                .getResultList()
+                .stream()
+                .map(Travel::toDTO)
+                .toList();
+    }
     
 }

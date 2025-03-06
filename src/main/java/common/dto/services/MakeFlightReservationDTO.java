@@ -19,16 +19,4 @@ public class MakeFlightReservationDTO {
     private double total;
     private long flightId;
     private int numberOfSeats;
-
-    public MakeFlightReservationDTO(AgencyReservationFlightDTO agencyReservationFlightDTO){
-        this.dni = agencyReservationFlightDTO.getDni();
-        this.email = agencyReservationFlightDTO.getEmail();
-        this.name = agencyReservationFlightDTO.getName();  
-        this.phone = agencyReservationFlightDTO.getPhone();
-        this.date = agencyReservationFlightDTO.getDate();
-        this.customerId = agencyReservationFlightDTO.getCustomerId();
-        this.total = agencyReservationFlightDTO.getTotal();
-        this.flightId = agencyReservationFlightDTO.getFlightId();
-        this.numberOfSeats = agencyReservationFlightDTO.getNumberOfSeats();
-    }
 }

@@ -5,14 +5,12 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import business.booking.BookingDTO;
-import soapclient.airline.reservation.ReservationDTO;
+import common.dto.services.ReservationDTO;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class HotelFlightReservationDTO {
-    
     private BookingDTO booking;
-    private AgencyReservationSuccessDTO reservation;
-    
+    private ReservationDTO reservation;
 }

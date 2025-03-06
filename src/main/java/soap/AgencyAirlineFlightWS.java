@@ -16,13 +16,13 @@ import javax.jws.WebService;
 
 import business.services.externalservices.airlinemta.flight.query.FlightAirlineQueryService;
 
-@WebService(serviceName = "AgencyFlight")
-public class AgencyFlightWS {
+@WebService(serviceName = "AgencyAirlineFlightWS")
+public class AgencyAirlineFlightWS {
     
     private final FlightAirlineQueryService flightAirlineQueryService;
 
     @Inject
-    public AgencyFlightWS(final FlightAirlineQueryService flightAirlineQueryService) {
+    public AgencyAirlineFlightWS(final FlightAirlineQueryService flightAirlineQueryService) {
         this.flightAirlineQueryService = flightAirlineQueryService;
     }
 
