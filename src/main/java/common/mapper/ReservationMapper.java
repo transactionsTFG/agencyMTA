@@ -14,6 +14,7 @@ import common.dto.services.StatusFlightDTO;
 import common.dto.services.UpdateReservationDTO;
 import soapclient.airline.reservation.IdFlightInstanceWithSeatsDTO;
 import soapclient.airline.reservation.NewReservationSOAP;
+import soapclient.airline.reservation.ReservationSOAP;
 import soapclient.airline.reservation.StatusFlightSOAP;
 import soapclient.airline.reservation.UpdateReservationSOAP;
 
@@ -29,7 +30,7 @@ public interface ReservationMapper {
     @Mapping(target = "statusFlightsDTO", source = "statusFlights.statusFlightSOAP")
     AirlineReservationDTO newReservationToDTO(NewReservationSOAP soap);
 
-    ReservationDTO toReservationDTO(soapclient.airline.reservation.ReservationSOAP soap);
+    ReservationDTO toReservationDTO(ReservationSOAP soap);
 
     default List<StatusFlightDTO> mapStatusFlights(NewReservationSOAP.StatusFlights statusFlights) {
         if (statusFlights == null || statusFlights.getStatusFlightSOAP() == null) 
