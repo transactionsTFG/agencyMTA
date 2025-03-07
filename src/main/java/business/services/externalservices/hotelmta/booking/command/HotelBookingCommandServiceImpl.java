@@ -31,9 +31,9 @@ public class HotelBookingCommandServiceImpl implements HotelBookingCommandServic
     }
 
     @Override
-    public BookingDTO makeBooking(MakeBookingReservationDTO booking, UserDTO userDTO) {
+    public BookingDTO makeBooking(MakeBookingReservationDTO booking, UserDTO userDTO, final String dni) {
         BookingSOAP bookingSOAP = (BookingSOAP) this.bookingService.getBookingWSBPort()
-                .makeBooking(BookingMapper.INSTANCE.fromMakeDTOToRequestSOAP(booking), UserMapper.INSTANCE.fromDTOToSOAP(userDTO)).getData();
+                .makeBooking(BookingMapper.INSTANCE.fromMakeDTOToRequestSOAP(booking), UserMapper.INSTANCE.fromDTOToSOAP(userDTO, dni)).getData();
         return BookingMapper.INSTANCE.fromSOAPToDTO(bookingSOAP);
     }
 

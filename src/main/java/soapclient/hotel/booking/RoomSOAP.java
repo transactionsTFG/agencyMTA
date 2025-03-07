@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for roomSOAP complex type.
+ * <p>Clase Java para roomSOAP complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
  * &lt;complexType name="roomSOAP"&gt;
@@ -52,7 +52,7 @@ public class RoomSOAP {
     protected double dailyPrice;
 
     /**
-     * Gets the value of the id property.
+     * Obtiene el valor de la propiedad id.
      * 
      */
     public long getId() {
@@ -60,7 +60,7 @@ public class RoomSOAP {
     }
 
     /**
-     * Sets the value of the id property.
+     * Define el valor de la propiedad id.
      * 
      */
     public void setId(long value) {
@@ -68,7 +68,7 @@ public class RoomSOAP {
     }
 
     /**
-     * Gets the value of the hotelId property.
+     * Obtiene el valor de la propiedad hotelId.
      * 
      */
     public long getHotelId() {
@@ -76,7 +76,7 @@ public class RoomSOAP {
     }
 
     /**
-     * Sets the value of the hotelId property.
+     * Define el valor de la propiedad hotelId.
      * 
      */
     public void setHotelId(long value) {
@@ -84,7 +84,7 @@ public class RoomSOAP {
     }
 
     /**
-     * Gets the value of the number property.
+     * Obtiene el valor de la propiedad number.
      * 
      */
     public int getNumber() {
@@ -92,7 +92,7 @@ public class RoomSOAP {
     }
 
     /**
-     * Sets the value of the number property.
+     * Define el valor de la propiedad number.
      * 
      */
     public void setNumber(int value) {
@@ -100,7 +100,7 @@ public class RoomSOAP {
     }
 
     /**
-     * Gets the value of the singleBed property.
+     * Obtiene el valor de la propiedad singleBed.
      * 
      */
     public boolean isSingleBed() {
@@ -108,7 +108,7 @@ public class RoomSOAP {
     }
 
     /**
-     * Sets the value of the singleBed property.
+     * Define el valor de la propiedad singleBed.
      * 
      */
     public void setSingleBed(boolean value) {
@@ -116,7 +116,7 @@ public class RoomSOAP {
     }
 
     /**
-     * Gets the value of the available property.
+     * Obtiene el valor de la propiedad available.
      * 
      */
     public boolean isAvailable() {
@@ -124,7 +124,7 @@ public class RoomSOAP {
     }
 
     /**
-     * Sets the value of the available property.
+     * Define el valor de la propiedad available.
      * 
      */
     public void setAvailable(boolean value) {
@@ -132,7 +132,7 @@ public class RoomSOAP {
     }
 
     /**
-     * Gets the value of the peopleNumber property.
+     * Obtiene el valor de la propiedad peopleNumber.
      * 
      */
     public int getPeopleNumber() {
@@ -140,7 +140,7 @@ public class RoomSOAP {
     }
 
     /**
-     * Sets the value of the peopleNumber property.
+     * Define el valor de la propiedad peopleNumber.
      * 
      */
     public void setPeopleNumber(int value) {
@@ -148,7 +148,7 @@ public class RoomSOAP {
     }
 
     /**
-     * Gets the value of the dailyPrice property.
+     * Obtiene el valor de la propiedad dailyPrice.
      * 
      */
     public double getDailyPrice() {
@@ -156,7 +156,7 @@ public class RoomSOAP {
     }
 
     /**
-     * Sets the value of the dailyPrice property.
+     * Define el valor de la propiedad dailyPrice.
      * 
      */
     public void setDailyPrice(double value) {

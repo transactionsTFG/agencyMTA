@@ -27,6 +27,24 @@ public interface BookingWSB {
     /**
      * 
      * @param booking
+     * @param user
+     * @return
+     *     returns soapclient.hotel.booking.SoapResponse
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "makeBooking", targetNamespace = "http://soap/", className = "soapclient.hotel.booking.MakeBooking")
+    @ResponseWrapper(localName = "makeBookingResponse", targetNamespace = "http://soap/", className = "soapclient.hotel.booking.MakeBookingResponse")
+    @Action(input = "http://soap/BookingWSB/makeBookingRequest", output = "http://soap/BookingWSB/makeBookingResponse")
+    public SoapResponse makeBooking(
+        @WebParam(name = "booking", targetNamespace = "")
+        MakeBookingRequestSOAP booking,
+        @WebParam(name = "user", targetNamespace = "")
+        UserSOAP user);
+
+    /**
+     * 
+     * @param booking
      * @return
      *     returns soapclient.hotel.booking.SoapResponse
      */
@@ -71,24 +89,6 @@ public interface BookingWSB {
         long bookingID,
         @WebParam(name = "roomID", targetNamespace = "")
         long roomID);
-
-    /**
-     * 
-     * @param booking
-     * @param user
-     * @return
-     *     returns soapclient.hotel.booking.SoapResponse
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "makeBooking", targetNamespace = "http://soap/", className = "soapclient.hotel.booking.MakeBooking")
-    @ResponseWrapper(localName = "makeBookingResponse", targetNamespace = "http://soap/", className = "soapclient.hotel.booking.MakeBookingResponse")
-    @Action(input = "http://soap/BookingWSB/makeBookingRequest", output = "http://soap/BookingWSB/makeBookingResponse")
-    public SoapResponse makeBooking(
-        @WebParam(name = "booking", targetNamespace = "")
-        MakeBookingRequestSOAP booking,
-        @WebParam(name = "user", targetNamespace = "")
-        UserSOAP user);
 
     /**
      * 

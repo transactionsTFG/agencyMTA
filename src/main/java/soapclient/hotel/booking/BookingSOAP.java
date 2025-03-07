@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for bookingSOAP complex type.
+ * <p>Clase Java para bookingSOAP complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
  * &lt;complexType name="bookingSOAP"&gt;
@@ -49,7 +49,7 @@ public class BookingSOAP {
     protected double totalPrice;
 
     /**
-     * Gets the value of the id property.
+     * Obtiene el valor de la propiedad id.
      * 
      */
     public long getId() {
@@ -57,7 +57,7 @@ public class BookingSOAP {
     }
 
     /**
-     * Sets the value of the id property.
+     * Define el valor de la propiedad id.
      * 
      */
     public void setId(long value) {
@@ -65,7 +65,7 @@ public class BookingSOAP {
     }
 
     /**
-     * Gets the value of the withBreakfast property.
+     * Obtiene el valor de la propiedad withBreakfast.
      * 
      */
     public boolean isWithBreakfast() {
@@ -73,7 +73,7 @@ public class BookingSOAP {
     }
 
     /**
-     * Sets the value of the withBreakfast property.
+     * Define el valor de la propiedad withBreakfast.
      * 
      */
     public void setWithBreakfast(boolean value) {
@@ -81,7 +81,7 @@ public class BookingSOAP {
     }
 
     /**
-     * Gets the value of the peopleNumber property.
+     * Obtiene el valor de la propiedad peopleNumber.
      * 
      */
     public int getPeopleNumber() {
@@ -89,7 +89,7 @@ public class BookingSOAP {
     }
 
     /**
-     * Sets the value of the peopleNumber property.
+     * Define el valor de la propiedad peopleNumber.
      * 
      */
     public void setPeopleNumber(int value) {
@@ -97,7 +97,7 @@ public class BookingSOAP {
     }
 
     /**
-     * Gets the value of the customerId property.
+     * Obtiene el valor de la propiedad customerId.
      * 
      */
     public long getCustomerId() {
@@ -105,7 +105,7 @@ public class BookingSOAP {
     }
 
     /**
-     * Sets the value of the customerId property.
+     * Define el valor de la propiedad customerId.
      * 
      */
     public void setCustomerId(long value) {
@@ -113,7 +113,7 @@ public class BookingSOAP {
     }
 
     /**
-     * Gets the value of the available property.
+     * Obtiene el valor de la propiedad available.
      * 
      */
     public boolean isAvailable() {
@@ -121,7 +121,7 @@ public class BookingSOAP {
     }
 
     /**
-     * Sets the value of the available property.
+     * Define el valor de la propiedad available.
      * 
      */
     public void setAvailable(boolean value) {
@@ -129,7 +129,7 @@ public class BookingSOAP {
     }
 
     /**
-     * Gets the value of the totalPrice property.
+     * Obtiene el valor de la propiedad totalPrice.
      * 
      */
     public double getTotalPrice() {
@@ -137,7 +137,7 @@ public class BookingSOAP {
     }
 
     /**
-     * Sets the value of the totalPrice property.
+     * Define el valor de la propiedad totalPrice.
      * 
      */
     public void setTotalPrice(double value) {

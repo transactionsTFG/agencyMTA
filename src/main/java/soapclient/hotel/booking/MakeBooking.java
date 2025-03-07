@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for makeBooking complex type.
+ * <p>Clase Java para makeBooking complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
  * &lt;complexType name="makeBooking"&gt;
@@ -37,7 +37,7 @@ public class MakeBooking {
     protected UserSOAP user;
 
     /**
-     * Gets the value of the booking property.
+     * Obtiene el valor de la propiedad booking.
      * 
      * @return
      *     possible object is
@@ -49,7 +49,7 @@ public class MakeBooking {
     }
 
     /**
-     * Sets the value of the booking property.
+     * Define el valor de la propiedad booking.
      * 
      * @param value
      *     allowed object is
@@ -61,7 +61,7 @@ public class MakeBooking {
     }
 
     /**
-     * Gets the value of the user property.
+     * Obtiene el valor de la propiedad user.
      * 
      * @return
      *     possible object is
@@ -73,7 +73,7 @@ public class MakeBooking {
     }
 
     /**
-     * Sets the value of the user property.
+     * Define el valor de la propiedad user.
      * 
      * @param value
      *     allowed object is

@@ -67,9 +67,9 @@ public class GatewayAgencyCommandServiceImpl implements GatewayAgencyCommandServ
     @Override
     public BookingDTO makeReservationHotel(MakeBookingReservationDTO booking, long idCustomer, String dni) {
         UserDTO userDTO = this.userService.readUserById(idCustomer);
-        BookingDTO bookingHotel = this.hotelBookingCommandService.makeBooking(booking, userDTO);
+        BookingDTO bookingHotel = this.hotelBookingCommandService.makeBooking(booking, userDTO, dni);
         TravelDTO travelDTO = TravelMapper.INSTANCE.toMakeReservationHotel(booking, bookingHotel, idCustomer);
-        this.agencyTravelService.makeTravel(travelDTO);
+        this.agencyTravelService.modifyTravel(travelDTO);
         return bookingHotel;
     }
 
@@ -78,7 +78,7 @@ public class GatewayAgencyCommandServiceImpl implements GatewayAgencyCommandServ
     public AgencyReservationSuccessDTO makeReservationHotelAndFlight(final MakeBookingReservationDTO booking, long idCustomer, String dni, Map<Long, Integer> mapIdFlightInstance) {
         UserDTO userDTO = this.userService.readUserById(idCustomer);
         List<IdFlightWithSeatsDTO> idFlightWithSeatsDTOs = mapIdFlightInstance.entrySet().stream().map(entry -> new IdFlightWithSeatsDTO(entry.getKey(), entry.getValue())).toList();
-        BookingDTO bookingHotel = this.hotelBookingCommandService.makeBooking(booking, userDTO);
+        BookingDTO bookingHotel = this.hotelBookingCommandService.makeBooking(booking, userDTO, dni);
         AirlineReservationDTO airlineMTAReservationDTO = this.airlineReservationCommandService.makeReservation(userDTO, dni, idFlightWithSeatsDTOs);
         airlineMTAReservationDTO.getStatusFlightsDTO().forEach(status -> this.agencyTravelService.makeTravel(TravelMapper.INSTANCE.toMakeReservationAirlineAndHotel(bookingHotel, airlineMTAReservationDTO, status, idCustomer)));
         return AgencyReservationSuccessDTO.builder()

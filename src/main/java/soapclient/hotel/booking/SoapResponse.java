@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for soapResponse complex type.
+ * <p>Clase Java para soapResponse complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
  * &lt;complexType name="soapResponse"&gt;
@@ -40,7 +40,7 @@ public class SoapResponse {
     protected String message;
 
     /**
-     * Gets the value of the success property.
+     * Obtiene el valor de la propiedad success.
      * 
      */
     public boolean isSuccess() {
@@ -48,7 +48,7 @@ public class SoapResponse {
     }
 
     /**
-     * Sets the value of the success property.
+     * Define el valor de la propiedad success.
      * 
      */
     public void setSuccess(boolean value) {
@@ -56,7 +56,7 @@ public class SoapResponse {
     }
 
     /**
-     * Gets the value of the data property.
+     * Obtiene el valor de la propiedad data.
      * 
      * @return
      *     possible object is
@@ -68,7 +68,7 @@ public class SoapResponse {
     }
 
     /**
-     * Sets the value of the data property.
+     * Define el valor de la propiedad data.
      * 
      * @param value
      *     allowed object is
@@ -80,7 +80,7 @@ public class SoapResponse {
     }
 
     /**
-     * Gets the value of the message property.
+     * Obtiene el valor de la propiedad message.
      * 
      * @return
      *     possible object is
@@ -92,7 +92,7 @@ public class SoapResponse {
     }
 
     /**
-     * Sets the value of the message property.
+     * Define el valor de la propiedad message.
      * 
      * @param value
      *     allowed object is

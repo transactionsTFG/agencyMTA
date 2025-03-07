@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for cancelBookingLine complex type.
+ * <p>Clase Java para cancelBookingLine complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
  * &lt;complexType name="cancelBookingLine"&gt;
@@ -37,7 +37,7 @@ public class CancelBookingLine {
     protected long roomID;
 
     /**
-     * Gets the value of the bookingID property.
+     * Obtiene el valor de la propiedad bookingID.
      * 
      */
     public long getBookingID() {
@@ -45,7 +45,7 @@ public class CancelBookingLine {
     }
 
     /**
-     * Sets the value of the bookingID property.
+     * Define el valor de la propiedad bookingID.
      * 
      */
     public void setBookingID(long value) {
@@ -53,7 +53,7 @@ public class CancelBookingLine {
     }
 
     /**
-     * Gets the value of the roomID property.
+     * Obtiene el valor de la propiedad roomID.
      * 
      */
     public long getRoomID() {
@@ -61,7 +61,7 @@ public class CancelBookingLine {
     }
 
     /**
-     * Sets the value of the roomID property.
+     * Define el valor de la propiedad roomID.
      * 
      */
     public void setRoomID(long value) {

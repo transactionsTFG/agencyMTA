@@ -10,9 +10,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for makeBookingRequestSOAP complex type.
+ * <p>Clase Java para makeBookingRequestSOAP complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
  * &lt;complexType name="makeBookingRequestSOAP"&gt;
@@ -24,7 +24,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="numberOfNights" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
  *         &lt;element name="withBreakfast" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
  *         &lt;element name="peopleNumber" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
- *         &lt;element name="customerId" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
+ *         &lt;element name="customerDNI" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="roomId" type="{http://www.w3.org/2001/XMLSchema}long" maxOccurs="unbounded" minOccurs="0"/&gt;
  *         &lt;element name="user" type="{http://soap/}userSOAP" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
@@ -42,7 +42,7 @@ import javax.xml.bind.annotation.XmlType;
     "numberOfNights",
     "withBreakfast",
     "peopleNumber",
-    "customerId",
+    "customerDNI",
     "roomId",
     "user"
 })
@@ -53,13 +53,13 @@ public class MakeBookingRequestSOAP {
     protected int numberOfNights;
     protected boolean withBreakfast;
     protected int peopleNumber;
-    protected long customerId;
+    protected String customerDNI;
     @XmlElement(type = Long.class)
     protected List<Long> roomId;
     protected UserSOAP user;
 
     /**
-     * Gets the value of the startDate property.
+     * Obtiene el valor de la propiedad startDate.
      * 
      * @return
      *     possible object is
@@ -71,7 +71,7 @@ public class MakeBookingRequestSOAP {
     }
 
     /**
-     * Sets the value of the startDate property.
+     * Define el valor de la propiedad startDate.
      * 
      * @param value
      *     allowed object is
@@ -83,7 +83,7 @@ public class MakeBookingRequestSOAP {
     }
 
     /**
-     * Gets the value of the endDate property.
+     * Obtiene el valor de la propiedad endDate.
      * 
      * @return
      *     possible object is
@@ -95,7 +95,7 @@ public class MakeBookingRequestSOAP {
     }
 
     /**
-     * Sets the value of the endDate property.
+     * Define el valor de la propiedad endDate.
      * 
      * @param value
      *     allowed object is
@@ -107,7 +107,7 @@ public class MakeBookingRequestSOAP {
     }
 
     /**
-     * Gets the value of the numberOfNights property.
+     * Obtiene el valor de la propiedad numberOfNights.
      * 
      */
     public int getNumberOfNights() {
@@ -115,7 +115,7 @@ public class MakeBookingRequestSOAP {
     }
 
     /**
-     * Sets the value of the numberOfNights property.
+     * Define el valor de la propiedad numberOfNights.
      * 
      */
     public void setNumberOfNights(int value) {
@@ -123,7 +123,7 @@ public class MakeBookingRequestSOAP {
     }
 
     /**
-     * Gets the value of the withBreakfast property.
+     * Obtiene el valor de la propiedad withBreakfast.
      * 
      */
     public boolean isWithBreakfast() {
@@ -131,7 +131,7 @@ public class MakeBookingRequestSOAP {
     }
 
     /**
-     * Sets the value of the withBreakfast property.
+     * Define el valor de la propiedad withBreakfast.
      * 
      */
     public void setWithBreakfast(boolean value) {
@@ -139,7 +139,7 @@ public class MakeBookingRequestSOAP {
     }
 
     /**
-     * Gets the value of the peopleNumber property.
+     * Obtiene el valor de la propiedad peopleNumber.
      * 
      */
     public int getPeopleNumber() {
@@ -147,7 +147,7 @@ public class MakeBookingRequestSOAP {
     }
 
     /**
-     * Sets the value of the peopleNumber property.
+     * Define el valor de la propiedad peopleNumber.
      * 
      */
     public void setPeopleNumber(int value) {
@@ -155,19 +155,27 @@ public class MakeBookingRequestSOAP {
     }
 
     /**
-     * Gets the value of the customerId property.
+     * Obtiene el valor de la propiedad customerDNI.
      * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public long getCustomerId() {
-        return customerId;
+    public String getCustomerDNI() {
+        return customerDNI;
     }
 
     /**
-     * Sets the value of the customerId property.
+     * Define el valor de la propiedad customerDNI.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public void setCustomerId(long value) {
-        this.customerId = value;
+    public void setCustomerDNI(String value) {
+        this.customerDNI = value;
     }
 
     /**
@@ -200,7 +208,7 @@ public class MakeBookingRequestSOAP {
     }
 
     /**
-     * Gets the value of the user property.
+     * Obtiene el valor de la propiedad user.
      * 
      * @return
      *     possible object is
@@ -212,7 +220,7 @@ public class MakeBookingRequestSOAP {
     }
 
     /**
-     * Sets the value of the user property.
+     * Define el valor de la propiedad user.
      * 
      * @param value
      *     allowed object is

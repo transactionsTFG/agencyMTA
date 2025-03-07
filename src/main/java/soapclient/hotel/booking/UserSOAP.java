@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for userSOAP complex type.
+ * <p>Clase Java para userSOAP complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
  * &lt;complexType name="userSOAP"&gt;
@@ -18,7 +18,7 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;sequence&gt;
  *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="email" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="passport" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="dni" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="phone" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
@@ -32,18 +32,18 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "userSOAP", propOrder = {
     "name",
     "email",
-    "passport",
+    "dni",
     "phone"
 })
 public class UserSOAP {
 
     protected String name;
     protected String email;
-    protected String passport;
+    protected String dni;
     protected String phone;
 
     /**
-     * Gets the value of the name property.
+     * Obtiene el valor de la propiedad name.
      * 
      * @return
      *     possible object is
@@ -55,7 +55,7 @@ public class UserSOAP {
     }
 
     /**
-     * Sets the value of the name property.
+     * Define el valor de la propiedad name.
      * 
      * @param value
      *     allowed object is
@@ -67,7 +67,7 @@ public class UserSOAP {
     }
 
     /**
-     * Gets the value of the email property.
+     * Obtiene el valor de la propiedad email.
      * 
      * @return
      *     possible object is
@@ -79,7 +79,7 @@ public class UserSOAP {
     }
 
     /**
-     * Sets the value of the email property.
+     * Define el valor de la propiedad email.
      * 
      * @param value
      *     allowed object is
@@ -91,31 +91,31 @@ public class UserSOAP {
     }
 
     /**
-     * Gets the value of the passport property.
+     * Obtiene el valor de la propiedad dni.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getPassport() {
-        return passport;
+    public String getDni() {
+        return dni;
     }
 
     /**
-     * Sets the value of the passport property.
+     * Define el valor de la propiedad dni.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setPassport(String value) {
-        this.passport = value;
+    public void setDni(String value) {
+        this.dni = value;
     }
 
     /**
-     * Gets the value of the phone property.
+     * Obtiene el valor de la propiedad phone.
      * 
      * @return
      *     possible object is
@@ -127,7 +127,7 @@ public class UserSOAP {
     }
 
     /**
-     * Sets the value of the phone property.
+     * Define el valor de la propiedad phone.
      * 
      * @param value
      *     allowed object is
