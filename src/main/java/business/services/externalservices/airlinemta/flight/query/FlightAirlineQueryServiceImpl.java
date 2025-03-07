@@ -23,7 +23,7 @@ public class FlightAirlineQueryServiceImpl implements FlightAirlineQueryService 
         if(dateOrigin != null && !ValidatorTime.isValidDate(dateOrigin))
             throw new SAException("Fecha de origen no válida");
         
-        String dateOriginParam = dateOrigin != null ? dateOrigin + " UTC" : null;
+        String dateOriginParam = dateOrigin != null ? dateOrigin : null;
 
         ParamFlightSOAP param = new ParamFlightSOAP();
         param.setCountryOrigin(countryOrigin);
