@@ -36,6 +36,7 @@ public interface TravelMapper {
                         .cost(bookingDTO.getTotalPrice())
                         .date(makeBooking.getStartDate())
                         .returnDate(makeBooking.getEndDate())
+                        .passengerCounter(bookingDTO.getPeopleNumber())
                         .flightCost(0)
                         .flightReservationID(-1)
                         .hotelCost(bookingDTO.getTotalPrice())
