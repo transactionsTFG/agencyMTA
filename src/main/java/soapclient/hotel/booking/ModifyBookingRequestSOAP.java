@@ -25,7 +25,6 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="numberOfNights" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
  *         &lt;element name="withBreakfast" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
  *         &lt;element name="peopleNumber" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
- *         &lt;element name="customerId" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
  *         &lt;element name="roomId" type="{http://www.w3.org/2001/XMLSchema}long" maxOccurs="unbounded" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
@@ -43,7 +42,6 @@ import javax.xml.bind.annotation.XmlType;
     "numberOfNights",
     "withBreakfast",
     "peopleNumber",
-    "customerId",
     "roomId"
 })
 public class ModifyBookingRequestSOAP {
@@ -54,7 +52,6 @@ public class ModifyBookingRequestSOAP {
     protected int numberOfNights;
     protected boolean withBreakfast;
     protected int peopleNumber;
-    protected long customerId;
     @XmlElement(type = Long.class)
     protected List<Long> roomId;
 
@@ -168,22 +165,6 @@ public class ModifyBookingRequestSOAP {
      */
     public void setPeopleNumber(int value) {
         this.peopleNumber = value;
-    }
-
-    /**
-     * Obtiene el valor de la propiedad customerId.
-     * 
-     */
-    public long getCustomerId() {
-        return customerId;
-    }
-
-    /**
-     * Define el valor de la propiedad customerId.
-     * 
-     */
-    public void setCustomerId(long value) {
-        this.customerId = value;
     }
 
     /**

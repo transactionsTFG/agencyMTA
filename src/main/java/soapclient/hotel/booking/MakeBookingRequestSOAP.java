@@ -24,9 +24,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="numberOfNights" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
  *         &lt;element name="withBreakfast" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
  *         &lt;element name="peopleNumber" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
- *         &lt;element name="customerDNI" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="roomId" type="{http://www.w3.org/2001/XMLSchema}long" maxOccurs="unbounded" minOccurs="0"/&gt;
- *         &lt;element name="user" type="{http://soap/}userSOAP" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -42,9 +40,7 @@ import javax.xml.bind.annotation.XmlType;
     "numberOfNights",
     "withBreakfast",
     "peopleNumber",
-    "customerDNI",
-    "roomId",
-    "user"
+    "roomId"
 })
 public class MakeBookingRequestSOAP {
 
@@ -53,10 +49,8 @@ public class MakeBookingRequestSOAP {
     protected int numberOfNights;
     protected boolean withBreakfast;
     protected int peopleNumber;
-    protected String customerDNI;
     @XmlElement(type = Long.class)
     protected List<Long> roomId;
-    protected UserSOAP user;
 
     /**
      * Obtiene el valor de la propiedad startDate.
@@ -155,30 +149,6 @@ public class MakeBookingRequestSOAP {
     }
 
     /**
-     * Obtiene el valor de la propiedad customerDNI.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getCustomerDNI() {
-        return customerDNI;
-    }
-
-    /**
-     * Define el valor de la propiedad customerDNI.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setCustomerDNI(String value) {
-        this.customerDNI = value;
-    }
-
-    /**
      * Gets the value of the roomId property.
      * 
      * <p>
@@ -205,30 +175,6 @@ public class MakeBookingRequestSOAP {
             roomId = new ArrayList<Long>();
         }
         return this.roomId;
-    }
-
-    /**
-     * Obtiene el valor de la propiedad user.
-     * 
-     * @return
-     *     possible object is
-     *     {@link UserSOAP }
-     *     
-     */
-    public UserSOAP getUser() {
-        return user;
-    }
-
-    /**
-     * Define el valor de la propiedad user.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link UserSOAP }
-     *     
-     */
-    public void setUser(UserSOAP value) {
-        this.user = value;
     }
 
 }
