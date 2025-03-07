@@ -174,7 +174,7 @@ public class GatewayAgencyCommandServiceImpl implements GatewayAgencyCommandServ
 
     @Override
     public double cancelReservationLineHotel(final long idHotelBooking, final long roomId) {
-        double moneyReturned = this.hotelBookingCommandService.cancelBooking(idHotelBooking);
+        double moneyReturned = this.hotelBookingCommandService.cancelBookingLine(idHotelBooking, roomId);
         TravelDTO travelDTO = this.agencyTravelService.findTravelByIdReservationHotel(idHotelBooking);
         travelDTO.setHotelCost(travelDTO.getHotelCost() - moneyReturned);
         travelDTO.setCost(travelDTO.getCost() - moneyReturned);
