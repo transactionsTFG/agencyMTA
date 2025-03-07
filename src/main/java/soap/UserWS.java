@@ -34,10 +34,4 @@ public class UserWS {
     public UserDTO loginUser(@WebParam(name = "user") UserLoginSOAP user) throws SAException {
         return this.userService.loginUser(user);
     }
-
-    @WebMethod(operationName = WebMethodConsts.OP_SEARCH_USER)
-    @Transactional
-    public UserDTO readUser(@WebParam(name = "user") UserLoginSOAP user) throws SAException {
-        return this.userService.readUser(user);
-    }
 }

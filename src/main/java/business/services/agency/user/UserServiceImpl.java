@@ -48,16 +48,6 @@ public class UserServiceImpl implements UserService {
         return user.toDTO();
     }
 
-    @Override
-    public UserDTO readUser(UserLoginSOAP userLogin) {
-        TypedQuery<User> query = this.em.createNamedQuery("business.user.User.findByEmail", User.class);
-        query.setParameter("email", userLogin.getEmail());
-        List<User> resultList = query.getResultList();
-        User user = resultList.isEmpty() ? null : resultList.get(0);
-        if (user == null) 
-            throw new UserException("Usuario no encontrado");
-        return user.toDTO();
-    }
 
     @Override
     public UserDTO readUserById(long id) {
