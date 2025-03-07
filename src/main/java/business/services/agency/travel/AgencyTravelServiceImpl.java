@@ -44,16 +44,16 @@ public class AgencyTravelServiceImpl implements AgencyTravelService{
         if (t == null) 
             throw new TravelException("Reserva no encontrada");
         t.setActive(travel.isActive());
-        t.setCost(t.getCost());
-        t.setHotelReservationID(t.getHotelReservationID());
-        t.setFlightReservationID(t.getFlightReservationID());   
-        t.setFlightCost(t.getFlightCost());
-        t.setHotelCost(t.getHotelCost());
-        t.setPassengerCounter(t.getPassengerCounter());
-        t.setReturnDate(t.getReturnDate());
-        t.setStatus(t.getStatus());
-        t.setUser(t.getUser());
-        t.setDate(t.getDate());
+        t.setCost(travel.getCost());
+        t.setHotelReservationID(travel.getHotelReservationID());
+        t.setFlightReservationID(travel.getFlightReservationID());   
+        t.setFlightCost(travel.getFlightCost());
+        t.setHotelCost(travel.getHotelCost());
+        t.setPassengerCounter(travel.getPassengerCounter());
+        t.setReturnDate(travel.getReturnDate());
+        t.setStatus(travel.getStatus());
+        t.getUser().setId(travel.getUserId());
+        t.setDate(travel.getDate());
         this.em.merge(t);
         return t.toDTO();
     }
