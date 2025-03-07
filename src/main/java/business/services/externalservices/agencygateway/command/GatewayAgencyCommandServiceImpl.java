@@ -118,7 +118,7 @@ public class GatewayAgencyCommandServiceImpl implements GatewayAgencyCommandServ
         travelDTO.setActive(true); 
         travelDTO.setDate(booking.getStartDate());
         travelDTO.setReturnDate(booking.getEndDate());
-        travelDTO.setPassengerCounter(booking.getPeopleNumber());
+        travelDTO.setPassengerCounter(bookingHotel.getPeopleNumber());
         travelDTO.setHotelCost(bookingHotel.getTotalPrice());
         travelDTO.setCost(travelDTO.getFlightCost() + travelDTO.getHotelCost());
         this.agencyTravelService.modifyTravel(travelDTO);
