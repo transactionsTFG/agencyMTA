@@ -1,5 +1,6 @@
 package common.validator;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
@@ -11,7 +12,7 @@ public class ValidatorTime {
 
     public static boolean isValidDate(String dateStr) {
         try {
-            LocalDateTime.parse(dateStr, FORMATTER_FILTER);
+            LocalDate.parse(dateStr, FORMATTER_FILTER);
             return true;
         } catch (DateTimeParseException e) {
             return false;
