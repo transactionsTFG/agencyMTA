@@ -97,7 +97,10 @@ public class GatewayAgencyCommandServiceImpl implements GatewayAgencyCommandServ
         if(listTravel.isEmpty()) 
             throw new TravelException("No se encontraron viajes asociados a la reserva de vuelo");
         listTravel.forEach(travel -> {
+            System.out.println("----------------------------------------------------------" + idFlightInstanceWithSeatsMap.size());
             final long idTravelFlight = travel.getFlightReservationID();
+            if (!idFlightInstanceWithSeatsMap.containsKey(idTravelFlight)) 
+                return;
             final int numberSeats = idFlightInstanceWithSeatsMap.get(idTravelFlight);
             final double price = updateReservationDTO.getUpdatePriceReservationDTO().stream().filter(f -> f.getIdFlightInstance() == idTravelFlight).findFirst().get().getPrice();
             if(numberSeats == 0)
