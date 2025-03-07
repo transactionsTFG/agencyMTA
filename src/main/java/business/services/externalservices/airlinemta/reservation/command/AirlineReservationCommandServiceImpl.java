@@ -16,6 +16,7 @@ import soapclient.airline.reservation.CustomerDTO;
 import soapclient.airline.reservation.IdFlightInstanceWithSeatsDTO;
 import soapclient.airline.reservation.MakeReservationRequestSOAP;
 import soapclient.airline.reservation.NewReservationSOAP;
+import soapclient.airline.reservation.ReservationSOAP;
 import soapclient.airline.reservation.ReservationWS_Service;
 import soapclient.airline.reservation.UpdateReservationSOAP;
 import soapclient.airline.reservation.MakeReservationRequestSOAP.Flights;
@@ -32,7 +33,7 @@ public class AirlineReservationCommandServiceImpl implements AirlineReservationC
 
     @Override
     public ReservationDTO getAirlineReservationWithLockMode(long idAirlineReservation) {
-        return ReservationMapper.INSTANCE.toReservationDTO((soapclient.airline.reservation.ReservationDTO) this.reservationService.getReservationWSPort().searchReservation(idAirlineReservation).getData());
+        return ReservationMapper.INSTANCE.toReservationDTO((ReservationSOAP) this.reservationService.getReservationWSPort().searchReservation(idAirlineReservation).getData());
     }   
 
     @Override
