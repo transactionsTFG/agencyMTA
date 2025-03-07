@@ -69,7 +69,7 @@ public class GatewayAgencyCommandServiceImpl implements GatewayAgencyCommandServ
         UserDTO userDTO = this.userService.readUserById(idCustomer);
         BookingDTO bookingHotel = this.hotelBookingCommandService.makeBooking(booking, userDTO, dni);
         TravelDTO travelDTO = TravelMapper.INSTANCE.toMakeReservationHotel(booking, bookingHotel, idCustomer);
-        this.agencyTravelService.modifyTravel(travelDTO);
+        this.agencyTravelService.makeTravel(travelDTO);
         return bookingHotel;
     }
 
@@ -120,7 +120,7 @@ public class GatewayAgencyCommandServiceImpl implements GatewayAgencyCommandServ
         travelDTO.setReturnDate(booking.getEndDate());
         travelDTO.setHotelCost(bookingHotel.getTotalPrice());
         travelDTO.setCost(travelDTO.getFlightCost() + travelDTO.getHotelCost());
-        this.agencyTravelService.makeTravel(travelDTO);
+        this.agencyTravelService.modifyTravel(travelDTO);
         return bookingHotel;
     }
 
@@ -167,6 +167,7 @@ public class GatewayAgencyCommandServiceImpl implements GatewayAgencyCommandServ
             travelDTO.setCost(0);
             travelDTO.setActive(false);
         }
+        this.agencyTravelService.modifyTravel(travelDTO);
         return moneyReturned;
     }
 
@@ -182,6 +183,7 @@ public class GatewayAgencyCommandServiceImpl implements GatewayAgencyCommandServ
             travelDTO.setCost(0);
             travelDTO.setActive(false);
         }
+        this.agencyTravelService.modifyTravel(travelDTO);
         return moneyReturned;
     }
 
