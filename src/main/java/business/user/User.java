@@ -53,8 +53,6 @@ public class User implements Serializable {
     @Column(nullable = false)
     private boolean active;
     @Column(nullable = false)
-    private String passport;
-    @Column(nullable = false)
     private String born;
     @Column(nullable = false)
     private String phone;
@@ -67,7 +65,6 @@ public class User implements Serializable {
         this.email = user.getEmail();
         this.password = user.getPassword();
         this.active = true;
-        this.passport = user.getPassport();
         this.born = user.getBorn();
         this.phone = user.getPhone();
         this.type = new Type(user.getIdTypeUser()); 
@@ -81,7 +78,6 @@ public class User implements Serializable {
                 .surname(this.surname)
                 .email(this.email)
                 .active(this.active)
-                .passport(this.passport)
                 .born(this.born)
                 .phone(this.phone)
                 .build();

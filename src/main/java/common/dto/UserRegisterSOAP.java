@@ -26,9 +26,6 @@ public class UserRegisterSOAP {
     private String password;
 
     @XmlElement
-    private String passport;
-
-    @XmlElement
     private String born;
 
     @XmlElement

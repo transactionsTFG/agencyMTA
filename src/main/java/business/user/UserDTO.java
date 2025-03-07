@@ -18,7 +18,6 @@ public class UserDTO {
     private String surname;
     private String email;
     private boolean active;
-    private String passport;
     private String born;
     private String phone;
 }
