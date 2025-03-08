@@ -12,6 +12,7 @@ import business.services.externalservices.hotelmta.room.query.HotelRoomQueryServ
 import common.dto.services.FlightHotelDTO;
 import common.dto.services.FlightListDTO;
 import common.dto.services.RoomListDTO;
+import common.dto.soap.request.SearchAirlineHotelRequestSOAP;
 
 @Stateless
 public class GatewayAgenyQueryServiceImpl implements GatewayAgencyQueryService {
@@ -28,9 +29,9 @@ public class GatewayAgenyQueryServiceImpl implements GatewayAgencyQueryService {
     }
 
     @Override
-    public Map<String, FlightHotelDTO> getFlightAndHotels(String countryOrigin, String countryDestination, String dateFrom) {
-        List<RoomListDTO> roomList = this.hotelRoomQueryService.getRooms(null, countryDestination);
-        List<FlightListDTO> flightList = this.flightQueryService.getFlights(countryOrigin, countryDestination, null, null, dateFrom);
+    public Map<String, FlightHotelDTO> getFlightAndHotels(final SearchAirlineHotelRequestSOAP param) {
+        List<RoomListDTO> roomList = this.hotelRoomQueryService.getRooms(param.getHotelName(), param.getCountryDestination());
+        List<FlightListDTO> flightList = this.flightQueryService.getFlights(param.getCountryOrigin(), param.getCountryDestination(), param.getCityOrigin(), param.getCityDestination(), param.getDateFrom());
         Map<String, List<RoomListDTO>> hotelsByCountry = roomList.stream()
                                                                     .collect(Collectors.groupingBy(RoomListDTO::getCountryName));
         Map<String, List<FlightListDTO>> flightsByCountry = flightList.stream()

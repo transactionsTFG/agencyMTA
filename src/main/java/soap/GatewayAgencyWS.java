@@ -42,7 +42,7 @@ public class GatewayAgencyWS {
     @WebMethod(operationName=WebMethodConsts.OP_SEARCH_FLIGHTS_AND_HOTEL)
     public Map<String, FlightHotelDTO> searchAirlineHotel(@WebParam(name = "parmaSearchAirlineHotel") final SearchAirlineHotelRequestSOAP param) throws SAException {
         return this.gatewayAgencyQueryService
-                    .getFlightAndHotels(param.getCountryOrigin(), param.getCountryDestination(), param.getDateFrom());
+                    .getFlightAndHotels(param);
     }
 
     @WebMethod(operationName=WebMethodConsts.OP_SEARCH_TRAVEL)

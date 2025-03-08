@@ -18,9 +18,15 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class SearchAirlineHotelRequestSOAP {
     @XmlElement
+    private String hotelName;
+    @XmlElement
     private String countryOrigin;
     @XmlElement
     private String countryDestination;
+    @XmlElement
+    private String cityOrigin;
+    @XmlElement
+    private String cityDestination;
     @XmlElement
     private String dateFrom;
 }
