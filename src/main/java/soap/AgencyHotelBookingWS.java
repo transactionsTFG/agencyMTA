@@ -48,7 +48,7 @@ public class AgencyHotelBookingWS {
 
     @WebMethod(operationName = WebMethodConsts.OP_CANCEL_HOTEL_BOOKING_LINE)
     @Transactional
-    public double cancelBooking(@WebParam(name = "bookingId") long bookingId, @WebParam(name = "roomId") long roomId) throws SAException {
+    public double cancelBookingLine(@WebParam(name = "bookingId") long bookingId, @WebParam(name = "roomId") long roomId) throws SAException {
         return this.gatewayAgencyCommandService.cancelReservationLineHotel(bookingId, roomId);
     }
 
