@@ -11,7 +11,7 @@ import weblogic.wsee.wstx.wsat.Transactional.Version;
 @Stateless
 public class HotelRoomCommandServiceImpl implements HotelRoomCommandService {
 
-    @WebServiceRef(wsdlLocation = "http://localhost:7001/hotelMTA/RoomWSB?wsdl")
+    @WebServiceRef(wsdlLocation = "https://localhost:7002/hotelMTA/RoomWSB?wsdl")
     @Transactional(version = Version.WSAT12, value = TransactionFlowType.MANDATORY)
     private RoomWSB_Service roomServiceWithTransactionWrite;
     

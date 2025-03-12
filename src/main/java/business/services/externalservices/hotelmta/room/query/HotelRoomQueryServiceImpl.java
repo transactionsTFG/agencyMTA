@@ -12,7 +12,7 @@ import soapclient.hotel.room.RoomWSB_Service;
 @Stateless
 public class HotelRoomQueryServiceImpl implements HotelRoomQueryService {
 
-    @WebServiceRef(wsdlLocation = "http://localhost:7001/hotelMTA/RoomWSB?wsdl")
+    @WebServiceRef(wsdlLocation = "https://localhost:7002/hotelMTA/RoomWSB?wsdl")
     private RoomWSB_Service roomServiceWithTransactionRead;
 
     @Override

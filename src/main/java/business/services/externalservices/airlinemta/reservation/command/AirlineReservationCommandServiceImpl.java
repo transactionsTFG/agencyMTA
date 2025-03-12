@@ -27,7 +27,7 @@ import weblogic.wsee.wstx.wsat.Transactional.Version;
 
 @Stateless
 public class AirlineReservationCommandServiceImpl implements AirlineReservationCommandService {
-    @WebServiceRef(wsdlLocation = "http://localhost:8001/airlineMTA/ReservationWS?wsdl")
+    @WebServiceRef(wsdlLocation = "https://localhost:8002/airlineMTA/ReservationWS?wsdl")
     @Transactional(version = Version.WSAT12, value = TransactionFlowType.MANDATORY)
     private ReservationWS_Service reservationService;
 

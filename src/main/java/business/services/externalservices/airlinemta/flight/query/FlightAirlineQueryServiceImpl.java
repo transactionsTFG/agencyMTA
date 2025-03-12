@@ -15,7 +15,7 @@ import soapclient.airline.flight.ParamFlightSOAP;
 @Stateless
 public class FlightAirlineQueryServiceImpl implements FlightAirlineQueryService {
 
-    @WebServiceRef(wsdlLocation = "http://localhost:8001/airlineMTA/FlightWS?wsdl")
+    @WebServiceRef(wsdlLocation = "https://localhost:8002/airlineMTA/FlightWS?wsdl")
     private FlightWS_Service flightServiceWithTransactionRead;
 
     @Override
