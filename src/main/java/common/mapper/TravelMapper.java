@@ -1,5 +1,7 @@
 package common.mapper;
 
+import java.util.List;
+
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
@@ -8,10 +10,13 @@ import business.booking.MakeBookingReservationDTO;
 import business.travel.TravelDTO;
 import common.dto.services.AirlineReservationDTO;
 import common.dto.services.StatusFlightDTO;
+import common.dto.soap.response.GetTravelSOAP;
 
 @Mapper
 public interface TravelMapper {
     TravelMapper INSTANCE = Mappers.getMapper(TravelMapper.class);
+
+    List<GetTravelSOAP> toGetTravelSOAP(List<TravelDTO> travels);
     
     default TravelDTO toMakeReservationAirline(AirlineReservationDTO air, StatusFlightDTO status, long idUser) {
         return TravelDTO.builder()

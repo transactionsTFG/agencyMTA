@@ -1,5 +1,6 @@
 package soap;
 
+import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
@@ -24,6 +25,7 @@ import common.dto.soap.request.ModifyFlightReservationRequestionSOAP;
 import common.dto.soap.request.SearchAirlineHotelRequestSOAP;
 import common.dto.soap.response.GetTravelSOAP;
 import common.exceptions.SAException;
+import common.mapper.TravelMapper;
 import weblogic.wsee.wstx.wsat.Transactional;
 
 @WebService(serviceName = "GatewayAgencyWS")
@@ -49,6 +51,12 @@ public class GatewayAgencyWS {
     @Transactional
     public GetTravelSOAP searchTravel(@WebParam(name = "paramSearchTravel") final long id) throws SAException {
         return GetTravelSOAP.toSOAP(this.agencyTravelService.findWithOptimisticLockById(id));
+    }
+
+    @WebMethod(operationName=WebMethodConsts.OP_SEARCH_TRAVEL_BY_USER)
+    @Transactional
+    public List<GetTravelSOAP> searchTravelByIdUser(@WebParam(name = "idUser") final long idUser) throws SAException {
+        return  TravelMapper.INSTANCE.toGetTravelSOAP(this.agencyTravelService.findTravelByIdUser(idUser));
     }
 
     @WebMethod(operationName=WebMethodConsts.OP_MAKE_FLIGHT_AND_HOTEL)

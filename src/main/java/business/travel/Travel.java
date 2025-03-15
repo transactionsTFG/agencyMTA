@@ -19,6 +19,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @NamedQueries({
+    @NamedQuery(name = "business.travel.Travel.findTravelByIdUser", query = "SELECT t FROM Travel t where t.user.id = :idUser"),
     @NamedQuery(name = "business.travel.Travel.findTravelByHotelReservationID", query = "SELECT t FROM Travel t where t.hotelReservationID = :hotelReservationID AND t.active = true"),
     @NamedQuery(name = "business.travel.Travel.findTravelByFlightReservation", query = "SELECT t FROM Travel t where t.flightReservationID = :flightReservationID AND t.active = true"),
     @NamedQuery(name = "business.travel.Travel.findTravelByFlightReservationAndHotelId", query = "SELECT t FROM Travel t where t.flightReservationID = :flightReservationID AND t.hotelReservationID = :hotelReservationID AND t.active = true")

@@ -7,6 +7,7 @@ import business.travel.TravelDTO;
 public interface AgencyTravelService {
     TravelDTO findWithOptimisticLockById(final long idTravel);
     TravelDTO findTravelByIdReservationHotel(final long idReservationHotel);
+    List<TravelDTO> findTravelByIdUser(final long idUser);
     List<TravelDTO> findTravelByIdReservationFlight(final long idReservationFlight);
     List<TravelDTO> findTravelByIdReservationFlightAndHotel(final long idReservationFlight, final long idReservationHotel);
 

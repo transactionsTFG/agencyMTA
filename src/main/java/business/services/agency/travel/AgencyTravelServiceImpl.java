@@ -69,6 +69,16 @@ public class AgencyTravelServiceImpl implements AgencyTravelService{
     }
 
     @Override
+    public List<TravelDTO> findTravelByIdUser(final long idUser) {
+        return this.em.createNamedQuery("business.travel.Travel.findTravelByIdUser", Travel.class)
+                .setParameter("idUser", idUser)
+                .getResultList()
+                .stream()
+                .map(Travel::toDTO)
+                .toList();
+    }
+
+    @Override
     public List<TravelDTO> findTravelByIdReservationFlight(final long idReservationFlight) {
         return this.em.createNamedQuery("business.travel.Travel.findTravelByFlightReservation", Travel.class)
                 .setParameter("flightReservationID", idReservationFlight)
