@@ -1,5 +1,7 @@
 package business.travel;
 
+import java.time.LocalDateTime;
+
 import common.dto.services.AgencyReservationFlightDTO;
 import common.dto.services.AirlineReservationDTO;
 import lombok.AllArgsConstructor;
@@ -26,5 +28,5 @@ public class TravelDTO {
     private double flightCost;
     private double hotelCost;
     private boolean active;
-
+    private LocalDateTime dateCreation;
 }

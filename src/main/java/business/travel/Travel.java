@@ -1,6 +1,9 @@
 package business.travel;
 
 import business.user.User;
+
+import java.time.LocalDateTime;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.PrePersist;
 import javax.persistence.Version;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -46,8 +50,15 @@ public class Travel {
 	private double flightCost;
 	private double hotelCost;
     private boolean active;
+    @Column(nullable = false) 
+    private LocalDateTime dateCreation;
     @Version
     private int version;
+
+    @PrePersist
+    public void prePersist() {
+        this.dateCreation = LocalDateTime.now();
+    }
     
     public Travel(TravelDTO dto){
         this.id = dto.getId();
@@ -68,6 +79,7 @@ public class Travel {
     public TravelDTO toDTO(){
         return TravelDTO.builder()
             .id(this.id)
+            .dateCreation(this.dateCreation)
             .userId(this.user.getId())
             .date(this.date)
             .returnDate(this.returnDate)

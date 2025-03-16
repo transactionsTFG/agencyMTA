@@ -11,7 +11,7 @@
         <class>business.user.User</class>
         <properties>
             <property name="javax.persistence.jtaDataSource" value="jdbc/agency"/>
-            <property name="javax.persistence.schema-generation.database.action" value="none"/>
+            <property name="javax.persistence.schema-generation.database.action" value="create-or-extend-tables"/> <!-- Is equal that Update of Hiberante -->
         </properties>
     </persistence-unit>
 </persistence>

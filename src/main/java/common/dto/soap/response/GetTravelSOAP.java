@@ -1,5 +1,7 @@
 package common.dto.soap.response;
 
+import java.time.LocalDateTime;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -40,6 +42,9 @@ public class GetTravelSOAP {
     private double hotelCost;
     @XmlElement
     private boolean active;
+    @XmlElement
+    private LocalDateTime dateCreation;
+
     public static GetTravelSOAP toSOAP(TravelDTO dto) {
         return new GetTravelSOAP(
                 dto.getId(),
@@ -53,7 +58,8 @@ public class GetTravelSOAP {
                 dto.getHotelReservationID(),
                 dto.getFlightCost(),
                 dto.getHotelCost(),
-                dto.isActive()
+                dto.isActive(),
+                dto.getDateCreation()
         );
     }
 }
