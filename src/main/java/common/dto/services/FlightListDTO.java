@@ -24,8 +24,8 @@ public class FlightListDTO {
     public static FlightListDTO fromFlightDataListSOAP(FlightDataListSOAP flightData) {
         return FlightListDTO.builder()
                 .id(flightData.getId())
-                .arrivalTime(flightData.getArrivalTime())
-                .departureTime(flightData.getDepartureTime())
+                .arrivalTime(flightData.getArrivalDate().toString())
+                .departureTime(flightData.getDepartureDate().toString())
                 .cityDestination(flightData.getCityDestination())
                 .countryOrigin(flightData.getCountryOrigin())
                 .countryDestination(flightData.getCountryDestination())

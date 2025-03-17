@@ -26,6 +26,7 @@ public class ObjectFactory {
 
     private final static QName _ParamFlightSOAP_QNAME = new QName("http://soap/", "ParamFlightSOAP");
     private final static QName _FlightSOAP_QNAME = new QName("http://soap/", "FlightSOAP");
+    private final static QName _NewReservationSOAP_QNAME = new QName("http://soap/", "NewReservationSOAP");
     private final static QName _ReservationSOAP_QNAME = new QName("http://soap/", "ReservationSOAP");
     private final static QName _SoapResponse_QNAME = new QName("http://soap/", "SoapResponse");
     private final static QName _UpdateReservationSOAP_QNAME = new QName("http://soap/", "UpdateReservationSOAP");
@@ -39,6 +40,14 @@ public class ObjectFactory {
      * 
      */
     public ObjectFactory() {
+    }
+
+    /**
+     * Create an instance of {@link NewReservationSOAP }
+     * 
+     */
+    public NewReservationSOAP createNewReservationSOAP() {
+        return new NewReservationSOAP();
     }
 
     /**
@@ -122,6 +131,30 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link StatusFlightSOAP }
+     * 
+     */
+    public StatusFlightSOAP createStatusFlightSOAP() {
+        return new StatusFlightSOAP();
+    }
+
+    /**
+     * Create an instance of {@link UpdatePriceReservationSOAP }
+     * 
+     */
+    public UpdatePriceReservationSOAP createUpdatePriceReservationSOAP() {
+        return new UpdatePriceReservationSOAP();
+    }
+
+    /**
+     * Create an instance of {@link NewReservationSOAP.StatusFlights }
+     * 
+     */
+    public NewReservationSOAP.StatusFlights createNewReservationSOAPStatusFlights() {
+        return new NewReservationSOAP.StatusFlights();
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link ParamFlightSOAP }{@code >}
      * 
      * @param value
@@ -145,6 +178,19 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://soap/", name = "FlightSOAP")
     public JAXBElement<FlightSOAP> createFlightSOAP(FlightSOAP value) {
         return new JAXBElement<FlightSOAP>(_FlightSOAP_QNAME, FlightSOAP.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link NewReservationSOAP }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link NewReservationSOAP }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://soap/", name = "NewReservationSOAP")
+    public JAXBElement<NewReservationSOAP> createNewReservationSOAP(NewReservationSOAP value) {
+        return new JAXBElement<NewReservationSOAP>(_NewReservationSOAP_QNAME, NewReservationSOAP.class, null, value);
     }
 
     /**

@@ -1,6 +1,8 @@
 
 package soapclient.airline.flight;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlType;
@@ -22,6 +24,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="idCustomer" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
  *         &lt;element name="active" type="{http://www.w3.org/2001/XMLSchema}boolean"/&gt;
  *         &lt;element name="updatePrice" type="{http://www.w3.org/2001/XMLSchema}double"/&gt;
+ *         &lt;element name="updatePriceReservationSOAP" type="{http://soap/}updatePriceReservationSOAP" maxOccurs="unbounded" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -37,7 +40,8 @@ import javax.xml.bind.annotation.XmlType;
     "total",
     "idCustomer",
     "active",
-    "updatePrice"
+    "updatePrice",
+    "updatePriceReservationSOAP"
 })
 public class UpdateReservationSOAP {
 
@@ -47,6 +51,7 @@ public class UpdateReservationSOAP {
     protected long idCustomer;
     protected boolean active;
     protected double updatePrice;
+    protected List<UpdatePriceReservationSOAP> updatePriceReservationSOAP;
 
     /**
      * Obtiene el valor de la propiedad id.
@@ -150,6 +155,35 @@ public class UpdateReservationSOAP {
      */
     public void setUpdatePrice(double value) {
         this.updatePrice = value;
+    }
+
+    /**
+     * Gets the value of the updatePriceReservationSOAP property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the updatePriceReservationSOAP property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getUpdatePriceReservationSOAP().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link UpdatePriceReservationSOAP }
+     * 
+     * 
+     */
+    public List<UpdatePriceReservationSOAP> getUpdatePriceReservationSOAP() {
+        if (updatePriceReservationSOAP == null) {
+            updatePriceReservationSOAP = new ArrayList<UpdatePriceReservationSOAP>();
+        }
+        return this.updatePriceReservationSOAP;
     }
 
 }

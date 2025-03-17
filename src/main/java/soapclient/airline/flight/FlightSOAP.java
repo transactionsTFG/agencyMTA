@@ -19,8 +19,8 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
  *         &lt;element name="codeFlight" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="weekDay" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="arrivalTime" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="departureTime" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="arrivalTime" type="{http://www.w3.org/2001/XMLSchema}anySimpleType" minOccurs="0"/&gt;
+ *         &lt;element name="departureTime" type="{http://www.w3.org/2001/XMLSchema}anySimpleType" minOccurs="0"/&gt;
  *         &lt;element name="idAircraft" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
  *         &lt;element name="idOriginFlight" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
  *         &lt;element name="idDestinationFlight" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
@@ -50,8 +50,8 @@ public class FlightSOAP {
     protected long id;
     protected String codeFlight;
     protected String weekDay;
-    protected String arrivalTime;
-    protected String departureTime;
+    protected Object arrivalTime;
+    protected Object departureTime;
     protected long idAircraft;
     protected long idOriginFlight;
     protected long idDestinationFlight;
@@ -126,10 +126,10 @@ public class FlightSOAP {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link Object }
      *     
      */
-    public String getArrivalTime() {
+    public Object getArrivalTime() {
         return arrivalTime;
     }
 
@@ -138,10 +138,10 @@ public class FlightSOAP {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link Object }
      *     
      */
-    public void setArrivalTime(String value) {
+    public void setArrivalTime(Object value) {
         this.arrivalTime = value;
     }
 
@@ -150,10 +150,10 @@ public class FlightSOAP {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link Object }
      *     
      */
-    public String getDepartureTime() {
+    public Object getDepartureTime() {
         return departureTime;
     }
 
@@ -162,10 +162,10 @@ public class FlightSOAP {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link Object }
      *     
      */
-    public void setDepartureTime(String value) {
+    public void setDepartureTime(Object value) {
         this.departureTime = value;
     }
 

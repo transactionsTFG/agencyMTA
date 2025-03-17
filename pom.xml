@@ -80,7 +80,7 @@
             <!-- Configuración de wsimport -->
             <!-- Comando: mvn jaxws:wsimport -->
             <!-- Se comenta porque genera de mas paquetes -->
-            <!-- <plugin>
+            <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>jaxws-maven-plugin</artifactId>
                 <version>2.6</version>
@@ -93,12 +93,12 @@
                 </executions>
                 <configuration>
                     <wsdlUrls>
-                        <wsdlUrl>http://localhost:7001/hotelMTA/BookingWSB?wsdl</wsdlUrl> 
+                        <wsdlUrl>http://localhost:8001/airlineMTA/FlightWS?wsdl</wsdlUrl> 
                     </wsdlUrls>
                     <sourceDestDir>src/main/java</sourceDestDir>
-                    <packageName>soapclient.hotel.booking</packageName>
+                    <packageName>soapclient.airline.flight</packageName>
                 </configuration>
-            </plugin> -->
+            </plugin>
         </plugins>
     </build>
 </project>

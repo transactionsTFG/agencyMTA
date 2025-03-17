@@ -17,8 +17,8 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
  *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
- *         &lt;element name="arrivalTime" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="departureTime" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="arrivalDate" type="{http://www.w3.org/2001/XMLSchema}anySimpleType" minOccurs="0"/&gt;
+ *         &lt;element name="departureDate" type="{http://www.w3.org/2001/XMLSchema}anySimpleType" minOccurs="0"/&gt;
  *         &lt;element name="cityDestination" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="countryOrigin" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="countryDestination" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
@@ -34,8 +34,8 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "flightDataListSOAP", propOrder = {
     "id",
-    "arrivalTime",
-    "departureTime",
+    "arrivalDate",
+    "departureDate",
     "cityDestination",
     "countryOrigin",
     "countryDestination",
@@ -44,8 +44,8 @@ import javax.xml.bind.annotation.XmlType;
 public class FlightDataListSOAP {
 
     protected long id;
-    protected String arrivalTime;
-    protected String departureTime;
+    protected Object arrivalDate;
+    protected Object departureDate;
     protected String cityDestination;
     protected String countryOrigin;
     protected String countryDestination;
@@ -68,51 +68,51 @@ public class FlightDataListSOAP {
     }
 
     /**
-     * Obtiene el valor de la propiedad arrivalTime.
+     * Obtiene el valor de la propiedad arrivalDate.
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link Object }
      *     
      */
-    public String getArrivalTime() {
-        return arrivalTime;
+    public Object getArrivalDate() {
+        return arrivalDate;
     }
 
     /**
-     * Define el valor de la propiedad arrivalTime.
+     * Define el valor de la propiedad arrivalDate.
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link Object }
      *     
      */
-    public void setArrivalTime(String value) {
-        this.arrivalTime = value;
+    public void setArrivalDate(Object value) {
+        this.arrivalDate = value;
     }
 
     /**
-     * Obtiene el valor de la propiedad departureTime.
+     * Obtiene el valor de la propiedad departureDate.
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link Object }
      *     
      */
-    public String getDepartureTime() {
-        return departureTime;
+    public Object getDepartureDate() {
+        return departureDate;
     }
 
     /**
-     * Define el valor de la propiedad departureTime.
+     * Define el valor de la propiedad departureDate.
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link Object }
      *     
      */
-    public void setDepartureTime(String value) {
-        this.departureTime = value;
+    public void setDepartureDate(Object value) {
+        this.departureDate = value;
     }
 
     /**
