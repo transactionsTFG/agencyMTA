@@ -20,8 +20,8 @@ public class FlightListDTO {
     private String countryOrigin;
     private String countryDestination;
     private String weekDay;
+    private double price;
 
-    // Método de mapeo desde FlightDataListSOAP a FlightListDTO
     public static FlightListDTO fromFlightDataListSOAP(FlightDataListSOAP flightData) {
         String arrivalDateTxt = null;
         String departureDateTxt = null;
@@ -39,6 +39,7 @@ public class FlightListDTO {
                 .countryOrigin(flightData.getCountryOrigin())
                 .countryDestination(flightData.getCountryDestination())
                 .weekDay(flightData.getWeekDay())
+                .price(flightData.getPrice())
                 .build();
     }
 }

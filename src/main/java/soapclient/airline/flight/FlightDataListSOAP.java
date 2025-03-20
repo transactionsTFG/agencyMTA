@@ -23,6 +23,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="countryOrigin" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="countryDestination" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="weekDay" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="price" type="{http://www.w3.org/2001/XMLSchema}double"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -39,7 +40,8 @@ import javax.xml.bind.annotation.XmlType;
     "cityDestination",
     "countryOrigin",
     "countryDestination",
-    "weekDay"
+    "weekDay",
+    "price"
 })
 public class FlightDataListSOAP {
 
@@ -50,6 +52,7 @@ public class FlightDataListSOAP {
     protected String countryOrigin;
     protected String countryDestination;
     protected String weekDay;
+    protected double price;
 
     /**
      * Obtiene el valor de la propiedad id.
@@ -209,6 +212,22 @@ public class FlightDataListSOAP {
      */
     public void setWeekDay(String value) {
         this.weekDay = value;
+    }
+
+    /**
+     * Obtiene el valor de la propiedad price.
+     * 
+     */
+    public double getPrice() {
+        return price;
+    }
+
+    /**
+     * Define el valor de la propiedad price.
+     * 
+     */
+    public void setPrice(double value) {
+        this.price = value;
     }
 
 }
