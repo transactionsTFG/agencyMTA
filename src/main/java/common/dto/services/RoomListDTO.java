@@ -19,8 +19,8 @@ public class RoomListDTO {
     private int peopleNumber;
     private String hotelName;
     private String countryName;
+    private double dailyPrice;
 
-    // ✅ Mapper para convertir de RoomParamsDTO a RoomListDTO
     public static RoomListDTO fromRoomParamsDTO(RoomParamsDTO roomParamsDTO) {
         return RoomListDTO.builder()
                 .id(roomParamsDTO.getId())
@@ -30,6 +30,7 @@ public class RoomListDTO {
                 .peopleNumber(roomParamsDTO.getPeopleNumber())
                 .hotelName(roomParamsDTO.getHotelName())
                 .countryName(roomParamsDTO.getCountryName())
+                .dailyPrice(roomParamsDTO.getDailyPrice())
                 .build();
     }
 }
