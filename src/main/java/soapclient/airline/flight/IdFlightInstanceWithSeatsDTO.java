@@ -7,17 +7,17 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for updatePriceReservationSOAP complex type.
+ * <p>Java class for idFlightInstanceWithSeatsDTO complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="updatePriceReservationSOAP"&gt;
+ * &lt;complexType name="idFlightInstanceWithSeatsDTO"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
  *         &lt;element name="idFlightInstance" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
- *         &lt;element name="price" type="{http://www.w3.org/2001/XMLSchema}double"/&gt;
+ *         &lt;element name="seats" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -27,14 +27,14 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "updatePriceReservationSOAP", propOrder = {
+@XmlType(name = "idFlightInstanceWithSeatsDTO", propOrder = {
     "idFlightInstance",
-    "price"
+    "seats"
 })
-public class UpdatePriceReservationSOAP {
+public class IdFlightInstanceWithSeatsDTO {
 
     protected long idFlightInstance;
-    protected double price;
+    protected int seats;
 
     /**
      * Gets the value of the idFlightInstance property.
@@ -53,19 +53,19 @@ public class UpdatePriceReservationSOAP {
     }
 
     /**
-     * Gets the value of the price property.
+     * Gets the value of the seats property.
      * 
      */
-    public double getPrice() {
-        return price;
+    public int getSeats() {
+        return seats;
     }
 
     /**
-     * Sets the value of the price property.
+     * Sets the value of the seats property.
      * 
      */
-    public void setPrice(double value) {
-        this.price = value;
+    public void setSeats(int value) {
+        this.seats = value;
     }
 
 }

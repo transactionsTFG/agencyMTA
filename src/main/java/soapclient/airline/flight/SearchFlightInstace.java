@@ -7,16 +7,16 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for searchFlight complex type.
+ * <p>Java class for searchFlightInstace complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="searchFlight"&gt;
+ * &lt;complexType name="searchFlightInstace"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="idFlightSearch" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
+ *         &lt;element name="idFlightInstance" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -26,27 +26,27 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "searchFlight", propOrder = {
-    "idFlightSearch"
+@XmlType(name = "searchFlightInstace", propOrder = {
+    "idFlightInstance"
 })
-public class SearchFlight {
+public class SearchFlightInstace {
 
-    protected long idFlightSearch;
+    protected long idFlightInstance;
 
     /**
-     * Gets the value of the idFlightSearch property.
+     * Gets the value of the idFlightInstance property.
      * 
      */
-    public long getIdFlightSearch() {
-        return idFlightSearch;
+    public long getIdFlightInstance() {
+        return idFlightInstance;
     }
 
     /**
-     * Sets the value of the idFlightSearch property.
+     * Sets the value of the idFlightInstance property.
      * 
      */
-    public void setIdFlightSearch(long value) {
-        this.idFlightSearch = value;
+    public void setIdFlightInstance(long value) {
+        this.idFlightInstance = value;
     }
 
 }

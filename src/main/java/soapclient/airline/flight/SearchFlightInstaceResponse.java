@@ -8,16 +8,16 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for searchFlightResponse complex type.
+ * <p>Java class for searchFlightInstaceResponse complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="searchFlightResponse"&gt;
+ * &lt;complexType name="searchFlightInstaceResponse"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="return" type="{http://soap/}soapResponse" minOccurs="0"/&gt;
+ *         &lt;element name="return" type="{http://soap/}flightInstanceDTO" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -27,23 +27,23 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "searchFlightResponse", propOrder = {
+@XmlType(name = "searchFlightInstaceResponse", propOrder = {
     "_return"
 })
-public class SearchFlightResponse {
+public class SearchFlightInstaceResponse {
 
     @XmlElement(name = "return")
-    protected SoapResponse _return;
+    protected FlightInstanceDTO _return;
 
     /**
      * Gets the value of the return property.
      * 
      * @return
      *     possible object is
-     *     {@link SoapResponse }
+     *     {@link FlightInstanceDTO }
      *     
      */
-    public SoapResponse getReturn() {
+    public FlightInstanceDTO getReturn() {
         return _return;
     }
 
@@ -52,10 +52,10 @@ public class SearchFlightResponse {
      * 
      * @param value
      *     allowed object is
-     *     {@link SoapResponse }
+     *     {@link FlightInstanceDTO }
      *     
      */
-    public void setReturn(SoapResponse value) {
+    public void setReturn(FlightInstanceDTO value) {
         this._return = value;
     }
 

@@ -55,4 +55,34 @@ public interface FlightWS {
         @WebParam(name = "paramSearch", targetNamespace = "")
         ParamFlightSOAP paramSearch);
 
+    /**
+     * 
+     * @param idFlightInstance
+     * @return
+     *     returns soapclient.airline.flight.FlightInstanceDTO
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "searchFlightInstace", targetNamespace = "http://soap/", className = "soapclient.airline.flight.SearchFlightInstace")
+    @ResponseWrapper(localName = "searchFlightInstaceResponse", targetNamespace = "http://soap/", className = "soapclient.airline.flight.SearchFlightInstaceResponse")
+    @Action(input = "http://soap/FlightWS/searchFlightInstaceRequest", output = "http://soap/FlightWS/searchFlightInstaceResponse")
+    public FlightInstanceDTO searchFlightInstace(
+        @WebParam(name = "idFlightInstance", targetNamespace = "")
+        long idFlightInstance);
+
+    /**
+     * 
+     * @param idReservation
+     * @return
+     *     returns java.util.List<soapclient.airline.flight.IdFlightInstanceWithSeatsDTO>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "searchFlightsByReservation", targetNamespace = "http://soap/", className = "soapclient.airline.flight.SearchFlightsByReservation")
+    @ResponseWrapper(localName = "searchFlightsByReservationResponse", targetNamespace = "http://soap/", className = "soapclient.airline.flight.SearchFlightsByReservationResponse")
+    @Action(input = "http://soap/FlightWS/searchFlightsByReservationRequest", output = "http://soap/FlightWS/searchFlightsByReservationResponse")
+    public List<IdFlightInstanceWithSeatsDTO> searchFlightsByReservation(
+        @WebParam(name = "idReservation", targetNamespace = "")
+        long idReservation);
+
 }
