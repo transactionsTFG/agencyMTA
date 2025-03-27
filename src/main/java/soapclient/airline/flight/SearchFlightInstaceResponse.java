@@ -11,7 +11,6 @@ import javax.xml.bind.annotation.XmlType;
  * <p>Java class for searchFlightInstaceResponse complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
-
  * 
  * <pre>
  * &lt;complexType name="searchFlightInstaceResponse"&gt;
@@ -38,7 +37,6 @@ public class SearchFlightInstaceResponse {
 
     /**
      * Gets the value of the return property.
-
      * 
      * @return
      *     possible object is

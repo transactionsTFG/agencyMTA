@@ -42,21 +42,6 @@ public interface FlightWS {
 
     /**
      * 
-     * @param idFlightInstance
-     * @return
-     *     returns soapclient.airline.flight.FlightInstanceDTO
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "searchFlightInstace", targetNamespace = "http://soap/", className = "soapclient.airline.flight.SearchFlightInstace")
-    @ResponseWrapper(localName = "searchFlightInstaceResponse", targetNamespace = "http://soap/", className = "soapclient.airline.flight.SearchFlightInstaceResponse")
-    @Action(input = "http://soap/FlightWS/searchFlightInstaceRequest", output = "http://soap/FlightWS/searchFlightInstaceResponse")
-    public FlightInstanceDTO searchFlightInstace(
-        @WebParam(name = "idFlightInstance", targetNamespace = "")
-        long idFlightInstance);
-
-    /**
-     * 
      * @param paramSearch
      * @return
      *     returns java.util.List<soapclient.airline.flight.FlightDataListSOAP>
