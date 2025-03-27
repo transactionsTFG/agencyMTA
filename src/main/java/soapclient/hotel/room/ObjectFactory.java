@@ -27,6 +27,8 @@ public class ObjectFactory {
     private final static QName _SearchRoom_QNAME = new QName("http://soap/", "searchRoom");
     private final static QName _SearchRoomResponse_QNAME = new QName("http://soap/", "searchRoomResponse");
     private final static QName _SearchRooms_QNAME = new QName("http://soap/", "searchRooms");
+    private final static QName _SearchRoomsByBooking_QNAME = new QName("http://soap/", "searchRoomsByBooking");
+    private final static QName _SearchRoomsByBookingResponse_QNAME = new QName("http://soap/", "searchRoomsByBookingResponse");
     private final static QName _SearchRoomsResponse_QNAME = new QName("http://soap/", "searchRoomsResponse");
 
     /**
@@ -58,6 +60,22 @@ public class ObjectFactory {
      */
     public SearchRooms createSearchRooms() {
         return new SearchRooms();
+    }
+
+    /**
+     * Create an instance of {@link SearchRoomsByBooking }
+     * 
+     */
+    public SearchRoomsByBooking createSearchRoomsByBooking() {
+        return new SearchRoomsByBooking();
+    }
+
+    /**
+     * Create an instance of {@link SearchRoomsByBookingResponse }
+     * 
+     */
+    public SearchRoomsByBookingResponse createSearchRoomsByBookingResponse() {
+        return new SearchRoomsByBookingResponse();
     }
 
     /**
@@ -121,6 +139,32 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://soap/", name = "searchRooms")
     public JAXBElement<SearchRooms> createSearchRooms(SearchRooms value) {
         return new JAXBElement<SearchRooms>(_SearchRooms_QNAME, SearchRooms.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SearchRoomsByBooking }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link SearchRoomsByBooking }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://soap/", name = "searchRoomsByBooking")
+    public JAXBElement<SearchRoomsByBooking> createSearchRoomsByBooking(SearchRoomsByBooking value) {
+        return new JAXBElement<SearchRoomsByBooking>(_SearchRoomsByBooking_QNAME, SearchRoomsByBooking.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SearchRoomsByBookingResponse }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link SearchRoomsByBookingResponse }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://soap/", name = "searchRoomsByBookingResponse")
+    public JAXBElement<SearchRoomsByBookingResponse> createSearchRoomsByBookingResponse(SearchRoomsByBookingResponse value) {
+        return new JAXBElement<SearchRoomsByBookingResponse>(_SearchRoomsByBookingResponse_QNAME, SearchRoomsByBookingResponse.class, null, value);
     }
 
     /**

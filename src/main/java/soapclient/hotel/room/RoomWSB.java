@@ -27,6 +27,21 @@ public interface RoomWSB {
 
     /**
      * 
+     * @param bookingID
+     * @return
+     *     returns java.util.List<soapclient.hotel.room.RoomDTO>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "searchRoomsByBooking", targetNamespace = "http://soap/", className = "soapclient.hotel.room.SearchRoomsByBooking")
+    @ResponseWrapper(localName = "searchRoomsByBookingResponse", targetNamespace = "http://soap/", className = "soapclient.hotel.room.SearchRoomsByBookingResponse")
+    @Action(input = "http://soap/RoomWSB/searchRoomsByBookingRequest", output = "http://soap/RoomWSB/searchRoomsByBookingResponse")
+    public List<RoomDTO> searchRoomsByBooking(
+        @WebParam(name = "bookingID", targetNamespace = "")
+        long bookingID);
+
+    /**
+     * 
      * @param arg1
      * @param arg0
      * @return
