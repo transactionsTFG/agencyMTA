@@ -5,6 +5,7 @@ import java.util.Map;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.transaction.Transaction;
 
 import business.booking.BookingDTO;
 import business.booking.MakeBookingReservationDTO;
@@ -23,6 +24,7 @@ import common.dto.services.ReservationDTO;
 import common.dto.services.UpdateReservationDTO;
 import common.exceptions.TravelException;
 import common.mapper.TravelMapper;
+import weblogic.transaction.TxHelper;
 
 @Stateless
 public class GatewayAgencyCommandServiceImpl implements GatewayAgencyCommandService {
@@ -75,6 +77,15 @@ public class GatewayAgencyCommandServiceImpl implements GatewayAgencyCommandServ
 
     @Override
     public BookingDTO makeReservationHotel(MakeBookingReservationDTO booking, long idCustomer, String dni) {
+
+        try {
+            Transaction tx = TxHelper.getTransactionManager().getTransaction();
+            if (tx != null) {
+                System.out.println("--------------------------------------------------------------------------------------------------Transaction toString(): " + tx.toString());
+            }
+        } catch(Exception e) {
+
+        }
         UserDTO userDTO = this.userService.readUserById(idCustomer);
         BookingDTO bookingHotel = this.hotelBookingCommandService.makeBooking(booking, userDTO, dni);
         TravelDTO travelDTO = TravelMapper.INSTANCE.toMakeReservationHotel(booking, bookingHotel, idCustomer);
