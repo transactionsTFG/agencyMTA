@@ -33,6 +33,8 @@ public class ObjectFactory {
     private final static QName _SearchFlights_QNAME = new QName("http://soap/", "searchFlights");
     private final static QName _SearchFlightsResponse_QNAME = new QName("http://soap/", "searchFlightsResponse");
     private final static QName _SearchFlight_QNAME = new QName("http://soap/", "searchFlight");
+    private final static QName _SearchFlightInstace_QNAME = new QName("http://soap/", "searchFlightInstace");
+    private final static QName _SearchFlightInstaceResponse_QNAME = new QName("http://soap/", "searchFlightInstaceResponse");
     private final static QName _SearchFlightResponse_QNAME = new QName("http://soap/", "searchFlightResponse");
 
     /**
@@ -115,11 +117,35 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link SearchFlightInstace }
+     * 
+     */
+    public SearchFlightInstace createSearchFlightInstace() {
+        return new SearchFlightInstace();
+    }
+
+    /**
+     * Create an instance of {@link SearchFlightInstaceResponse }
+     * 
+     */
+    public SearchFlightInstaceResponse createSearchFlightInstaceResponse() {
+        return new SearchFlightInstaceResponse();
+    }
+
+    /**
      * Create an instance of {@link SearchFlightResponse }
      * 
      */
     public SearchFlightResponse createSearchFlightResponse() {
         return new SearchFlightResponse();
+    }
+
+    /**
+     * Create an instance of {@link FlightInstanceDTO }
+     * 
+     */
+    public FlightInstanceDTO createFlightInstanceDTO() {
+        return new FlightInstanceDTO();
     }
 
     /**
@@ -269,6 +295,32 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://soap/", name = "searchFlight")
     public JAXBElement<SearchFlight> createSearchFlight(SearchFlight value) {
         return new JAXBElement<SearchFlight>(_SearchFlight_QNAME, SearchFlight.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SearchFlightInstace }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link SearchFlightInstace }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://soap/", name = "searchFlightInstace")
+    public JAXBElement<SearchFlightInstace> createSearchFlightInstace(SearchFlightInstace value) {
+        return new JAXBElement<SearchFlightInstace>(_SearchFlightInstace_QNAME, SearchFlightInstace.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SearchFlightInstaceResponse }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link SearchFlightInstaceResponse }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://soap/", name = "searchFlightInstaceResponse")
+    public JAXBElement<SearchFlightInstaceResponse> createSearchFlightInstaceResponse(SearchFlightInstaceResponse value) {
+        return new JAXBElement<SearchFlightInstaceResponse>(_SearchFlightInstaceResponse_QNAME, SearchFlightInstaceResponse.class, null, value);
     }
 
     /**

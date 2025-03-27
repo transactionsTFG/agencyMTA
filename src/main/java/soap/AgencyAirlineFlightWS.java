@@ -7,6 +7,7 @@ import common.consts.WebMethodConsts;
 import common.dto.services.FlightListDTO;
 import common.dto.soap.request.ParamSearchFlightSOAP;
 import common.exceptions.SAException;
+import soapclient.airline.flight.FlightInstanceDTO;
 import soapclient.airline.flight.FlightSOAP;
 
 import javax.inject.Inject;
@@ -35,6 +36,11 @@ public class AgencyAirlineFlightWS {
     public List<FlightListDTO> searchAll(@WebParam(name = "paramSearchFlight") final ParamSearchFlightSOAP param) throws SAException {
         return this.flightAirlineQueryService
                     .getFlights(param.getCountryOrigin(), param.getCountryDestination(), param.getCityOrigin(), param.getCityDestination(), param.getDateOrigin());
+    }
+
+    @WebMethod(operationName=WebMethodConsts.OP_SEARCH_FLIGHT_INSTANCE)
+    public FlightInstanceDTO searchFlightInstance(@WebParam(name = "idFlightInstance") final long idFlightInstance) throws SAException {
+        return this.flightAirlineQueryService.getFlightInstance(idFlightInstance);
     }
 
 
