@@ -5,6 +5,7 @@ public class WebMethodConsts {
     }
 
     public static final String OP_SEARCH_FLIGHT = "search";
+    public static final String OP_SEARCH_FLIGHT_INSTANCE = "searchFlightInstance";
     public static final String OP_SEARCH_FLIGHTS = "searchFlight";
     public static final String OP_SEARCH_TRAVEL = "searchTravel";
     public static final String OP_SEARCH_TRAVEL_BY_USER = "searchTravelByIdUser";

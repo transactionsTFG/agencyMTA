@@ -8,6 +8,7 @@ import javax.xml.ws.WebServiceRef;
 import common.dto.services.FlightListDTO;
 import common.exceptions.SAException;
 import common.validator.ValidatorTime;
+import soapclient.airline.flight.FlightInstanceDTO;
 import soapclient.airline.flight.FlightSOAP;
 import soapclient.airline.flight.FlightWS_Service;
 import soapclient.airline.flight.ParamFlightSOAP;
@@ -40,6 +41,11 @@ public class FlightAirlineQueryServiceImpl implements FlightAirlineQueryService 
     @Override
     public FlightSOAP getFlight(long idTravel) {
         return  (FlightSOAP) this.flightServiceWithTransactionRead.getFlightWSPort().searchFlight(idTravel).getData();
+    }
+
+    @Override
+    public FlightInstanceDTO getFlightInstance(long idFlightInstance) {
+        return this.flightServiceWithTransactionRead.getFlightWSPort().searchFlightInstace(idFlightInstance);
     }
 
 }

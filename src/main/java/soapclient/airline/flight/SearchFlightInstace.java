@@ -10,6 +10,9 @@ import javax.xml.bind.annotation.XmlType;
  * <p>Java class for searchFlightInstace complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Clase Java para searchFlightInstace complex type.
+ * 
+ * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
  * &lt;complexType name="searchFlightInstace"&gt;
@@ -35,7 +38,6 @@ public class SearchFlightInstace {
 
     /**
      * Gets the value of the idFlightInstance property.
-     * 
      */
     public long getIdFlightInstance() {
         return idFlightInstance;
@@ -43,7 +45,6 @@ public class SearchFlightInstace {
 
     /**
      * Sets the value of the idFlightInstance property.
-     * 
      */
     public void setIdFlightInstance(long value) {
         this.idFlightInstance = value;
