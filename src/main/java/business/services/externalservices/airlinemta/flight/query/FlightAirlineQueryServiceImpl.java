@@ -11,6 +11,7 @@ import common.validator.ValidatorTime;
 import soapclient.airline.flight.FlightInstanceDTO;
 import soapclient.airline.flight.FlightSOAP;
 import soapclient.airline.flight.FlightWS_Service;
+import soapclient.airline.flight.IdFlightInstanceWithSeatsDTO;
 import soapclient.airline.flight.ParamFlightSOAP;
 
 @Stateless
@@ -46,6 +47,11 @@ public class FlightAirlineQueryServiceImpl implements FlightAirlineQueryService 
     @Override
     public FlightInstanceDTO getFlightInstance(long idFlightInstance) {
         return this.flightServiceWithTransactionRead.getFlightWSPort().searchFlightInstace(idFlightInstance);
+    }
+
+    @Override
+    public List<IdFlightInstanceWithSeatsDTO> getFlightsByReservation(long reservationId) {
+        return this.flightServiceWithTransactionRead.getFlightWSPort().searchFlightsByReservation(reservationId);
     }
 
 }

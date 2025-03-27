@@ -7,5 +7,6 @@ import soapclient.hotel.room.RoomDTO;
 
 public interface HotelRoomQueryService {
     List<RoomListDTO> getRooms(String nameHotel, String nameCountry);
+    List<RoomDTO> getRoomsByBooking(long bookingId);
     RoomDTO getRoom(long id);
 }

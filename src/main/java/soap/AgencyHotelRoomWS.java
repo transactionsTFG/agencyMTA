@@ -33,4 +33,9 @@ public class AgencyHotelRoomWS {
         return this.hotelRoomQueryService.getRooms(nameHotel, nameCountry);
     }
 
+    @WebMethod(operationName = WebMethodConsts.OP_SEARCH_ROOMS_BY_BOOKING)
+    public List<RoomDTO> readRoomsByBooking(@WebParam(name = "bookingId") long bookingId) {
+        return this.hotelRoomQueryService.getRoomsByBooking(bookingId);
+    }
+
 }

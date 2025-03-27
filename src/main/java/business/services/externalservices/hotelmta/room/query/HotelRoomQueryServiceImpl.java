@@ -26,5 +26,10 @@ public class HotelRoomQueryServiceImpl implements HotelRoomQueryService {
     public RoomDTO getRoom(long id) {
         return this.roomServiceWithTransactionRead.getRoomWSBPort().searchRoom(id);
     }
+
+    @Override
+    public List<RoomDTO> getRoomsByBooking(long bookingId) {
+        return this.roomServiceWithTransactionRead.getRoomWSBPort().searchRoomsByBooking(bookingId);
+    }
     
 }
