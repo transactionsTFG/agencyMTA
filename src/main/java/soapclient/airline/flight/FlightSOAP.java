@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for flightSOAP complex type.
+ * <p>Clase Java para flightSOAP complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
  * &lt;complexType name="flightSOAP"&gt;
@@ -58,7 +58,7 @@ public class FlightSOAP {
     protected boolean active;
 
     /**
-     * Gets the value of the id property.
+     * Obtiene el valor de la propiedad id.
      * 
      */
     public long getId() {
@@ -66,7 +66,7 @@ public class FlightSOAP {
     }
 
     /**
-     * Sets the value of the id property.
+     * Define el valor de la propiedad id.
      * 
      */
     public void setId(long value) {
@@ -74,7 +74,7 @@ public class FlightSOAP {
     }
 
     /**
-     * Gets the value of the codeFlight property.
+     * Obtiene el valor de la propiedad codeFlight.
      * 
      * @return
      *     possible object is
@@ -86,7 +86,7 @@ public class FlightSOAP {
     }
 
     /**
-     * Sets the value of the codeFlight property.
+     * Define el valor de la propiedad codeFlight.
      * 
      * @param value
      *     allowed object is
@@ -98,7 +98,7 @@ public class FlightSOAP {
     }
 
     /**
-     * Gets the value of the weekDay property.
+     * Obtiene el valor de la propiedad weekDay.
      * 
      * @return
      *     possible object is
@@ -110,7 +110,7 @@ public class FlightSOAP {
     }
 
     /**
-     * Sets the value of the weekDay property.
+     * Define el valor de la propiedad weekDay.
      * 
      * @param value
      *     allowed object is
@@ -122,7 +122,7 @@ public class FlightSOAP {
     }
 
     /**
-     * Gets the value of the arrivalTime property.
+     * Obtiene el valor de la propiedad arrivalTime.
      * 
      * @return
      *     possible object is
@@ -134,7 +134,7 @@ public class FlightSOAP {
     }
 
     /**
-     * Sets the value of the arrivalTime property.
+     * Define el valor de la propiedad arrivalTime.
      * 
      * @param value
      *     allowed object is
@@ -146,7 +146,7 @@ public class FlightSOAP {
     }
 
     /**
-     * Gets the value of the departureTime property.
+     * Obtiene el valor de la propiedad departureTime.
      * 
      * @return
      *     possible object is
@@ -158,7 +158,7 @@ public class FlightSOAP {
     }
 
     /**
-     * Sets the value of the departureTime property.
+     * Define el valor de la propiedad departureTime.
      * 
      * @param value
      *     allowed object is
@@ -170,7 +170,7 @@ public class FlightSOAP {
     }
 
     /**
-     * Gets the value of the idAircraft property.
+     * Obtiene el valor de la propiedad idAircraft.
      * 
      */
     public long getIdAircraft() {
@@ -178,7 +178,7 @@ public class FlightSOAP {
     }
 
     /**
-     * Sets the value of the idAircraft property.
+     * Define el valor de la propiedad idAircraft.
      * 
      */
     public void setIdAircraft(long value) {
@@ -186,7 +186,7 @@ public class FlightSOAP {
     }
 
     /**
-     * Gets the value of the idOriginFlight property.
+     * Obtiene el valor de la propiedad idOriginFlight.
      * 
      */
     public long getIdOriginFlight() {
@@ -194,7 +194,7 @@ public class FlightSOAP {
     }
 
     /**
-     * Sets the value of the idOriginFlight property.
+     * Define el valor de la propiedad idOriginFlight.
      * 
      */
     public void setIdOriginFlight(long value) {
@@ -202,7 +202,7 @@ public class FlightSOAP {
     }
 
     /**
-     * Gets the value of the idDestinationFlight property.
+     * Obtiene el valor de la propiedad idDestinationFlight.
      * 
      */
     public long getIdDestinationFlight() {
@@ -210,7 +210,7 @@ public class FlightSOAP {
     }
 
     /**
-     * Sets the value of the idDestinationFlight property.
+     * Define el valor de la propiedad idDestinationFlight.
      * 
      */
     public void setIdDestinationFlight(long value) {
@@ -218,7 +218,7 @@ public class FlightSOAP {
     }
 
     /**
-     * Gets the value of the active property.
+     * Obtiene el valor de la propiedad active.
      * 
      */
     public boolean isActive() {
@@ -226,7 +226,7 @@ public class FlightSOAP {
     }
 
     /**
-     * Sets the value of the active property.
+     * Define el valor de la propiedad active.
      * 
      */
     public void setActive(boolean value) {

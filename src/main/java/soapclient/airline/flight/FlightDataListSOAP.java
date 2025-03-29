@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for flightDataListSOAP complex type.
+ * <p>Clase Java para flightDataListSOAP complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
  * &lt;complexType name="flightDataListSOAP"&gt;
@@ -55,7 +55,7 @@ public class FlightDataListSOAP {
     protected double price;
 
     /**
-     * Gets the value of the id property.
+     * Obtiene el valor de la propiedad id.
      * 
      */
     public long getId() {
@@ -63,7 +63,7 @@ public class FlightDataListSOAP {
     }
 
     /**
-     * Sets the value of the id property.
+     * Define el valor de la propiedad id.
      * 
      */
     public void setId(long value) {
@@ -71,7 +71,7 @@ public class FlightDataListSOAP {
     }
 
     /**
-     * Gets the value of the arrivalDate property.
+     * Obtiene el valor de la propiedad arrivalDate.
      * 
      * @return
      *     possible object is
@@ -83,7 +83,7 @@ public class FlightDataListSOAP {
     }
 
     /**
-     * Sets the value of the arrivalDate property.
+     * Define el valor de la propiedad arrivalDate.
      * 
      * @param value
      *     allowed object is
@@ -95,7 +95,7 @@ public class FlightDataListSOAP {
     }
 
     /**
-     * Gets the value of the departureDate property.
+     * Obtiene el valor de la propiedad departureDate.
      * 
      * @return
      *     possible object is
@@ -107,7 +107,7 @@ public class FlightDataListSOAP {
     }
 
     /**
-     * Sets the value of the departureDate property.
+     * Define el valor de la propiedad departureDate.
      * 
      * @param value
      *     allowed object is
@@ -119,7 +119,7 @@ public class FlightDataListSOAP {
     }
 
     /**
-     * Gets the value of the cityDestination property.
+     * Obtiene el valor de la propiedad cityDestination.
      * 
      * @return
      *     possible object is
@@ -131,7 +131,7 @@ public class FlightDataListSOAP {
     }
 
     /**
-     * Sets the value of the cityDestination property.
+     * Define el valor de la propiedad cityDestination.
      * 
      * @param value
      *     allowed object is
@@ -143,7 +143,7 @@ public class FlightDataListSOAP {
     }
 
     /**
-     * Gets the value of the countryOrigin property.
+     * Obtiene el valor de la propiedad countryOrigin.
      * 
      * @return
      *     possible object is
@@ -155,7 +155,7 @@ public class FlightDataListSOAP {
     }
 
     /**
-     * Sets the value of the countryOrigin property.
+     * Define el valor de la propiedad countryOrigin.
      * 
      * @param value
      *     allowed object is
@@ -167,7 +167,7 @@ public class FlightDataListSOAP {
     }
 
     /**
-     * Gets the value of the countryDestination property.
+     * Obtiene el valor de la propiedad countryDestination.
      * 
      * @return
      *     possible object is
@@ -179,7 +179,7 @@ public class FlightDataListSOAP {
     }
 
     /**
-     * Sets the value of the countryDestination property.
+     * Define el valor de la propiedad countryDestination.
      * 
      * @param value
      *     allowed object is
@@ -191,7 +191,7 @@ public class FlightDataListSOAP {
     }
 
     /**
-     * Gets the value of the weekDay property.
+     * Obtiene el valor de la propiedad weekDay.
      * 
      * @return
      *     possible object is
@@ -203,7 +203,7 @@ public class FlightDataListSOAP {
     }
 
     /**
-     * Sets the value of the weekDay property.
+     * Define el valor de la propiedad weekDay.
      * 
      * @param value
      *     allowed object is
@@ -215,7 +215,7 @@ public class FlightDataListSOAP {
     }
 
     /**
-     * Gets the value of the price property.
+     * Obtiene el valor de la propiedad price.
      * 
      */
     public double getPrice() {
@@ -223,7 +223,7 @@ public class FlightDataListSOAP {
     }
 
     /**
-     * Sets the value of the price property.
+     * Define el valor de la propiedad price.
      * 
      */
     public void setPrice(double value) {

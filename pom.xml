@@ -80,7 +80,7 @@
             <!-- Configuración de wsimport -->
             <!-- Comando: mvn jaxws:wsimport -->
             <!-- Se comenta porque genera de mas paquetes -->
-            <!-- 
+            
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>jaxws-maven-plugin</artifactId>
@@ -100,7 +100,7 @@
                     <packageName>soapclient.airline.flight</packageName>
                 </configuration>
             </plugin>
-            -->
+            
         </plugins>
     </build>
 </project>

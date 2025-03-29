@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for idFlightInstanceWithSeatsDTO complex type.
+ * <p>Clase Java para idFlightInstanceWithSeatsDTO complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
  * &lt;complexType name="idFlightInstanceWithSeatsDTO"&gt;
@@ -37,7 +37,7 @@ public class IdFlightInstanceWithSeatsDTO {
     protected int seats;
 
     /**
-     * Gets the value of the idFlightInstance property.
+     * Obtiene el valor de la propiedad idFlightInstance.
      * 
      */
     public long getIdFlightInstance() {
@@ -45,7 +45,7 @@ public class IdFlightInstanceWithSeatsDTO {
     }
 
     /**
-     * Sets the value of the idFlightInstance property.
+     * Define el valor de la propiedad idFlightInstance.
      * 
      */
     public void setIdFlightInstance(long value) {
@@ -53,7 +53,7 @@ public class IdFlightInstanceWithSeatsDTO {
     }
 
     /**
-     * Gets the value of the seats property.
+     * Obtiene el valor de la propiedad seats.
      * 
      */
     public int getSeats() {
@@ -61,7 +61,7 @@ public class IdFlightInstanceWithSeatsDTO {
     }
 
     /**
-     * Sets the value of the seats property.
+     * Define el valor de la propiedad seats.
      * 
      */
     public void setSeats(int value) {

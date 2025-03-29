@@ -9,9 +9,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for updateReservationSOAP complex type.
+ * <p>Clase Java para updateReservationSOAP complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
  * &lt;complexType name="updateReservationSOAP"&gt;
@@ -54,7 +54,7 @@ public class UpdateReservationSOAP {
     protected List<UpdatePriceReservationSOAP> updatePriceReservationSOAP;
 
     /**
-     * Gets the value of the id property.
+     * Obtiene el valor de la propiedad id.
      * 
      */
     public long getId() {
@@ -62,7 +62,7 @@ public class UpdateReservationSOAP {
     }
 
     /**
-     * Sets the value of the id property.
+     * Define el valor de la propiedad id.
      * 
      */
     public void setId(long value) {
@@ -70,7 +70,7 @@ public class UpdateReservationSOAP {
     }
 
     /**
-     * Gets the value of the date property.
+     * Obtiene el valor de la propiedad date.
      * 
      * @return
      *     possible object is
@@ -82,7 +82,7 @@ public class UpdateReservationSOAP {
     }
 
     /**
-     * Sets the value of the date property.
+     * Define el valor de la propiedad date.
      * 
      * @param value
      *     allowed object is
@@ -94,7 +94,7 @@ public class UpdateReservationSOAP {
     }
 
     /**
-     * Gets the value of the total property.
+     * Obtiene el valor de la propiedad total.
      * 
      */
     public double getTotal() {
@@ -102,7 +102,7 @@ public class UpdateReservationSOAP {
     }
 
     /**
-     * Sets the value of the total property.
+     * Define el valor de la propiedad total.
      * 
      */
     public void setTotal(double value) {
@@ -110,7 +110,7 @@ public class UpdateReservationSOAP {
     }
 
     /**
-     * Gets the value of the idCustomer property.
+     * Obtiene el valor de la propiedad idCustomer.
      * 
      */
     public long getIdCustomer() {
@@ -118,7 +118,7 @@ public class UpdateReservationSOAP {
     }
 
     /**
-     * Sets the value of the idCustomer property.
+     * Define el valor de la propiedad idCustomer.
      * 
      */
     public void setIdCustomer(long value) {
@@ -126,7 +126,7 @@ public class UpdateReservationSOAP {
     }
 
     /**
-     * Gets the value of the active property.
+     * Obtiene el valor de la propiedad active.
      * 
      */
     public boolean isActive() {
@@ -134,7 +134,7 @@ public class UpdateReservationSOAP {
     }
 
     /**
-     * Sets the value of the active property.
+     * Define el valor de la propiedad active.
      * 
      */
     public void setActive(boolean value) {
@@ -142,7 +142,7 @@ public class UpdateReservationSOAP {
     }
 
     /**
-     * Gets the value of the updatePrice property.
+     * Obtiene el valor de la propiedad updatePrice.
      * 
      */
     public double getUpdatePrice() {
@@ -150,7 +150,7 @@ public class UpdateReservationSOAP {
     }
 
     /**
-     * Sets the value of the updatePrice property.
+     * Define el valor de la propiedad updatePrice.
      * 
      */
     public void setUpdatePrice(double value) {

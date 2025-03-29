@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for paramFlightSOAP complex type.
+ * <p>Clase Java para paramFlightSOAP complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
  * &lt;complexType name="paramFlightSOAP"&gt;
@@ -46,7 +46,7 @@ public class ParamFlightSOAP {
     protected String dateOrigin;
 
     /**
-     * Gets the value of the countryOrigin property.
+     * Obtiene el valor de la propiedad countryOrigin.
      * 
      * @return
      *     possible object is
@@ -58,7 +58,7 @@ public class ParamFlightSOAP {
     }
 
     /**
-     * Sets the value of the countryOrigin property.
+     * Define el valor de la propiedad countryOrigin.
      * 
      * @param value
      *     allowed object is
@@ -70,7 +70,7 @@ public class ParamFlightSOAP {
     }
 
     /**
-     * Gets the value of the countryDestination property.
+     * Obtiene el valor de la propiedad countryDestination.
      * 
      * @return
      *     possible object is
@@ -82,7 +82,7 @@ public class ParamFlightSOAP {
     }
 
     /**
-     * Sets the value of the countryDestination property.
+     * Define el valor de la propiedad countryDestination.
      * 
      * @param value
      *     allowed object is
@@ -94,7 +94,7 @@ public class ParamFlightSOAP {
     }
 
     /**
-     * Gets the value of the cityOrigin property.
+     * Obtiene el valor de la propiedad cityOrigin.
      * 
      * @return
      *     possible object is
@@ -106,7 +106,7 @@ public class ParamFlightSOAP {
     }
 
     /**
-     * Sets the value of the cityOrigin property.
+     * Define el valor de la propiedad cityOrigin.
      * 
      * @param value
      *     allowed object is
@@ -118,7 +118,7 @@ public class ParamFlightSOAP {
     }
 
     /**
-     * Gets the value of the cityDestination property.
+     * Obtiene el valor de la propiedad cityDestination.
      * 
      * @return
      *     possible object is
@@ -130,7 +130,7 @@ public class ParamFlightSOAP {
     }
 
     /**
-     * Sets the value of the cityDestination property.
+     * Define el valor de la propiedad cityDestination.
      * 
      * @param value
      *     allowed object is
@@ -142,7 +142,7 @@ public class ParamFlightSOAP {
     }
 
     /**
-     * Gets the value of the dateOrigin property.
+     * Obtiene el valor de la propiedad dateOrigin.
      * 
      * @return
      *     possible object is
@@ -154,7 +154,7 @@ public class ParamFlightSOAP {
     }
 
     /**
-     * Sets the value of the dateOrigin property.
+     * Define el valor de la propiedad dateOrigin.
      * 
      * @param value
      *     allowed object is

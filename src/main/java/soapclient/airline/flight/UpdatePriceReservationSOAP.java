@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for updatePriceReservationSOAP complex type.
+ * <p>Clase Java para updatePriceReservationSOAP complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
  * &lt;complexType name="updatePriceReservationSOAP"&gt;
@@ -37,7 +37,7 @@ public class UpdatePriceReservationSOAP {
     protected double price;
 
     /**
-     * Gets the value of the idFlightInstance property.
+     * Obtiene el valor de la propiedad idFlightInstance.
      * 
      */
     public long getIdFlightInstance() {
@@ -45,7 +45,7 @@ public class UpdatePriceReservationSOAP {
     }
 
     /**
-     * Sets the value of the idFlightInstance property.
+     * Define el valor de la propiedad idFlightInstance.
      * 
      */
     public void setIdFlightInstance(long value) {
@@ -53,7 +53,7 @@ public class UpdatePriceReservationSOAP {
     }
 
     /**
-     * Gets the value of the price property.
+     * Obtiene el valor de la propiedad price.
      * 
      */
     public double getPrice() {
@@ -61,7 +61,7 @@ public class UpdatePriceReservationSOAP {
     }
 
     /**
-     * Sets the value of the price property.
+     * Define el valor de la propiedad price.
      * 
      */
     public void setPrice(double value) {

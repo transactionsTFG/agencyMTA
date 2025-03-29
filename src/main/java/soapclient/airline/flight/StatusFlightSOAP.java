@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for statusFlightSOAP complex type.
+ * <p>Clase Java para statusFlightSOAP complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
  * &lt;complexType name="statusFlightSOAP"&gt;
@@ -46,7 +46,7 @@ public class StatusFlightSOAP {
     protected double price;
 
     /**
-     * Gets the value of the status property.
+     * Obtiene el valor de la propiedad status.
      * 
      * @return
      *     possible object is
@@ -58,7 +58,7 @@ public class StatusFlightSOAP {
     }
 
     /**
-     * Sets the value of the status property.
+     * Define el valor de la propiedad status.
      * 
      * @param value
      *     allowed object is
@@ -70,7 +70,7 @@ public class StatusFlightSOAP {
     }
 
     /**
-     * Gets the value of the timeDate property.
+     * Obtiene el valor de la propiedad timeDate.
      * 
      * @return
      *     possible object is
@@ -82,7 +82,7 @@ public class StatusFlightSOAP {
     }
 
     /**
-     * Sets the value of the timeDate property.
+     * Define el valor de la propiedad timeDate.
      * 
      * @param value
      *     allowed object is
@@ -94,7 +94,7 @@ public class StatusFlightSOAP {
     }
 
     /**
-     * Gets the value of the returnDate property.
+     * Obtiene el valor de la propiedad returnDate.
      * 
      * @return
      *     possible object is
@@ -106,7 +106,7 @@ public class StatusFlightSOAP {
     }
 
     /**
-     * Sets the value of the returnDate property.
+     * Define el valor de la propiedad returnDate.
      * 
      * @param value
      *     allowed object is
@@ -118,7 +118,7 @@ public class StatusFlightSOAP {
     }
 
     /**
-     * Gets the value of the seats property.
+     * Obtiene el valor de la propiedad seats.
      * 
      */
     public int getSeats() {
@@ -126,7 +126,7 @@ public class StatusFlightSOAP {
     }
 
     /**
-     * Sets the value of the seats property.
+     * Define el valor de la propiedad seats.
      * 
      */
     public void setSeats(int value) {
@@ -134,7 +134,7 @@ public class StatusFlightSOAP {
     }
 
     /**
-     * Gets the value of the price property.
+     * Obtiene el valor de la propiedad price.
      * 
      */
     public double getPrice() {
@@ -142,7 +142,7 @@ public class StatusFlightSOAP {
     }
 
     /**
-     * Sets the value of the price property.
+     * Define el valor de la propiedad price.
      * 
      */
     public void setPrice(double value) {

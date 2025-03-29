@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for reservationSOAP complex type.
+ * <p>Clase Java para reservationSOAP complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
  * &lt;complexType name="reservationSOAP"&gt;
@@ -46,7 +46,7 @@ public class ReservationSOAP {
     protected boolean active;
 
     /**
-     * Gets the value of the id property.
+     * Obtiene el valor de la propiedad id.
      * 
      */
     public long getId() {
@@ -54,7 +54,7 @@ public class ReservationSOAP {
     }
 
     /**
-     * Sets the value of the id property.
+     * Define el valor de la propiedad id.
      * 
      */
     public void setId(long value) {
@@ -62,7 +62,7 @@ public class ReservationSOAP {
     }
 
     /**
-     * Gets the value of the date property.
+     * Obtiene el valor de la propiedad date.
      * 
      * @return
      *     possible object is
@@ -74,7 +74,7 @@ public class ReservationSOAP {
     }
 
     /**
-     * Sets the value of the date property.
+     * Define el valor de la propiedad date.
      * 
      * @param value
      *     allowed object is
@@ -86,7 +86,7 @@ public class ReservationSOAP {
     }
 
     /**
-     * Gets the value of the total property.
+     * Obtiene el valor de la propiedad total.
      * 
      */
     public double getTotal() {
@@ -94,7 +94,7 @@ public class ReservationSOAP {
     }
 
     /**
-     * Sets the value of the total property.
+     * Define el valor de la propiedad total.
      * 
      */
     public void setTotal(double value) {
@@ -102,7 +102,7 @@ public class ReservationSOAP {
     }
 
     /**
-     * Gets the value of the idCustomer property.
+     * Obtiene el valor de la propiedad idCustomer.
      * 
      */
     public long getIdCustomer() {
@@ -110,7 +110,7 @@ public class ReservationSOAP {
     }
 
     /**
-     * Sets the value of the idCustomer property.
+     * Define el valor de la propiedad idCustomer.
      * 
      */
     public void setIdCustomer(long value) {
@@ -118,7 +118,7 @@ public class ReservationSOAP {
     }
 
     /**
-     * Gets the value of the active property.
+     * Obtiene el valor de la propiedad active.
      * 
      */
     public boolean isActive() {
@@ -126,7 +126,7 @@ public class ReservationSOAP {
     }
 
     /**
-     * Sets the value of the active property.
+     * Define el valor de la propiedad active.
      * 
      */
     public void setActive(boolean value) {
