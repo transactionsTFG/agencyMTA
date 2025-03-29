@@ -17,6 +17,5 @@ public class MakeBookingReservationDTO {
     private int numberOfNights;
     private boolean withBreakfast;
     private int peopleNumber;
-    private long customerId;
     private List<Long> roomId;
 }
