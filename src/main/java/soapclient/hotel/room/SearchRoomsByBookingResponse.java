@@ -19,7 +19,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="return" type="{http://soap/}roomDTO" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="return" type="{http://soap/}bookingLineDTO" maxOccurs="unbounded" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -35,7 +35,7 @@ import javax.xml.bind.annotation.XmlType;
 public class SearchRoomsByBookingResponse {
 
     @XmlElement(name = "return")
-    protected List<RoomDTO> _return;
+    protected List<BookingLineDTO> _return;
 
     /**
      * Gets the value of the return property.
@@ -55,13 +55,13 @@ public class SearchRoomsByBookingResponse {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link RoomDTO }
+     * {@link BookingLineDTO }
      * 
      * 
      */
-    public List<RoomDTO> getReturn() {
+    public List<BookingLineDTO> getReturn() {
         if (_return == null) {
-            _return = new ArrayList<RoomDTO>();
+            _return = new ArrayList<BookingLineDTO>();
         }
         return this._return;
     }

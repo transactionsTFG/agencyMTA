@@ -87,6 +87,22 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link BookingDTO }
+     * 
+     */
+    public BookingDTO createBookingDTO() {
+        return new BookingDTO();
+    }
+
+    /**
+     * Create an instance of {@link BookingLineDTO }
+     * 
+     */
+    public BookingLineDTO createBookingLineDTO() {
+        return new BookingLineDTO();
+    }
+
+    /**
      * Create an instance of {@link RoomDTO }
      * 
      */

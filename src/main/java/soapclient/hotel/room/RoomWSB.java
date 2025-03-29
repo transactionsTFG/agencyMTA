@@ -27,18 +27,18 @@ public interface RoomWSB {
 
     /**
      * 
-     * @param bookingID
+     * @param arg0
      * @return
-     *     returns java.util.List<soapclient.hotel.room.RoomDTO>
+     *     returns soapclient.hotel.room.RoomDTO
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "searchRoomsByBooking", targetNamespace = "http://soap/", className = "soapclient.hotel.room.SearchRoomsByBooking")
-    @ResponseWrapper(localName = "searchRoomsByBookingResponse", targetNamespace = "http://soap/", className = "soapclient.hotel.room.SearchRoomsByBookingResponse")
-    @Action(input = "http://soap/RoomWSB/searchRoomsByBookingRequest", output = "http://soap/RoomWSB/searchRoomsByBookingResponse")
-    public List<RoomDTO> searchRoomsByBooking(
-        @WebParam(name = "bookingID", targetNamespace = "")
-        long bookingID);
+    @RequestWrapper(localName = "searchRoom", targetNamespace = "http://soap/", className = "soapclient.hotel.room.SearchRoom")
+    @ResponseWrapper(localName = "searchRoomResponse", targetNamespace = "http://soap/", className = "soapclient.hotel.room.SearchRoomResponse")
+    @Action(input = "http://soap/RoomWSB/searchRoomRequest", output = "http://soap/RoomWSB/searchRoomResponse")
+    public RoomDTO searchRoom(
+        @WebParam(name = "arg0", targetNamespace = "")
+        long arg0);
 
     /**
      * 
@@ -60,17 +60,17 @@ public interface RoomWSB {
 
     /**
      * 
-     * @param arg0
+     * @param bookingID
      * @return
-     *     returns soapclient.hotel.room.RoomDTO
+     *     returns java.util.List<soapclient.hotel.room.BookingLineDTO>
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "searchRoom", targetNamespace = "http://soap/", className = "soapclient.hotel.room.SearchRoom")
-    @ResponseWrapper(localName = "searchRoomResponse", targetNamespace = "http://soap/", className = "soapclient.hotel.room.SearchRoomResponse")
-    @Action(input = "http://soap/RoomWSB/searchRoomRequest", output = "http://soap/RoomWSB/searchRoomResponse")
-    public RoomDTO searchRoom(
-        @WebParam(name = "arg0", targetNamespace = "")
-        long arg0);
+    @RequestWrapper(localName = "searchRoomsByBooking", targetNamespace = "http://soap/", className = "soapclient.hotel.room.SearchRoomsByBooking")
+    @ResponseWrapper(localName = "searchRoomsByBookingResponse", targetNamespace = "http://soap/", className = "soapclient.hotel.room.SearchRoomsByBookingResponse")
+    @Action(input = "http://soap/RoomWSB/searchRoomsByBookingRequest", output = "http://soap/RoomWSB/searchRoomsByBookingResponse")
+    public List<BookingLineDTO> searchRoomsByBooking(
+        @WebParam(name = "bookingID", targetNamespace = "")
+        long bookingID);
 
 }
