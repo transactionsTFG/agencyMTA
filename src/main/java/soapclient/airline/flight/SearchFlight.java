@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para searchFlight complex type.
+ * <p>Java class for searchFlight complex type.
  * 
- * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="searchFlight"&gt;
@@ -34,7 +34,7 @@ public class SearchFlight {
     protected long idFlightSearch;
 
     /**
-     * Obtiene el valor de la propiedad idFlightSearch.
+     * Gets the value of the idFlightSearch property.
      * 
      */
     public long getIdFlightSearch() {
@@ -42,7 +42,7 @@ public class SearchFlight {
     }
 
     /**
-     * Define el valor de la propiedad idFlightSearch.
+     * Sets the value of the idFlightSearch property.
      * 
      */
     public void setIdFlightSearch(long value) {

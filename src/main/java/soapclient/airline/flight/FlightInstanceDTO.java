@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para flightInstanceDTO complex type.
+ * <p>Java class for flightInstanceDTO complex type.
  * 
- * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="flightInstanceDTO"&gt;
@@ -55,7 +55,7 @@ public class FlightInstanceDTO {
     protected String statusFlight;
 
     /**
-     * Obtiene el valor de la propiedad active.
+     * Gets the value of the active property.
      * 
      */
     public boolean isActive() {
@@ -63,7 +63,7 @@ public class FlightInstanceDTO {
     }
 
     /**
-     * Define el valor de la propiedad active.
+     * Sets the value of the active property.
      * 
      */
     public void setActive(boolean value) {
@@ -71,7 +71,7 @@ public class FlightInstanceDTO {
     }
 
     /**
-     * Obtiene el valor de la propiedad arrivalDate.
+     * Gets the value of the arrivalDate property.
      * 
      * @return
      *     possible object is
@@ -83,7 +83,7 @@ public class FlightInstanceDTO {
     }
 
     /**
-     * Define el valor de la propiedad arrivalDate.
+     * Sets the value of the arrivalDate property.
      * 
      * @param value
      *     allowed object is
@@ -95,7 +95,7 @@ public class FlightInstanceDTO {
     }
 
     /**
-     * Obtiene el valor de la propiedad departureDate.
+     * Gets the value of the departureDate property.
      * 
      * @return
      *     possible object is
@@ -107,7 +107,7 @@ public class FlightInstanceDTO {
     }
 
     /**
-     * Define el valor de la propiedad departureDate.
+     * Sets the value of the departureDate property.
      * 
      * @param value
      *     allowed object is
@@ -119,7 +119,7 @@ public class FlightInstanceDTO {
     }
 
     /**
-     * Obtiene el valor de la propiedad id.
+     * Gets the value of the id property.
      * 
      */
     public long getId() {
@@ -127,7 +127,7 @@ public class FlightInstanceDTO {
     }
 
     /**
-     * Define el valor de la propiedad id.
+     * Sets the value of the id property.
      * 
      */
     public void setId(long value) {
@@ -135,7 +135,7 @@ public class FlightInstanceDTO {
     }
 
     /**
-     * Obtiene el valor de la propiedad idFlight.
+     * Gets the value of the idFlight property.
      * 
      */
     public long getIdFlight() {
@@ -143,7 +143,7 @@ public class FlightInstanceDTO {
     }
 
     /**
-     * Define el valor de la propiedad idFlight.
+     * Sets the value of the idFlight property.
      * 
      */
     public void setIdFlight(long value) {
@@ -151,7 +151,7 @@ public class FlightInstanceDTO {
     }
 
     /**
-     * Obtiene el valor de la propiedad passengerCounter.
+     * Gets the value of the passengerCounter property.
      * 
      */
     public int getPassengerCounter() {
@@ -159,7 +159,7 @@ public class FlightInstanceDTO {
     }
 
     /**
-     * Define el valor de la propiedad passengerCounter.
+     * Sets the value of the passengerCounter property.
      * 
      */
     public void setPassengerCounter(int value) {
@@ -167,7 +167,7 @@ public class FlightInstanceDTO {
     }
 
     /**
-     * Obtiene el valor de la propiedad price.
+     * Gets the value of the price property.
      * 
      */
     public double getPrice() {
@@ -175,7 +175,7 @@ public class FlightInstanceDTO {
     }
 
     /**
-     * Define el valor de la propiedad price.
+     * Sets the value of the price property.
      * 
      */
     public void setPrice(double value) {
@@ -183,7 +183,7 @@ public class FlightInstanceDTO {
     }
 
     /**
-     * Obtiene el valor de la propiedad statusFlight.
+     * Gets the value of the statusFlight property.
      * 
      * @return
      *     possible object is
@@ -195,7 +195,7 @@ public class FlightInstanceDTO {
     }
 
     /**
-     * Define el valor de la propiedad statusFlight.
+     * Sets the value of the statusFlight property.
      * 
      * @param value
      *     allowed object is

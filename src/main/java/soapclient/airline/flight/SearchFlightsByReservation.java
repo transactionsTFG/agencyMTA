@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para searchFlightsByReservation complex type.
+ * <p>Java class for searchFlightsByReservation complex type.
  * 
- * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="searchFlightsByReservation"&gt;
@@ -34,7 +34,7 @@ public class SearchFlightsByReservation {
     protected long idReservation;
 
     /**
-     * Obtiene el valor de la propiedad idReservation.
+     * Gets the value of the idReservation property.
      * 
      */
     public long getIdReservation() {
@@ -42,7 +42,7 @@ public class SearchFlightsByReservation {
     }
 
     /**
-     * Define el valor de la propiedad idReservation.
+     * Sets the value of the idReservation property.
      * 
      */
     public void setIdReservation(long value) {
