@@ -9,9 +9,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para makeReservationRequestSOAP complex type.
+ * <p>Java class for makeReservationRequestSOAP complex type.
  * 
- * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="makeReservationRequestSOAP"&gt;
@@ -52,7 +52,7 @@ public class MakeReservationRequestSOAP {
     protected MakeReservationRequestSOAP.Flights flights;
 
     /**
-     * Obtiene el valor de la propiedad customer.
+     * Gets the value of the customer property.
      * 
      * @return
      *     possible object is
@@ -64,7 +64,7 @@ public class MakeReservationRequestSOAP {
     }
 
     /**
-     * Define el valor de la propiedad customer.
+     * Sets the value of the customer property.
      * 
      * @param value
      *     allowed object is
@@ -76,7 +76,7 @@ public class MakeReservationRequestSOAP {
     }
 
     /**
-     * Obtiene el valor de la propiedad reservation.
+     * Gets the value of the reservation property.
      * 
      * @return
      *     possible object is
@@ -88,7 +88,7 @@ public class MakeReservationRequestSOAP {
     }
 
     /**
-     * Define el valor de la propiedad reservation.
+     * Sets the value of the reservation property.
      * 
      * @param value
      *     allowed object is
@@ -100,7 +100,7 @@ public class MakeReservationRequestSOAP {
     }
 
     /**
-     * Obtiene el valor de la propiedad flights.
+     * Gets the value of the flights property.
      * 
      * @return
      *     possible object is
@@ -112,7 +112,7 @@ public class MakeReservationRequestSOAP {
     }
 
     /**
-     * Define el valor de la propiedad flights.
+     * Sets the value of the flights property.
      * 
      * @param value
      *     allowed object is
@@ -125,9 +125,9 @@ public class MakeReservationRequestSOAP {
 
 
     /**
-     * <p>Clase Java para anonymous complex type.
+     * <p>Java class for anonymous complex type.
      * 
-     * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+     * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
      * &lt;complexType&gt;

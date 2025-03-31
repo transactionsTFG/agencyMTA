@@ -94,10 +94,10 @@
                 </executions>
                 <configuration>
                     <wsdlUrls>
-                        <wsdlUrl>http://localhost:8001/airlineMTA/FlightWS?wsdl</wsdlUrl> 
+                        <wsdlUrl>http://localhost:8001/airlineMTA/ReservationWS?wsdl</wsdlUrl> 
                     </wsdlUrls>
                     <sourceDestDir>src/main/java</sourceDestDir>
-                    <packageName>soapclient.airline.flight</packageName>
+                    <packageName>soapclient.airline.reservation</packageName>
                 </configuration>
             </plugin>
              -->

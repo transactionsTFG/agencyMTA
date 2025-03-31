@@ -7,6 +7,7 @@ import business.booking.MakeBookingReservationDTO;
 import business.booking.ModifyBookingReservationDTO;
 import common.dto.HotelFlightReservationDTO;
 import common.dto.services.AgencyReservationSuccessDTO;
+import common.dto.services.ReservationDTO;
 import common.dto.services.UpdateReservationDTO;
 
 public interface GatewayAgencyCommandService {
@@ -27,6 +28,9 @@ public interface GatewayAgencyCommandService {
     // TODO: probar
     UpdateReservationDTO modifyHotelFlightReservation(final ModifyBookingReservationDTO booking, final long idReservation, final Map<Long, Integer> idFlightInstanceWithSeatsMap);
    
+    //TODO: probar
+    ReservationDTO searchFlightReservation(final long flightReservationId);
+
     //TODO: probar
     double cancelReservationFlight(final long idReservationFlight);
     //TODO: probar

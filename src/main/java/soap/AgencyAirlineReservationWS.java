@@ -15,6 +15,7 @@ import common.dto.services.UpdateReservationDTO;
 import common.dto.soap.request.IdFlightInstanceWithSeatsSOAP;
 import common.dto.soap.request.ModifyFlightReservationRequestionSOAP;
 import common.exceptions.SAException;
+import common.dto.services.ReservationDTO;
 import weblogic.wsee.wstx.wsat.Transactional;
 
 @WebService(serviceName = "AgencyAirlineReservationWS")
@@ -51,6 +52,12 @@ public class AgencyAirlineReservationWS {
     @Transactional
     public double cancelReservation(@WebParam(name = "idReservationAirline") long idReservationAirline) throws SAException{
         return this.gatewayAgencyCommandService.cancelReservationFlight(idReservationAirline);
+    }
+
+    @WebMethod(operationName=WebMethodConsts.OP_SEARCH_FLIGHT_RESERVATION)
+    @Transactional
+    public common.dto.services.ReservationDTO searchReservation(@WebParam(name = "idReservationAirline") long idReservationAirline) throws SAException{
+        return this.gatewayAgencyCommandService.searchFlightReservation(idReservationAirline);
     }
 
 }

@@ -9,9 +9,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para newReservationSOAP complex type.
+ * <p>Java class for newReservationSOAP complex type.
  * 
- * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="newReservationSOAP"&gt;
@@ -58,7 +58,7 @@ public class NewReservationSOAP {
     protected NewReservationSOAP.StatusFlights statusFlights;
 
     /**
-     * Obtiene el valor de la propiedad id.
+     * Gets the value of the id property.
      * 
      */
     public long getId() {
@@ -66,7 +66,7 @@ public class NewReservationSOAP {
     }
 
     /**
-     * Define el valor de la propiedad id.
+     * Sets the value of the id property.
      * 
      */
     public void setId(long value) {
@@ -74,7 +74,7 @@ public class NewReservationSOAP {
     }
 
     /**
-     * Obtiene el valor de la propiedad date.
+     * Gets the value of the date property.
      * 
      * @return
      *     possible object is
@@ -86,7 +86,7 @@ public class NewReservationSOAP {
     }
 
     /**
-     * Define el valor de la propiedad date.
+     * Sets the value of the date property.
      * 
      * @param value
      *     allowed object is
@@ -98,7 +98,7 @@ public class NewReservationSOAP {
     }
 
     /**
-     * Obtiene el valor de la propiedad total.
+     * Gets the value of the total property.
      * 
      */
     public double getTotal() {
@@ -106,7 +106,7 @@ public class NewReservationSOAP {
     }
 
     /**
-     * Define el valor de la propiedad total.
+     * Sets the value of the total property.
      * 
      */
     public void setTotal(double value) {
@@ -114,7 +114,7 @@ public class NewReservationSOAP {
     }
 
     /**
-     * Obtiene el valor de la propiedad active.
+     * Gets the value of the active property.
      * 
      */
     public boolean isActive() {
@@ -122,7 +122,7 @@ public class NewReservationSOAP {
     }
 
     /**
-     * Define el valor de la propiedad active.
+     * Sets the value of the active property.
      * 
      */
     public void setActive(boolean value) {
@@ -130,7 +130,7 @@ public class NewReservationSOAP {
     }
 
     /**
-     * Obtiene el valor de la propiedad statusFlights.
+     * Gets the value of the statusFlights property.
      * 
      * @return
      *     possible object is
@@ -142,7 +142,7 @@ public class NewReservationSOAP {
     }
 
     /**
-     * Define el valor de la propiedad statusFlights.
+     * Sets the value of the statusFlights property.
      * 
      * @param value
      *     allowed object is
@@ -155,9 +155,9 @@ public class NewReservationSOAP {
 
 
     /**
-     * <p>Clase Java para anonymous complex type.
+     * <p>Java class for anonymous complex type.
      * 
-     * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+     * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
      * &lt;complexType&gt;

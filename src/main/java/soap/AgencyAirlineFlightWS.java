@@ -44,7 +44,7 @@ public class AgencyAirlineFlightWS {
         return this.flightAirlineQueryService.getFlightInstance(idFlightInstance);
     }
 
-    @WebMethod(operationName=WebMethodConsts.OP_SEARCH_FLIGHTS_INSTANCE_BY_RESERVATION)
+    @WebMethod(operationName=WebMethodConsts.OP_SEARCH_FLIGHTS_BY_RESERVATION)
     public List<IdFlightInstanceWithSeatsDTO> searchFlightInstanceByBooking(@WebParam(name = "reservationId") final long reservationId) throws SAException {
         return this.flightAirlineQueryService.getFlightsByReservation(reservationId);
     }

@@ -9,9 +9,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para modifyReservationRequestSOAP complex type.
+ * <p>Java class for modifyReservationRequestSOAP complex type.
  * 
- * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="modifyReservationRequestSOAP"&gt;
@@ -49,7 +49,7 @@ public class ModifyReservationRequestSOAP {
     protected ModifyReservationRequestSOAP.Flights flights;
 
     /**
-     * Obtiene el valor de la propiedad idReservation.
+     * Gets the value of the idReservation property.
      * 
      */
     public long getIdReservation() {
@@ -57,7 +57,7 @@ public class ModifyReservationRequestSOAP {
     }
 
     /**
-     * Define el valor de la propiedad idReservation.
+     * Sets the value of the idReservation property.
      * 
      */
     public void setIdReservation(long value) {
@@ -65,7 +65,7 @@ public class ModifyReservationRequestSOAP {
     }
 
     /**
-     * Obtiene el valor de la propiedad flights.
+     * Gets the value of the flights property.
      * 
      * @return
      *     possible object is
@@ -77,7 +77,7 @@ public class ModifyReservationRequestSOAP {
     }
 
     /**
-     * Define el valor de la propiedad flights.
+     * Sets the value of the flights property.
      * 
      * @param value
      *     allowed object is
@@ -90,9 +90,9 @@ public class ModifyReservationRequestSOAP {
 
 
     /**
-     * <p>Clase Java para anonymous complex type.
+     * <p>Java class for anonymous complex type.
      * 
-     * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+     * <p>The following schema fragment specifies the expected content contained within this class.
      * 
      * <pre>
      * &lt;complexType&gt;

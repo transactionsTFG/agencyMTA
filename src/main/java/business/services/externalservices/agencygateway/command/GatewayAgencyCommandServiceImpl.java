@@ -239,4 +239,9 @@ public class GatewayAgencyCommandServiceImpl implements GatewayAgencyCommandServ
         return priceReturn + moneyReturned;
     }
 
+    @Override
+    public ReservationDTO searchFlightReservation(long flightReservationId) {
+        return this.airlineReservationCommandService.getAirlineReservationWithLockMode(flightReservationId);
+    }
+
 }

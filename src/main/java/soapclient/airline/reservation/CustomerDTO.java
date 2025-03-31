@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para customerDTO complex type.
+ * <p>Java class for customerDTO complex type.
  * 
- * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="customerDTO"&gt;
@@ -49,7 +49,7 @@ public class CustomerDTO {
     protected String phone;
 
     /**
-     * Obtiene el valor de la propiedad active.
+     * Gets the value of the active property.
      * 
      */
     public boolean isActive() {
@@ -57,7 +57,7 @@ public class CustomerDTO {
     }
 
     /**
-     * Define el valor de la propiedad active.
+     * Sets the value of the active property.
      * 
      */
     public void setActive(boolean value) {
@@ -65,7 +65,7 @@ public class CustomerDTO {
     }
 
     /**
-     * Obtiene el valor de la propiedad dni.
+     * Gets the value of the dni property.
      * 
      * @return
      *     possible object is
@@ -77,7 +77,7 @@ public class CustomerDTO {
     }
 
     /**
-     * Define el valor de la propiedad dni.
+     * Sets the value of the dni property.
      * 
      * @param value
      *     allowed object is
@@ -89,7 +89,7 @@ public class CustomerDTO {
     }
 
     /**
-     * Obtiene el valor de la propiedad email.
+     * Gets the value of the email property.
      * 
      * @return
      *     possible object is
@@ -101,7 +101,7 @@ public class CustomerDTO {
     }
 
     /**
-     * Define el valor de la propiedad email.
+     * Sets the value of the email property.
      * 
      * @param value
      *     allowed object is
@@ -113,7 +113,7 @@ public class CustomerDTO {
     }
 
     /**
-     * Obtiene el valor de la propiedad id.
+     * Gets the value of the id property.
      * 
      */
     public long getId() {
@@ -121,7 +121,7 @@ public class CustomerDTO {
     }
 
     /**
-     * Define el valor de la propiedad id.
+     * Sets the value of the id property.
      * 
      */
     public void setId(long value) {
@@ -129,7 +129,7 @@ public class CustomerDTO {
     }
 
     /**
-     * Obtiene el valor de la propiedad name.
+     * Gets the value of the name property.
      * 
      * @return
      *     possible object is
@@ -141,7 +141,7 @@ public class CustomerDTO {
     }
 
     /**
-     * Define el valor de la propiedad name.
+     * Sets the value of the name property.
      * 
      * @param value
      *     allowed object is
@@ -153,7 +153,7 @@ public class CustomerDTO {
     }
 
     /**
-     * Obtiene el valor de la propiedad phone.
+     * Gets the value of the phone property.
      * 
      * @return
      *     possible object is
@@ -165,7 +165,7 @@ public class CustomerDTO {
     }
 
     /**
-     * Define el valor de la propiedad phone.
+     * Sets the value of the phone property.
      * 
      * @param value
      *     allowed object is
