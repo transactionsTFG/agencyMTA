@@ -17,6 +17,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
  *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
+ *         &lt;element name="idFlightInstance" type="{http://www.w3.org/2001/XMLSchema}long"/&gt;
  *         &lt;element name="arrivalDate" type="{http://www.w3.org/2001/XMLSchema}anySimpleType" minOccurs="0"/&gt;
  *         &lt;element name="departureDate" type="{http://www.w3.org/2001/XMLSchema}anySimpleType" minOccurs="0"/&gt;
  *         &lt;element name="cityDestination" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
@@ -35,6 +36,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "flightDataListSOAP", propOrder = {
     "id",
+    "idFlightInstance",
     "arrivalDate",
     "departureDate",
     "cityDestination",
@@ -46,6 +48,7 @@ import javax.xml.bind.annotation.XmlType;
 public class FlightDataListSOAP {
 
     protected long id;
+    protected long idFlightInstance;
     protected Object arrivalDate;
     protected Object departureDate;
     protected String cityDestination;
@@ -68,6 +71,22 @@ public class FlightDataListSOAP {
      */
     public void setId(long value) {
         this.id = value;
+    }
+
+    /**
+     * Gets the value of the idFlightInstance property.
+     * 
+     */
+    public long getIdFlightInstance() {
+        return idFlightInstance;
+    }
+
+    /**
+     * Sets the value of the idFlightInstance property.
+     * 
+     */
+    public void setIdFlightInstance(long value) {
+        this.idFlightInstance = value;
     }
 
     /**

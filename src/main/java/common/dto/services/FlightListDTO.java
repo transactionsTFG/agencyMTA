@@ -14,6 +14,7 @@ import org.w3c.dom.Element;
 @AllArgsConstructor
 public class FlightListDTO {
     private long id;
+	private long idFlightInstance;
     private String arrivalDate;
     private String departureDate;
     private String cityDestination;
@@ -33,6 +34,7 @@ public class FlightListDTO {
 
         return FlightListDTO.builder()
                 .id(flightData.getId())
+				.idFlightInstance(flightData.getIdFlightInstance())
                 .arrivalDate(arrivalDateTxt)
                 .departureDate(departureDateTxt)
                 .cityDestination(flightData.getCityDestination())
