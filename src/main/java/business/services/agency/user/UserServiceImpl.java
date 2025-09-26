@@ -45,6 +45,7 @@ public class UserServiceImpl implements UserService {
         User user = resultList.isEmpty() ? null : resultList.get(0);
         if (user == null || !(user.getPassword().equals(userLogin.getPassword()))) 
             throw new UserException("Usuario no encontrado");
+		this.em.refresh(user);
         return user.toDTO();
     }
 
